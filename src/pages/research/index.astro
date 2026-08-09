@@ -4,23 +4,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { areas } from '../../data/areas.ts';
+import { useTranslations, type Lang } from '../../i18n/ui';
+import { localizeProject, localizeArea } from '../../i18n/content';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
 
 const projects = await getCollection('projects');
 const byArea = (key: string) =>
   projects.filter((p) => p.data.area === key).sort((a, b) => a.data.order - b.data.order);
+const localizedAreas = areas.map((a) => localizeArea(a, lang));
 ---
 
-<BaseLayout
-  title="Research"
-  description="POLAR's research spans wearables and prosthetics, rehabilitation robots, neuromuscular control, and assistive technologies."
->
-  <PageHero
-    eyebrow="Research"
-    title="Building technology that moves people forward."
-    lead="Our projects span four connected themes — from body-worn devices to the robots and neuromuscular science behind recovery."
-  >
-    <nav class="area-nav" aria-label="Research themes">
-      {areas.map((a) => (
+<BaseLayout lang={lang} title={t('research.eyebrow')} description={t('research.lead')}>
+  <PageHero eyebrow={t('research.eyebrow')} title={t('research.title')} lead={t('research.lead')}>
+    <nav class="area-nav" aria-label={t('home.themes.eyebrow')}>
+      {localizedAreas.map((a) => (
         <a href={`#${a.key}`} class="area-nav__chip" style={`--accent:${a.color}`}>
           {a.name}<span>{byArea(a.key).length}</span>
         </a>
@@ -28,7 +27,7 @@ const byArea = (key: string) =>
     </nav>
   </PageHero>
 
-  {areas.map((area) => (
+  {localizedAreas.map((area) => (
     <section class="section area-section" id={area.key}>
       <div class="container">
         <div class="area-section__head reveal" style={`--accent:${area.color}`}>
@@ -41,14 +40,14 @@ const byArea = (key: string) =>
           </div>
         </div>
         <div class="grid grid--3">
-          {byArea(area.key).map((p) => (
-            <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} showArea={false} />
-          ))}
+          {byArea(area.key).map((p) => {
+            const d = localizeProject(p.id, p.data, lang);
+            return <ProjectCard id={p.id} name={d.name} area={d.area} summary={d.summary} thumb={d.thumb} showArea={false} lang={lang} />;
+          })}
         </div>
       </div>
     </section>
   ))}
-
 </BaseLayout>
 
 <style>

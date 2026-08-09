@@ -1,5 +1,7 @@
 ---
 import { areaMap } from '../data/areas.ts';
+import { localizePath, type Lang } from '../i18n/ui';
+import { localizeArea } from '../i18n/content';
 
 interface Props {
   id: string;
@@ -8,12 +10,13 @@ interface Props {
   summary: string;
   thumb?: string | null;
   showArea?: boolean;
+  lang?: Lang;
 }
-const { id, name, area, summary, thumb, showArea = true } = Astro.props;
-const meta = areaMap[area];
+const { id, name, area, summary, thumb, showArea = true, lang = 'en' } = Astro.props;
+const meta = localizeArea(areaMap[area], lang);
 ---
 
-<a class="project card reveal" href={`/research/${id}/`} style={`--accent:${meta.color}`}>
+<a class="project card reveal" href={localizePath(`/research/${id}/`, lang)} style={`--accent:${meta.color}`}>
   <div class="project__media">
     {thumb ? (
       <img src={thumb} alt={`${name} — ${meta.name}`} loading="lazy" decoding="async" width="600" height="360" />

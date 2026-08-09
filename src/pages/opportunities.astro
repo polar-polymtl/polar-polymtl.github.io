@@ -1,46 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import experiments from '../data/experiments.json';
+import experimentsData from '../data/experiments.json';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { localizeExperiment } from '../i18n/content';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
 
 const positions = [
-  {
-    title: 'PhD & MSc Students',
-    body: 'Fully engage in a multi-year research project in rehabilitation robotics, wearables, or neuromuscular control — from design and modelling to experiments with patients and clinicians.',
-    tag: 'Graduate',
-  },
-  {
-    title: 'Postdoctoral Researchers',
-    body: 'Lead ambitious research directions, mentor students, and help translate lab prototypes toward clinical impact. Fellowship and project-funded positions considered.',
-    tag: 'Postdoc',
-  },
-  {
-    title: 'Undergraduate & Interns',
-    body: 'Gain hands-on research experience through summer projects, NSERC/MITACS awards, and international internships. A great first step into biomedical robotics.',
-    tag: 'Undergraduate',
-  },
+  { title: t('opps.pos.grad.title'), body: t('opps.pos.grad.body'), tag: t('opps.pos.grad.tag') },
+  { title: t('opps.pos.postdoc.title'), body: t('opps.pos.postdoc.body'), tag: t('opps.pos.postdoc.tag') },
+  { title: t('opps.pos.undergrad.title'), body: t('opps.pos.undergrad.body'), tag: t('opps.pos.undergrad.tag') },
 ];
-
-const looking = [
-  'A background in mechanical, biomedical, electrical, or software engineering — or a related field',
-  'Curiosity about robotics, biomechanics, control, or human movement',
-  'Hands-on skills: CAD, prototyping, embedded systems, signal processing, or programming',
-  'Motivation to build technology that genuinely helps people',
-];
+const looking = [t('opps.value.1'), t('opps.value.2'), t('opps.value.3'), t('opps.value.4')];
+const experiments = experimentsData.map((e) => localizeExperiment(e, lang));
 ---
 
-<BaseLayout
-  title="Opportunities"
-  description="Join POLAR — graduate, postdoctoral, and undergraduate research opportunities in rehabilitation robotics at Polytechnique Montréal."
->
-  <PageHero
-    eyebrow="Opportunities"
-    title="Build the future of rehabilitation robotics with us."
-    lead="POLAR welcomes motivated students and researchers who want to turn engineering into real-world mobility for patients. If that sounds like you, we’d love to hear from you."
-  >
+<BaseLayout lang={lang} title={t('opps.eyebrow')} description={t('opps.lead')}>
+  <PageHero eyebrow={t('opps.eyebrow')} title={t('opps.title')} lead={t('opps.lead')}>
     <div class="hero-actions">
-      <a href="#apply" class="btn">How to apply</a>
-      <a href="#experiments" class="btn btn--ghost">Participate in experiments</a>
+      <a href="#apply" class="btn">{t('opps.apply.cta')}</a>
+      <a href="#experiments" class="btn btn--ghost">{t('opps.exp.cta')}</a>
     </div>
   </PageHero>
 
@@ -48,8 +29,8 @@ const looking = [
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Who we’re looking for</span>
-        <h2>Positions at every stage.</h2>
+        <span class="eyebrow">{t('opps.who.eyebrow')}</span>
+        <h2>{t('opps.who.title')}</h2>
       </div>
       <div class="grid grid--3">
         {positions.map((p) => (
@@ -67,8 +48,8 @@ const looking = [
   <section class="section section--soft">
     <div class="container apply-grid" id="apply">
       <div class="reveal">
-        <span class="eyebrow">What we value</span>
-        <h2>A good fit for POLAR.</h2>
+        <span class="eyebrow">{t('opps.value.eyebrow')}</span>
+        <h2>{t('opps.value.title')}</h2>
         <ul class="check-list">
           {looking.map((item) => (
             <li>
@@ -77,21 +58,19 @@ const looking = [
             </li>
           ))}
         </ul>
-        <p class="muted">
-          Don’t match every point? Apply anyway — motivation and curiosity matter most.
-        </p>
+        <p class="muted">{t('opps.value.note')}</p>
       </div>
 
       <aside class="apply-card card reveal">
-        <h3>How to apply</h3>
-        <p>Send Prof. Mohebbi a short email that includes:</p>
+        <h3>{t('opps.apply.title')}</h3>
+        <p>{t('opps.apply.intro')}</p>
         <ol class="apply-steps">
-          <li>A brief note on your research interests and why POLAR</li>
-          <li>Your CV / résumé</li>
-          <li>Academic transcripts (unofficial is fine)</li>
+          <li>{t('opps.apply.step1')}</li>
+          <li>{t('opps.apply.step2')}</li>
+          <li>{t('opps.apply.step3')}</li>
         </ol>
         <a href="mailto:abolfazl.mohebbi@polymtl.ca?subject=Prospective%20student%20%E2%80%94%20POLAR%20Lab" class="btn apply-btn">
-          Email the director
+          {t('opps.apply.email')}
         </a>
         <p class="apply-email">abolfazl.mohebbi@polymtl.ca</p>
       </aside>
@@ -102,13 +81,9 @@ const looking = [
   <section class="section" id="experiments">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Participate in experiments</span>
-        <h2>Take part in our research.</h2>
-        <p>
-          POLAR regularly recruits volunteers for studies on movement, balance, and assistive
-          technology. Participation is compensated. If a study interests you, email the listed
-          contact to take part.
-        </p>
+        <span class="eyebrow">{t('opps.exp.eyebrow')}</span>
+        <h2>{t('opps.exp.title')}</h2>
+        <p>{t('opps.exp.lead')}</p>
       </div>
       <div class="grid grid--2">
         {experiments.map((e) => (
@@ -116,12 +91,12 @@ const looking = [
             <h3 class="exp__title">{e.title}</h3>
             <p class="exp__desc">{e.description}</p>
             <dl class="exp__meta">
-              <div><dt>Duration</dt><dd>{e.duration}</dd></div>
-              <div><dt>Location</dt><dd>{e.location}</dd></div>
-              <div><dt>Compensation</dt><dd>{e.compensation}</dd></div>
+              <div><dt>{t('opps.exp.duration')}</dt><dd>{e.duration}</dd></div>
+              <div><dt>{t('opps.exp.location')}</dt><dd>{e.location}</dd></div>
+              <div><dt>{t('opps.exp.compensation')}</dt><dd>{e.compensation}</dd></div>
             </dl>
             <a class="btn btn--ghost exp__cta" href={`mailto:${e.contact}?subject=${encodeURIComponent('Participation — ' + e.title)}`}>
-              Contact to participate
+              {t('opps.exp.contact')}
             </a>
           </article>
         ))}

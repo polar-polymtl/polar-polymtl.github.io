@@ -1,14 +1,22 @@
 ---
 import type { Area } from '../data/areas.ts';
+import { localizePath, type Lang } from '../i18n/ui';
 
 interface Props {
   area: Area;
   count?: number;
+  lang?: Lang;
 }
-const { area, count } = Astro.props;
+const { area, count, lang = 'en' } = Astro.props;
+const countLabel =
+  count == null
+    ? lang === 'fr' ? 'Explorer' : 'Explore'
+    : lang === 'fr'
+      ? `${count} ${count === 1 ? 'projet' : 'projets'}`
+      : `${count} project${count === 1 ? '' : 's'}`;
 ---
 
-<a class="area card reveal" href={`/research/#${area.key}`} style={`--accent:${area.color}`}>
+<a class="area card reveal" href={localizePath(`/research/#${area.key}`, lang)} style={`--accent:${area.color}`}>
   <div class="area__media">
     <img src={area.image} alt={area.name} loading="lazy" decoding="async" width="700" height="450" />
     <span class="area__icon" aria-hidden="true">
@@ -21,7 +29,7 @@ const { area, count } = Astro.props;
     <h3 class="area__name">{area.name}</h3>
     <p class="area__desc">{area.description}</p>
     <span class="area__link">
-      {count != null ? `${count} project${count === 1 ? '' : 's'}` : 'Explore'}
+      {countLabel}
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </span>
   </div>

@@ -2,26 +2,39 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getLangFromUrl, stripLang, localizePath, type Lang } from '../i18n/ui';
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  lang?: Lang;
 }
 
 const {
   title,
   description = 'POLAR — Polytechnique Lab for Assistive and Rehabilitation Technologies. We develop robotics and biomechatronics to help people restore, relearn, and augment human mobility.',
   image = '/images/polar-logo.png',
+  lang = getLangFromUrl(Astro.url),
 } = Astro.props;
 
 const siteName = 'POLAR Lab';
-const fullTitle = title ? `${title} · ${siteName}` : `${siteName} — Assistive & Rehabilitation Technologies`;
+const defaultTitle =
+  lang === 'fr'
+    ? 'POLAR Lab — Technologies d’assistance et de réadaptation'
+    : 'POLAR Lab — Assistive & Rehabilitation Technologies';
+const fullTitle = title ? `${title} · ${siteName}` : defaultTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+
+// hreflang alternates: same page in each language.
+const basePath = stripLang(Astro.url.pathname);
+const enHref = new URL(localizePath(basePath, 'en'), Astro.site ?? Astro.url.origin).href;
+const frHref = new URL(localizePath(basePath, 'fr'), Astro.site ?? Astro.url.origin).href;
+const skip = lang === 'fr' ? 'Aller au contenu' : 'Skip to content';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <script is:inline>
       // Mark JS as active so scroll-reveal styles apply. Without this class
@@ -33,6 +46,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).hr
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="fr" href={frHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
 
     <link rel="icon" href="/images/logo.png" type="image/png" />
     <meta name="theme-color" content="#12467b" />
@@ -55,12 +71,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).hr
     />
   </head>
   <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <Header />
+    <a href="#main" class="skip-link">{skip}</a>
+    <Header lang={lang} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
 
     <script>
       // Reveal-on-scroll for elements marked with .reveal.

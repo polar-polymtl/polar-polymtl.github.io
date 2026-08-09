@@ -1,13 +1,23 @@
 ---
 import Logo from './Logo.astro';
+import { useTranslations, localizePath, stripLang, type Lang, type UIKey } from '../i18n/ui';
 
-const nav = [
-  { label: 'Home', href: '/' },
-  { label: 'Research', href: '/research/' },
-  { label: 'People', href: '/people/' },
-  { label: 'Opportunities', href: '/opportunities/' },
-  { label: 'About', href: '/about/' },
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
+
+const navItems: { key: UIKey; href: string }[] = [
+  { key: 'nav.home', href: '/' },
+  { key: 'nav.research', href: '/research/' },
+  { key: 'nav.people', href: '/people/' },
+  { key: 'nav.opportunities', href: '/opportunities/' },
+  { key: 'nav.about', href: '/about/' },
 ];
+const nav = navItems.map((i) => ({ label: t(i.key), href: localizePath(i.href, lang) }));
+const joinHref = localizePath('/opportunities/', lang);
+
+// Language switcher → same page in the other language.
+const other: Lang = lang === 'en' ? 'fr' : 'en';
+const switchHref = localizePath(stripLang(Astro.url.pathname), other);
 
 // Normalize current path for active-state matching.
 const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
@@ -20,7 +30,7 @@ const isActive = (href: string) => {
 
 <header class="site-header" id="site-header" data-header>
   <div class="container container--wide header-inner">
-    <a href="/" class="header-brand" aria-label="POLAR — home">
+    <a href={localizePath('/', lang)} class="header-brand" aria-label="POLAR — home">
       <Logo variant="full" />
     </a>
 
@@ -38,7 +48,11 @@ const isActive = (href: string) => {
           </li>
         ))}
       </ul>
-      <a href="/opportunities/" class="btn btn--ghost nav-cta">Join the lab</a>
+      <a href={switchHref} class="lang-switch" hreflang={other} aria-label={other === 'fr' ? 'Voir en français' : 'View in English'}>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        {t('lang.switch')}
+      </a>
+      <a href={joinHref} class="btn btn--ghost nav-cta">{t('nav.join')}</a>
     </nav>
 
     <button
@@ -66,7 +80,8 @@ const isActive = (href: string) => {
           </a>
         </li>
       ))}
-      <li><a href="/opportunities/" class="btn nav-cta-mobile">Join the lab</a></li>
+      <li><a href={switchHref} class="mobile-link" hreflang={other}>🌐 {t('lang.switch')}</a></li>
+      <li><a href={joinHref} class="btn nav-cta-mobile">{t('nav.join')}</a></li>
     </ul>
   </div>
 </header>
@@ -132,6 +147,14 @@ const isActive = (href: string) => {
   .nav-link.is-active { color: var(--brand); }
 
   .nav-cta { padding: 0.6em 1.1em; font-size: 0.95rem; }
+
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--font-head); font-weight: 600; font-size: 0.9rem;
+    color: var(--ink-soft);
+    padding: 0.4rem 0.2rem;
+  }
+  .lang-switch:hover { color: var(--brand-600); }
 
   /* Mobile toggle */
   .nav-toggle {

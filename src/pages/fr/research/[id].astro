@@ -1,0 +1,17 @@
+---
+// French project detail — same static paths, rendered in French.
+import { getCollection } from 'astro:content';
+import Detail from '../../research/[id].astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({
+    params: { id: p.id },
+    props: { project: p, all: projects },
+  }));
+}
+
+const { project, all } = Astro.props;
+---
+
+<Detail project={project} all={all} lang="fr" />

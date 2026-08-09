@@ -5,6 +5,12 @@ import ResearchAreaCard from '../components/ResearchAreaCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PartnerLogos from '../components/PartnerLogos.astro';
 import { areas } from '../data/areas.ts';
+import { useTranslations, localizePath, type Lang } from '../i18n/ui';
+import { localizeProject, localizeArea } from '../i18n/content';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
+const P = (p: string) => localizePath(p, lang);
 
 const projects = await getCollection('projects');
 const people = await getCollection('people');
@@ -12,37 +18,32 @@ const people = await getCollection('people');
 const countByArea = (key: string) => projects.filter((p) => p.data.area === key).length;
 const featured = projects
   .filter((p) => p.data.featured)
-  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .map((p) => ({ id: p.id, ...localizeProject(p.id, p.data, lang) }));
 
 const stats = [
-  { value: `${projects.length}`, label: 'Active projects' },
-  { value: `${areas.length}`, label: 'Research themes' },
-  { value: `${people.length}+`, label: 'Members & alumni' },
-  { value: 'Living Lab', label: 'Research model' },
+  { value: `${projects.length}`, label: t('stats.projects') },
+  { value: `${areas.length}`, label: t('stats.themes') },
+  { value: `${people.length}+`, label: t('stats.members') },
+  { value: t('stats.model.value'), label: t('stats.model') },
 ];
 ---
 
-<BaseLayout>
+<BaseLayout lang={lang}>
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="hero__grid" aria-hidden="true"></div>
     <div class="container container--wide hero__inner">
       <div class="hero__copy">
-        <span class="eyebrow">Polytechnique Montréal · Rehabilitation Robotics</span>
+        <span class="eyebrow">{t('home.eyebrow')}</span>
         <h1 class="hero__title">
           <span class="hero__word">POLAR</span>
         </h1>
-        <p class="hero__expand">
-          <b>Po</b>lytechnique <b>L</b>ab for <b>A</b>ssistive and <b>R</b>ehabilitation Technologies
-        </p>
-        <p class="hero__lead">
-          We design robots, wearables, and biomechatronic systems that help people
-          <em>relearn, restore, and augment</em> human movement — advancing mobility
-          through innovation in medical robotics.
-        </p>
+        <p class="hero__expand" set:html={t('home.tagline')}></p>
+        <p class="hero__lead" set:html={t('home.lead')}></p>
         <div class="hero__actions">
-          <a href="/research/" class="btn">Explore our research</a>
-          <a href="/opportunities/" class="btn btn--ghost">Join the lab</a>
+          <a href={P('/research/')} class="btn">{t('home.cta.research')}</a>
+          <a href={P('/opportunities/')} class="btn btn--ghost">{t('home.cta.join')}</a>
         </div>
       </div>
 
@@ -53,7 +54,7 @@ const stats = [
 
     <div class="container container--wide hero__banner-wrap">
       <figure class="hero__banner">
-        <img src="/images/home-banner.webp" alt="POLAR — advancing human mobility through medical robotics" width="1000" height="563" loading="lazy" decoding="async" />
+        <img src="/images/home-banner.webp" alt="POLAR" width="1000" height="563" loading="lazy" decoding="async" />
       </figure>
     </div>
 
@@ -72,22 +73,13 @@ const stats = [
     <div class="container">
       <div class="who">
         <div class="who__head reveal">
-          <span class="eyebrow">Who we are</span>
-          <h2>Engineering movement back into people’s lives.</h2>
+          <span class="eyebrow">{t('home.who.eyebrow')}</span>
+          <h2>{t('home.who.title')}</h2>
         </div>
         <div class="who__text reveal">
-          <p class="lead">
-            POLAR is a research laboratory at Polytechnique Montréal, led by Prof. Abolfazl Mohebbi
-            and home to the iTMT Research Chair in Rehabilitation and Assistive Technologies.
-          </p>
-          <p>
-            We develop robotics and biomechatronics — from rehabilitation robots and haptic
-            interfaces to smart wearables and EMG-driven assistive devices — for people living with
-            stroke, spinal cord injury, cerebral palsy, and other motor conditions. Our work spans
-            the full path from fundamental neuromuscular science to devices tested with patients and
-            clinicians.
-          </p>
-          <a href="/about/" class="link-arrow">More about the lab
+          <p class="lead">{t('home.who.lead')}</p>
+          <p>{t('home.who.body')}</p>
+          <a href={P('/about/')} class="link-arrow">{t('home.who.more')}
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -99,12 +91,12 @@ const stats = [
   <section class="section section--soft">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Research themes</span>
-        <h2>Four directions, one mission.</h2>
-        <p>Our projects cluster into four connected themes — from what people wear to the robots and science behind their recovery.</p>
+        <span class="eyebrow">{t('home.themes.eyebrow')}</span>
+        <h2>{t('home.themes.title')}</h2>
+        <p>{t('home.themes.lead')}</p>
       </div>
       <div class="grid grid--2">
-        {areas.map((area) => <ResearchAreaCard area={area} count={countByArea(area.key)} />)}
+        {areas.map((area) => <ResearchAreaCard area={localizeArea(area, lang)} count={countByArea(area.key)} lang={lang} />)}
       </div>
     </div>
   </section>
@@ -114,13 +106,13 @@ const stats = [
     <div class="container">
       <div class="section-head reveal spread">
         <div>
-          <span class="eyebrow">Featured projects</span>
-          <h2>Selected work from the lab.</h2>
+          <span class="eyebrow">{t('home.featured.eyebrow')}</span>
+          <h2>{t('home.featured.title')}</h2>
         </div>
-        <a href="/research/" class="btn btn--ghost">All projects</a>
+        <a href={P('/research/')} class="btn btn--ghost">{t('home.featured.all')}</a>
       </div>
       <div class="grid grid--3">
-        {featured.map((p) => <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} />)}
+        {featured.map((p) => <ProjectCard id={p.id} name={p.name} area={p.area} summary={p.summary} thumb={p.thumb} lang={lang} />)}
       </div>
     </div>
   </section>
@@ -130,20 +122,16 @@ const stats = [
     <div class="container">
       <div class="livinglab card reveal">
         <div class="livinglab__body">
-          <span class="eyebrow">The Living Lab approach</span>
-          <h2>Patients and clinicians at the heart of innovation.</h2>
-          <p class="lead">
-            We build with the people we build for. Working alongside CHU Sainte-Justine and clinical
-            partners, POLAR embeds patients and health professionals directly in the design process —
-            so our technologies are grounded in real needs and everyday life.
-          </p>
-          <a href="/about/" class="btn">How we work</a>
+          <span class="eyebrow">{t('home.living.eyebrow')}</span>
+          <h2>{t('home.living.title')}</h2>
+          <p class="lead">{t('home.living.body')}</p>
+          <a href={P('/about/')} class="btn">{t('home.living.cta')}</a>
         </div>
-        <ul class="livinglab__steps" aria-label="Living Lab process">
-          <li><span>01</span> Listen to patients &amp; clinicians</li>
-          <li><span>02</span> Co-design &amp; prototype</li>
-          <li><span>03</span> Test in real settings</li>
-          <li><span>04</span> Refine &amp; translate</li>
+        <ul class="livinglab__steps" aria-label="Living Lab">
+          <li><span>01</span> {t('home.living.step1')}</li>
+          <li><span>02</span> {t('home.living.step2')}</li>
+          <li><span>03</span> {t('home.living.step3')}</li>
+          <li><span>04</span> {t('home.living.step4')}</li>
         </ul>
       </div>
     </div>
@@ -153,8 +141,8 @@ const stats = [
   <section class="section">
     <div class="container">
       <div class="section-head section-head--center reveal">
-        <span class="eyebrow">Partners &amp; affiliations</span>
-        <h2>Working across research and care.</h2>
+        <span class="eyebrow">{t('home.partners.eyebrow')}</span>
+        <h2>{t('home.partners.title')}</h2>
       </div>
       <PartnerLogos />
     </div>
@@ -164,12 +152,12 @@ const stats = [
   <section class="cta-band">
     <div class="container cta-band__inner">
       <div>
-        <h2>Interested in joining POLAR?</h2>
-        <p>We’re always looking for curious students and collaborators in robotics, biomechatronics, and rehabilitation engineering.</p>
+        <h2>{t('home.ctaband.title')}</h2>
+        <p>{t('home.ctaband.body')}</p>
       </div>
       <div class="cta-band__actions">
-        <a href="/opportunities/" class="btn btn--light">See opportunities</a>
-        <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost btn--ghost-light">Contact the director</a>
+        <a href={P('/opportunities/')} class="btn btn--light">{t('home.ctaband.opps')}</a>
+        <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost btn--ghost-light">{t('home.ctaband.contact')}</a>
       </div>
     </div>
   </section>

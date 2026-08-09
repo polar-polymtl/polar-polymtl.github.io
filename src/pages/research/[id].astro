@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { areaMap } from '../../data/areas.ts';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+import { localizeProject, localizeArea, localizeRole } from '../../i18n/content';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -12,9 +14,10 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project, all } = Astro.props;
-const d = project.data;
-const meta = areaMap[d.area];
+const { project, all, lang = 'en' } = Astro.props as { project: any; all: any[]; lang?: Lang };
+const t = useTranslations(lang);
+const d = localizeProject(project.id, project.data, lang);
+const meta = localizeArea(areaMap[d.area], lang);
 const related = all
   .filter((p) => p.data.area === d.area && p.id !== project.id)
   .sort((a, b) => a.data.order - b.data.order)
@@ -22,15 +25,15 @@ const related = all
 const [hero, ...gallery] = d.images;
 ---
 
-<BaseLayout title={d.name} description={d.summary}>
+<BaseLayout lang={lang} title={d.name} description={d.summary}>
   <article>
     <!-- Header -->
     <section class="detail-hero" style={`--accent:${meta.color}`}>
       <div class="container">
         <nav class="crumbs" aria-label="Breadcrumb">
-          <a href="/research/">Research</a>
+          <a href={localizePath('/research/', lang)}>{t('project.crumb')}</a>
           <span aria-hidden="true">/</span>
-          <a href={`/research/#${d.area}`}>{meta.name}</a>
+          <a href={localizePath(`/research/#${d.area}`, lang)}>{meta.name}</a>
         </nav>
         <div class="detail-head">
           <span class="tag" style={`background:color-mix(in srgb, ${meta.color} 14%, transparent); color:${meta.color}`}>{meta.name}</span>
@@ -65,7 +68,7 @@ const [hero, ...gallery] = d.images;
 
         {d.videos.length > 0 && (
           <div class="videos">
-            <h2 class="detail-h2">Videos</h2>
+            <h2 class="detail-h2">{t('project.videos')}</h2>
             {d.videos.map((v) => (
               <figure class="video">
                 <div class="video__frame">
@@ -85,7 +88,7 @@ const [hero, ...gallery] = d.images;
 
         {d.publications.length > 0 && (
           <div class="publications">
-            <h2 class="detail-h2">Publications</h2>
+            <h2 class="detail-h2">{t('project.publications')}</h2>
             <ol class="pub-list">
               {d.publications.map((pub) => (
                 <li>{pub.replace(/^\[\d+\]\s*/, '')}</li>
@@ -97,21 +100,21 @@ const [hero, ...gallery] = d.images;
 
       <aside class="detail-aside">
         <div class="aside-card card">
-          <h2 class="aside-title">Research theme</h2>
-          <a class="aside-theme" href={`/research/#${d.area}`} style={`--accent:${meta.color}`}>
+          <h2 class="aside-title">{t('project.theme')}</h2>
+          <a class="aside-theme" href={localizePath(`/research/#${d.area}`, lang)} style={`--accent:${meta.color}`}>
             <span class="aside-dot" aria-hidden="true"></span>{meta.name}
           </a>
 
           {d.team.length > 0 && (
             <>
-              <h2 class="aside-title">Contributors</h2>
+              <h2 class="aside-title">{t('project.contributors')}</h2>
               <ul class="team-list">
                 {d.team.map((member) => (
                   <li>
                     {member.email
                       ? <a class="team-name team-name--link" href={`mailto:${member.email}`}>{member.name}</a>
                       : <span class="team-name">{member.name}</span>}
-                    {member.role && <span class="team-role">{member.role}</span>}
+                    {member.role && <span class="team-role">{localizeRole(member.role, lang)}</span>}
                     {member.email && <a class="team-email" href={`mailto:${member.email}`}>{member.email}</a>}
                   </li>
                 ))}
@@ -119,7 +122,7 @@ const [hero, ...gallery] = d.images;
             </>
           )}
 
-          <a href="/opportunities/" class="btn btn--ghost aside-cta">Join this research</a>
+          <a href={localizePath('/opportunities/', lang)} class="btn btn--ghost aside-cta">{t('project.join')}</a>
         </div>
       </aside>
     </div>
@@ -127,20 +130,21 @@ const [hero, ...gallery] = d.images;
     {related.length > 0 && (
       <section class="section section--soft">
         <div class="container">
-          <div class="section-head reveal"><h2>More in {meta.name}</h2></div>
+          <div class="section-head reveal"><h2>{t('project.more')} {meta.name}</h2></div>
           <div class="grid grid--3">
-            {related.map((p) => (
-              <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} showArea={false} />
-            ))}
+            {related.map((p) => {
+              const rd = localizeProject(p.id, p.data, lang);
+              return <ProjectCard id={p.id} name={rd.name} area={rd.area} summary={rd.summary} thumb={rd.thumb} showArea={false} lang={lang} />;
+            })}
           </div>
         </div>
       </section>
     )}
 
     <div class="container detail-back">
-      <a href="/research/" class="link-back">
+      <a href={localizePath('/research/', lang)} class="link-back">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        All research
+        {t('project.back')}
       </a>
     </div>
   </article>

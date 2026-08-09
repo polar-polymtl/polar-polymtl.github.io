@@ -2,58 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PartnerLogos from '../components/PartnerLogos.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
 
-const conditions = [
-  'Stroke',
-  'Spinal cord injury',
-  'Cerebral palsy',
-  'Multiple sclerosis',
-  'Muscular dystrophy',
-  'ALS',
-  'Spinal muscular atrophy',
-  'Other motor disabilities',
-];
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
+
+const conditions =
+  lang === 'fr'
+    ? ['AVC', 'Lésion médullaire', 'Paralysie cérébrale', 'Sclérose en plaques', 'Dystrophie musculaire', 'SLA', 'Amyotrophie spinale', 'Autres atteintes motrices']
+    : ['Stroke', 'Spinal cord injury', 'Cerebral palsy', 'Multiple sclerosis', 'Muscular dystrophy', 'ALS', 'Spinal muscular atrophy', 'Other motor disabilities'];
 
 const values = [
-  {
-    title: 'Relearn',
-    body: 'Retraining movement and neuromotor control through robotic and interactive therapy.',
-  },
-  {
-    title: 'Restore',
-    body: 'Recovering lost function with rehabilitation robots, prosthetics, and biomechatronics.',
-  },
-  {
-    title: 'Augment',
-    body: 'Extending human ability and independence with wearable and assistive technologies.',
-  },
+  { title: t('about.value.relearn.title'), body: t('about.value.relearn.body') },
+  { title: t('about.value.restore.title'), body: t('about.value.restore.body') },
+  { title: t('about.value.augment.title'), body: t('about.value.augment.body') },
 ];
 ---
 
-<BaseLayout title="About" description="About POLAR — mission, the Living Lab approach, partners, and how to reach the lab at Polytechnique Montréal.">
-  <PageHero
-    eyebrow="About"
-    title="Restoring movement through human-centred engineering."
-    lead="POLAR — the Polytechnique Lab for Assistive and Rehabilitation Technologies — develops robotics and biomechatronics that help people relearn, restore, and augment their neuromotor performance."
-  />
+<BaseLayout lang={lang} title={t('about.eyebrow')} description={t('about.lead')}>
+  <PageHero eyebrow={t('about.eyebrow')} title={t('about.title')} lead={t('about.lead')} />
 
   <!-- Mission -->
   <section class="section">
     <div class="container mission-grid">
       <div class="reveal">
         <img class="about-logo" src="/images/polar-logo-full.webp" alt="POLAR — Polytechnique Lab for Assistive and Rehabilitation Technologies" width="720" height="748" loading="lazy" decoding="async" />
-        <span class="eyebrow">Our mission</span>
-        <h2>Technology in the service of mobility.</h2>
-        <p class="lead">
-          At POLAR, we research and develop innovative robotics and biomechatronics to help humans
-          relearn, restore, or augment their neuromotor performance — spanning rehabilitation
-          robotics, assistive technologies, and interventions that support people with disabilities
-          in everyday life.
-        </p>
-        <p>
-          Our work reaches across the lifespan, from children to older adults, and is grounded in
-          close collaboration with clinicians and the people who use our technologies.
-        </p>
+        <span class="eyebrow">{t('about.mission.eyebrow')}</span>
+        <h2>{t('about.mission.title')}</h2>
+        <p class="lead">{t('about.mission.lead')}</p>
+        <p>{t('about.mission.body')}</p>
       </div>
       <div class="values reveal">
         {values.map((v, i) => (
@@ -73,7 +50,7 @@ const values = [
   <section class="banner-section">
     <div class="container">
       <figure class="banner reveal">
-        <img src="/images/gait-banner.webp" alt="From assisted walking to independent gait — restoring human mobility" loading="lazy" decoding="async" width="1600" height="578" />
+        <img src="/images/gait-banner.webp" alt="POLAR" loading="lazy" decoding="async" width="1600" height="578" />
       </figure>
     </div>
   </section>
@@ -82,13 +59,9 @@ const values = [
   <section class="section section--tint">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">The Living Lab approach</span>
-        <h2>Patients and clinicians at the heart of the process.</h2>
-        <p>
-          We place the people we serve — and the health professionals who care for them — at the
-          centre of innovation. By co-designing and testing in real clinical and everyday settings,
-          our technologies stay grounded in genuine needs.
-        </p>
+        <span class="eyebrow">{t('about.living.eyebrow')}</span>
+        <h2>{t('about.living.title')}</h2>
+        <p>{t('about.living.body')}</p>
       </div>
     </div>
   </section>
@@ -97,12 +70,9 @@ const values = [
   <section class="section">
     <div class="container serve-grid">
       <div class="reveal">
-        <span class="eyebrow">Who we serve</span>
-        <h2>Supporting people across many conditions.</h2>
-        <p class="muted">
-          Our research aims to improve mobility and independence for patients of all ages living with
-          a range of motor conditions, including:
-        </p>
+        <span class="eyebrow">{t('about.serve.eyebrow')}</span>
+        <h2>{t('about.serve.title')}</h2>
+        <p class="muted">{t('about.serve.body')}</p>
       </div>
       <ul class="condition-list reveal">
         {conditions.map((c) => <li>{c}</li>)}
@@ -114,9 +84,9 @@ const values = [
   <section class="section section--soft">
     <div class="container">
       <div class="section-head section-head--center reveal">
-        <span class="eyebrow">Partners &amp; support</span>
-        <h2>Where research meets care.</h2>
-        <p>POLAR is supported by leading academic and clinical institutions across Montréal.</p>
+        <span class="eyebrow">{t('about.partners.eyebrow')}</span>
+        <h2>{t('about.partners.title')}</h2>
+        <p>{t('about.partners.body')}</p>
       </div>
       <PartnerLogos />
     </div>
@@ -126,22 +96,22 @@ const values = [
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Get in touch.</h2>
+        <span class="eyebrow">{t('about.contact.eyebrow')}</span>
+        <h2>{t('about.contact.title')}</h2>
       </div>
       <div class="contact-grid">
         <div class="contact-card card reveal">
-          <h3>General inquiries</h3>
+          <h3>{t('about.contact.general')}</h3>
           <p><a href="mailto:POLAR@polymtl.ca">POLAR@polymtl.ca</a></p>
           <p><a href="tel:+15143404711,3939">(514) 340-4711 ext. 3939</a></p>
         </div>
         <div class="contact-card card reveal">
-          <h3>Opportunities</h3>
-          <p>Prospective students &amp; collaborators:</p>
+          <h3>{t('about.contact.opps')}</h3>
+          <p>{t('about.contact.opps.body')}</p>
           <p><a href="mailto:abolfazl.mohebbi@polymtl.ca">abolfazl.mohebbi@polymtl.ca</a></p>
         </div>
         <div class="contact-card card reveal">
-          <h3>Find us</h3>
+          <h3>{t('about.contact.find')}</h3>
           <address>
             <strong>Polytechnique Montréal</strong><br />
             Pavillon principal, A630.5<br />

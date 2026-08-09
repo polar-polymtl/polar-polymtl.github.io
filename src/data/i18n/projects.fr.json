@@ -1,0 +1,87 @@
+{
+  "insole-perl": {
+    "name": "SEMELLE INSTRUMENTÉE",
+    "title": "Semelle instrumentée intelligente pour la détection des phases de marche et la prédiction du centre de pression",
+    "summary": "Une semelle instrumentée à faible coût qui lit la marche en temps réel pour aider à commander les exosquelettes des membres inférieurs."
+  },
+  "perl": {
+    "name": "PERL",
+    "title": "Exosquelette pédiatrique pour la réadaptation du membre inférieur (PERL)",
+    "summary": "Un exosquelette de cheville personnalisé offrant aux enfants atteints de paralysie cérébrale une assistance à la marche adaptative."
+  },
+  "open-arms": {
+    "name": "OPEN-ARMS",
+    "title": "Exosquelette pédiatrique à source ouverte pour le membre supérieur (OPEN-ARMS)",
+    "summary": "Un exosquelette de bras pédiatrique léger et à source ouverte offrant un soutien de l’épaule et du coude selon les besoins."
+  },
+  "flora": {
+    "name": "FLORA",
+    "title": "Orthèse flexible pour la réadaptation de la cheville (FLORA)",
+    "summary": "Une orthèse de cheville semi-active qui module la rigidité articulaire pour assister la marche sans la contraindre."
+  },
+  "tens": {
+    "name": "PROTHÈSE TENS",
+    "title": "Stratégie de rétroaction proprioceptive somatotopique non invasive pour prothèse de main robotisée",
+    "summary": "Une stimulation nerveuse non invasive qui restaure la rétroaction proprioceptive d’une prothèse de main robotisée."
+  },
+  "tentacle": {
+    "name": "ROBOT TENTACULE",
+    "title": "Membre prothétique myoélectrique en forme de tentacule",
+    "summary": "Une prothèse tentaculaire souple et myoélectrique qui s’enroule pour saisir des objets de formes et de tailles variées."
+  },
+  "crutch": {
+    "name": "BÉQUILLE INSTRUMENTÉE",
+    "title": "Béquille instrumentée pour l’usage avec des exosquelettes robotisés",
+    "summary": "Une béquille intelligente instrumentée qui mesure la charge et l’intention pour éclairer la commande de l’exosquelette."
+  },
+  "care": {
+    "name": "CARE",
+    "title": "Actionneur cycloïdal pour exosquelettes robotisés (CARE)",
+    "summary": "Un actionneur cycloïdal compact et à couple élevé conçu pour les exosquelettes robotisés portables."
+  },
+  "roborehab-6d": {
+    "name": "ROBOREHAB-6D",
+    "title": "Stratégies d’interaction physique humain–robot (pHRI) en réadaptation robotisée",
+    "summary": "Une commande adaptative « assistance selon les besoins » qui ajuste la thérapie robotisée du membre supérieur à l’effort de chaque patient."
+  },
+  "roborehab-2d": {
+    "name": "ROBOREHAB-2D",
+    "title": "RoboRehab 2D — Robot pantographe plan à cinq barres pour la réadaptation du membre supérieur",
+    "summary": "Un robot plan à faible coût et à source ouverte pour une réadaptation du membre supérieur motivante et ludique."
+  },
+  "haptic3d": {
+    "name": "HAPTIC3D",
+    "title": "HAPTIC3D — Robot haptique reproductible à 3 DDL pour la réadaptation du membre supérieur chez les enfants atteints de troubles neuromusculaires",
+    "summary": "Un robot haptique à 3 DDL reproductible et abordable pour la réadaptation pédiatrique du membre supérieur."
+  },
+  "hapticmaster": {
+    "name": "HAPTICMASTER",
+    "title": "Mécanisme de soutien du bras à 3 degrés de liberté pour la réadaptation robotisée du membre supérieur",
+    "summary": "Un mécanisme de soutien du bras à 3 DDL qui ajoute le mouvement du poignet au robot de réadaptation HapticMaster."
+  },
+  "vision-pc": {
+    "name": "CONTRÔLE POSTURAL — VISION",
+    "title": "Identification des contributions sensorielles visuelles au contrôle de l’équilibre humain",
+    "summary": "Modéliser l’influence de la vision sur l’équilibre humain à l’aide de perturbations en réalité virtuelle et de l’identification de systèmes."
+  },
+  "pedal-pc": {
+    "name": "CONTRÔLE POSTURAL — INTERACTIONS",
+    "title": "Identification des interactions sensorielles entre la vision et la proprioception dans le contrôle postural humain",
+    "summary": "Quantifier l’interaction entre la vision et la proprioception dans le contrôle postural humain."
+  },
+  "ankle-dynamics": {
+    "name": "ANKLE-DYNAMICS",
+    "title": "Étude expérimentale sur l’identification à paramètres variables de la rigidité non stationnaire de l’articulation de la cheville",
+    "summary": "Une interface imprimée en 3D pour l’identification précise de la rigidité dynamique de l’articulation de la cheville."
+  },
+  "emg-robot_1": {
+    "name": "GESTES DE LA MAIN EMG",
+    "title": "Reconnaissance des gestes de la main par électromyographie pour robots d’assistance à l’aide de l’apprentissage profond",
+    "summary": "La reconnaissance par apprentissage profond des gestes de la main à partir de signaux EMG pour les robots d’assistance."
+  },
+  "emg-robot_2": {
+    "name": "COMMANDE ROBOT EMG",
+    "title": "Télécommande par électromyographie d’un bras robotisé d’assistance",
+    "summary": "Un pipeline EMG en temps réel qui télécommande un bras robotisé d’assistance à partir de l’activité musculaire de l’avant-bras."
+  }
+}

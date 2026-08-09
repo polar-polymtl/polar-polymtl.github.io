@@ -138,7 +138,22 @@ All pictures live in the **`public/images/`** folder. To replace one, save your 
 
 ---
 
-## 7. Contact info, address, and social links (footer)
+## 7. French / English (bilingual site)
+
+The site is bilingual. **English** shows at the normal addresses (e.g. `/research/`) and **French** shows under `/fr/` (e.g. `/fr/research/`). Visitors switch with the 🌐 **Français / English** button in the top menu. Anything without a French translation automatically shows the English version, so the site never looks broken.
+
+Where the French text lives:
+
+| French text for… | File to open |
+| --- | --- |
+| Menus, buttons, headings, all page wording | `src/i18n/ui.ts` — each item has an `en:` and a `fr:` line; edit the `fr:` text |
+| Project card names, titles, and summaries | `src/data/i18n/projects.fr.json` |
+| Experiment studies | `src/data/i18n/experiments.fr.json` |
+| Research theme names & descriptions, and people's role labels | `src/i18n/content.ts` |
+
+**Not yet translated:** the long project *descriptions* and *publications* on project pages still show in English on the French side (the technical wording is best written by you). To add a French description, open `src/data/i18n/projects.fr.json`, find the project, and add a `"description"` list of French paragraphs — it will then replace the English one on `/fr/`.
+
+## 8. Contact info, address, and social links (footer)
 
 **File to open:** `src/components/Footer.astro`
 
@@ -146,7 +161,7 @@ Look near the top for the email, phone, and address text, and the social media l
 
 ---
 
-## 8. Colors and fonts
+## 9. Colors and fonts
 
 **File to open:** `src/styles/global.css`
 
@@ -154,10 +169,9 @@ At the very top, inside `:root { … }`, are the site's colors (e.g. `--brand`) 
 
 ---
 
-## 9. Page wording (headlines, intro text)
+## 10. Page wording (headlines, intro text)
 
-Each page's words live in its file in `src/pages/`:
-`index.astro` (Home), `about.astro` (About), `people.astro` (People), `research/index.astro` (Research), `opportunities.astro` (Opportunities). Open the file and edit the text between the `>` and `<` symbols. When unsure, change only the visible words and leave the symbols alone.
+Almost all the fixed wording on the pages (headings, buttons, intro sentences) lives in **one file**: `src/i18n/ui.ts`. Each entry has an English line (`en:`) and a French line (`fr:`) — edit the text inside the quotes. For example, to change the Home page hero sentence, find `'home.lead'` and edit both the `en` and `fr` versions. This keeps English and French side by side so they stay in sync.
 
 ---
 

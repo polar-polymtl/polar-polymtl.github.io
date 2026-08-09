@@ -3,6 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PersonCard from '../components/PersonCard.astro';
+import { useTranslations, type Lang, type UIKey } from '../i18n/ui';
+import { localizeRole, localizeNote } from '../i18n/content';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = useTranslations(lang);
 
 const people = await getCollection('people');
 const inGroup = (g: string) =>
@@ -11,18 +16,18 @@ const inGroup = (g: string) =>
 const director = inGroup('director')[0];
 
 // Sections rendered as full cards.
-const cardSections = [
-  { key: 'postdoc', title: 'Postdoctoral Researchers' },
-  { key: 'grad', title: 'Graduate Students' },
-  { key: 'cosupervised', title: 'Co-supervised Students' },
-  { key: 'undergrad', title: 'Undergraduate Researchers' },
+const cardSections: { key: string; title: UIKey }[] = [
+  { key: 'postdoc', title: 'people.group.postdoc' },
+  { key: 'grad', title: 'people.group.grad' },
+  { key: 'cosupervised', title: 'people.group.cosupervised' },
+  { key: 'undergrad', title: 'people.group.undergrad' },
 ];
 
 // Alumni sections rendered as a compact roster.
-const alumniSections = [
-  { key: 'alumni-grad', title: 'Graduate Students & Postdocs' },
-  { key: 'intern', title: 'Graduate Interns & Visiting Researchers' },
-  { key: 'alumni-undergrad', title: 'Undergraduate Researchers' },
+const alumniSections: { key: string; title: UIKey }[] = [
+  { key: 'alumni-grad', title: 'people.alumni.grad' },
+  { key: 'intern', title: 'people.alumni.intern' },
+  { key: 'alumni-undergrad', title: 'people.alumni.undergrad' },
 ];
 
 // Social icons for the compact alumni list.
@@ -36,18 +41,14 @@ const linksOf = (l?: Record<string, string>) =>
   l ? (Object.keys(ICONS) as string[]).filter((k) => l[k]).map((k) => ({ href: l[k], ...ICONS[k] })) : [];
 ---
 
-<BaseLayout title="People" description="The researchers, students, and alumni of the POLAR Lab at Polytechnique Montréal.">
-  <PageHero
-    eyebrow="People"
-    title="The people behind POLAR."
-    lead="A community of researchers and students from Montréal and around the world, working across robotics, biomechatronics, and rehabilitation engineering."
-  />
+<BaseLayout lang={lang} title={t('people.eyebrow')} description={t('people.lead')}>
+  <PageHero eyebrow={t('people.eyebrow')} title={t('people.title')} lead={t('people.lead')} />
 
   <!-- Group photo banner -->
   <section class="people-banner-section">
     <div class="container">
       <figure class="people-banner reveal">
-        <img src="/images/people-banner.webp" alt="The POLAR Lab team" width="1800" height="1243" loading="lazy" decoding="async" />
+        <img src="/images/people-banner.webp" alt={t('people.title')} width="1800" height="1243" loading="lazy" decoding="async" />
       </figure>
     </div>
   </section>
@@ -56,29 +57,22 @@ const linksOf = (l?: Record<string, string>) =>
   {director && (
     <section class="section">
       <div class="container">
-        <span class="eyebrow reveal">Lab Director</span>
+        <span class="eyebrow reveal">{t('people.director')}</span>
         <div class="director-grid">
           <PersonCard
             name={director.data.name}
-            role={director.data.role}
+            role={localizeRole(director.data.role, lang)}
             institution={director.data.institution}
-            note={director.data.note}
+            note={localizeNote(director.data.note, lang)}
             email={director.data.email}
             photo={director.data.photo}
             links={director.data.links}
             featured
           />
           <div class="director-note reveal">
-            <p class="lead">
-              POLAR is led by <strong>Prof. Abolfazl Mohebbi</strong>, Associate Professor in
-              Mechanical and Biomedical Engineering at Polytechnique Montréal and holder of the
-              iTMT Research Chair in Rehabilitation and Assistive Technologies.
-            </p>
-            <p class="muted">
-              His research bridges robotics, biomechatronics, and clinical rehabilitation — building
-              technologies that restore and augment human movement.
-            </p>
-            <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost">Get in touch</a>
+            <p class="lead" set:html={t('people.director.body')}></p>
+            <p class="muted">{t('people.director.body2')}</p>
+            <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost">{t('people.director.cta')}</a>
           </div>
         </div>
       </div>
@@ -93,16 +87,16 @@ const linksOf = (l?: Record<string, string>) =>
       <section class="section section--soft members-section">
         <div class="container">
           <div class="section-head reveal">
-            <h2>{sec.title}</h2>
+            <h2>{t(sec.title)}</h2>
           </div>
           <div class="grid grid--3">
             {members.map((p) => (
               <PersonCard
                 name={p.data.name}
-                role={p.data.role}
+                role={localizeRole(p.data.role, lang)}
                 institution={p.data.institution}
                 years={p.data.years}
-                note={p.data.note}
+                note={localizeNote(p.data.note, lang)}
                 photo={p.data.photo}
                 links={p.data.links}
               />
@@ -117,16 +111,16 @@ const linksOf = (l?: Record<string, string>) =>
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Alumni</span>
-        <h2>Where it started for many.</h2>
-        <p>Former members who have moved on to graduate programs, industry, and research around the world.</p>
+        <span class="eyebrow">{t('people.alumni.eyebrow')}</span>
+        <h2>{t('people.alumni.title')}</h2>
+        <p>{t('people.alumni.lead')}</p>
       </div>
       {alumniSections.map((sec) => {
         const members = inGroup(sec.key);
         if (!members.length) return null;
         return (
           <div class="alumni-block reveal">
-            <h3 class="alumni-block__title">{sec.title}</h3>
+            <h3 class="alumni-block__title">{t(sec.title)}</h3>
             <ul class="alumni-list">
               {members.map((p) => (
                 <li class="alumni-item">
@@ -138,7 +132,7 @@ const linksOf = (l?: Record<string, string>) =>
                       </a>
                     ))}
                   </span>
-                  <span class="alumni-item__role">{p.data.role}</span>
+                  <span class="alumni-item__role">{localizeRole(p.data.role, lang)}</span>
                   <span class="alumni-item__inst">{p.data.institution}</span>
                   {p.data.years && <span class="alumni-item__years">{p.data.years}</span>}
                 </li>

@@ -1,0 +1,30 @@
+{
+  "lower-limb-exo": {
+    "title": "Évaluation d’un exosquelette du membre inférieur",
+    "description": "Nous vous invitons à participer à une activité de recherche visant à évaluer des exosquelettes du membre inférieur pour une assistance personnalisée. Un exosquelette du membre inférieur peut comporter des articulations semblables à la cheville, au genou et à la hanche, qui aident la personne à marcher.",
+    "duration": "2 à 3 heures",
+    "location": "Polytechnique Montréal",
+    "compensation": "Oui"
+  },
+  "upper-limb-exo": {
+    "title": "Évaluation d’un exosquelette du membre supérieur",
+    "description": "Nous invitons des participants en bonne santé à prendre part à une activité de recherche visant à évaluer des exosquelettes du membre supérieur pour l’assistance et la réadaptation personnalisées.",
+    "duration": "2 à 3 heures",
+    "location": "Polytechnique Montréal",
+    "compensation": "Oui"
+  },
+  "postural-control": {
+    "title": "Étude sur l’équilibre et le contrôle postural",
+    "description": "L’équilibre debout est maintenu par des mécanismes de rétroaction qui font appel à diverses modalités sensorielles comme la vision, la proprioception et les informations vestibulaires. Des adultes en bonne santé sont invités à participer à des collectes de données caractérisant les effets de l’information sensorielle sur l’équilibre.",
+    "duration": "2 à 3 heures",
+    "location": "Université McGill · Polytechnique Montréal",
+    "compensation": "Oui"
+  },
+  "human-robot-interaction": {
+    "title": "Interaction humain–robot en réadaptation",
+    "description": "Des participants adultes sont invités à prendre part à des collectes de données portant sur l’efficacité et la sécurité de l’interaction humain–robot durant des exercices de réadaptation.",
+    "duration": "2 à 3 heures",
+    "location": "Polytechnique Montréal",
+    "compensation": "Oui"
+  }
+}

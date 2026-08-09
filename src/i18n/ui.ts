@@ -1,0 +1,353 @@
+// Interface strings for both languages + small helpers.
+// To translate a piece of interface text, edit the `fr` (or `en`) value below.
+// Anything missing from `fr` automatically falls back to the English string.
+
+export const languages = { en: 'English', fr: 'Français' } as const;
+export const defaultLang = 'en';
+export type Lang = keyof typeof languages;
+
+export const ui = {
+  en: {
+    // Header / nav
+    'nav.home': 'Home',
+    'nav.research': 'Research',
+    'nav.people': 'People',
+    'nav.opportunities': 'Opportunities',
+    'nav.about': 'About',
+    'nav.join': 'Join the lab',
+    'nav.menu': 'Menu',
+    'lang.switch': 'Français',
+
+    // Footer
+    'footer.tagline': 'Polytechnique Lab for Assistive and Rehabilitation Technologies — advancing human mobility through innovation in medical robotics.',
+    'footer.explore': 'Explore',
+    'footer.contact': 'Contact',
+    'footer.affiliations': 'Affiliations',
+    'footer.rights': 'All rights reserved.',
+    'footer.directed': 'Directed by Prof. Abolfazl Mohebbi',
+
+    // Home
+    'home.eyebrow': 'Polytechnique Montréal · Rehabilitation Robotics',
+    'home.tagline': '<b>Po</b>lytechnique <b>L</b>ab for <b>A</b>ssistive and <b>R</b>ehabilitation Technologies',
+    'home.lead': 'We design robots, wearables, and biomechatronic systems that help people <em>relearn, restore, and augment</em> human movement — advancing mobility through innovation in medical robotics.',
+    'home.cta.research': 'Explore our research',
+    'home.cta.join': 'Join the lab',
+    'stats.projects': 'Active projects',
+    'stats.themes': 'Research themes',
+    'stats.members': 'Members & alumni',
+    'stats.model': 'Research model',
+    'stats.model.value': 'Living Lab',
+    'home.who.eyebrow': 'Who we are',
+    'home.who.title': 'Engineering movement back into people’s lives.',
+    'home.who.lead': 'POLAR is a research laboratory at Polytechnique Montréal, led by Prof. Abolfazl Mohebbi and home to the iTMT Research Chair in Rehabilitation and Assistive Technologies.',
+    'home.who.body': 'We develop robotics and biomechatronics — from rehabilitation robots and haptic interfaces to smart wearables and EMG-driven assistive devices — for people living with stroke, spinal cord injury, cerebral palsy, and other motor conditions. Our work spans the full path from fundamental neuromuscular science to devices tested with patients and clinicians.',
+    'home.who.more': 'More about the lab',
+    'home.themes.eyebrow': 'Research themes',
+    'home.themes.title': 'Four directions, one mission.',
+    'home.themes.lead': 'Our projects cluster into four connected themes — from what people wear to the robots and science behind their recovery.',
+    'home.featured.eyebrow': 'Featured projects',
+    'home.featured.title': 'Selected work from the lab.',
+    'home.featured.all': 'All projects',
+    'home.living.eyebrow': 'The Living Lab approach',
+    'home.living.title': 'Patients and clinicians at the heart of innovation.',
+    'home.living.body': 'We build with the people we build for. Working alongside CHU Sainte-Justine and clinical partners, POLAR embeds patients and health professionals directly in the design process — so our technologies are grounded in real needs and everyday life.',
+    'home.living.cta': 'How we work',
+    'home.living.step1': 'Listen to patients & clinicians',
+    'home.living.step2': 'Co-design & prototype',
+    'home.living.step3': 'Test in real settings',
+    'home.living.step4': 'Refine & translate',
+    'home.partners.eyebrow': 'Partners & affiliations',
+    'home.partners.title': 'Working across research and care.',
+    'home.ctaband.title': 'Interested in joining POLAR?',
+    'home.ctaband.body': 'We’re always looking for curious students and collaborators in robotics, biomechatronics, and rehabilitation engineering.',
+    'home.ctaband.opps': 'See opportunities',
+    'home.ctaband.contact': 'Contact the director',
+
+    // Research index
+    'research.eyebrow': 'Research',
+    'research.title': 'Building technology that moves people forward.',
+    'research.lead': 'Our projects span four connected themes — from body-worn devices to the robots and neuromuscular science behind recovery.',
+
+    // Project detail
+    'project.crumb': 'Research',
+    'project.videos': 'Videos',
+    'project.publications': 'Publications',
+    'project.theme': 'Research theme',
+    'project.contributors': 'Contributors',
+    'project.join': 'Join this research',
+    'project.more': 'More in',
+    'project.back': 'All research',
+
+    // People
+    'people.eyebrow': 'People',
+    'people.title': 'The people behind POLAR.',
+    'people.lead': 'A community of researchers and students from Montréal and around the world, working across robotics, biomechatronics, and rehabilitation engineering.',
+    'people.director': 'Lab Director',
+    'people.director.body': 'POLAR is led by <strong>Prof. Abolfazl Mohebbi</strong>, Associate Professor in Mechanical and Biomedical Engineering at Polytechnique Montréal and holder of the iTMT Research Chair in Rehabilitation and Assistive Technologies.',
+    'people.director.body2': 'His research bridges robotics, biomechatronics, and clinical rehabilitation — building technologies that restore and augment human movement.',
+    'people.director.cta': 'Get in touch',
+    'people.group.postdoc': 'Postdoctoral Researchers',
+    'people.group.grad': 'Graduate Students',
+    'people.group.cosupervised': 'Co-supervised Students',
+    'people.group.undergrad': 'Undergraduate Researchers',
+    'people.alumni.eyebrow': 'Alumni',
+    'people.alumni.title': 'Where it started for many.',
+    'people.alumni.lead': 'Former members who have moved on to graduate programs, industry, and research around the world.',
+    'people.alumni.grad': 'Graduate Students & Postdocs',
+    'people.alumni.intern': 'Graduate Interns & Visiting Researchers',
+    'people.alumni.undergrad': 'Undergraduate Researchers',
+
+    // Opportunities
+    'opps.eyebrow': 'Opportunities',
+    'opps.title': 'Build the future of rehabilitation robotics with us.',
+    'opps.lead': 'POLAR welcomes motivated students and researchers who want to turn engineering into real-world mobility for patients. If that sounds like you, we’d love to hear from you.',
+    'opps.apply.cta': 'How to apply',
+    'opps.exp.cta': 'Participate in experiments',
+    'opps.who.eyebrow': 'Who we’re looking for',
+    'opps.who.title': 'Positions at every stage.',
+    'opps.pos.grad.title': 'PhD & MSc Students',
+    'opps.pos.grad.body': 'Fully engage in a multi-year research project in rehabilitation robotics, wearables, or neuromuscular control — from design and modelling to experiments with patients and clinicians.',
+    'opps.pos.grad.tag': 'Graduate',
+    'opps.pos.postdoc.title': 'Postdoctoral Researchers',
+    'opps.pos.postdoc.body': 'Lead ambitious research directions, mentor students, and help translate lab prototypes toward clinical impact. Fellowship and project-funded positions considered.',
+    'opps.pos.postdoc.tag': 'Postdoc',
+    'opps.pos.undergrad.title': 'Undergraduate & Interns',
+    'opps.pos.undergrad.body': 'Gain hands-on research experience through summer projects, NSERC/MITACS awards, and international internships. A great first step into biomedical robotics.',
+    'opps.pos.undergrad.tag': 'Undergraduate',
+    'opps.value.eyebrow': 'What we value',
+    'opps.value.title': 'A good fit for POLAR.',
+    'opps.value.1': 'A background in mechanical, biomedical, electrical, or software engineering — or a related field',
+    'opps.value.2': 'Curiosity about robotics, biomechanics, control, or human movement',
+    'opps.value.3': 'Hands-on skills: CAD, prototyping, embedded systems, signal processing, or programming',
+    'opps.value.4': 'Motivation to build technology that genuinely helps people',
+    'opps.value.note': 'Don’t match every point? Apply anyway — motivation and curiosity matter most.',
+    'opps.apply.title': 'How to apply',
+    'opps.apply.intro': 'Send Prof. Mohebbi a short email that includes:',
+    'opps.apply.step1': 'A brief note on your research interests and why POLAR',
+    'opps.apply.step2': 'Your CV / résumé',
+    'opps.apply.step3': 'Academic transcripts (unofficial is fine)',
+    'opps.apply.email': 'Email the director',
+    'opps.exp.eyebrow': 'Participate in experiments',
+    'opps.exp.title': 'Take part in our research.',
+    'opps.exp.lead': 'POLAR regularly recruits volunteers for studies on movement, balance, and assistive technology. Participation is compensated. If a study interests you, email the listed contact to take part.',
+    'opps.exp.duration': 'Duration',
+    'opps.exp.location': 'Location',
+    'opps.exp.compensation': 'Compensation',
+    'opps.exp.contact': 'Contact to participate',
+
+    // About
+    'about.eyebrow': 'About',
+    'about.title': 'Restoring movement through human-centred engineering.',
+    'about.lead': 'POLAR — the Polytechnique Lab for Assistive and Rehabilitation Technologies — develops robotics and biomechatronics that help people relearn, restore, and augment their neuromotor performance.',
+    'about.mission.eyebrow': 'Our mission',
+    'about.mission.title': 'Technology in the service of mobility.',
+    'about.mission.lead': 'At POLAR, we research and develop innovative robotics and biomechatronics to help humans relearn, restore, or augment their neuromotor performance — spanning rehabilitation robotics, assistive technologies, and interventions that support people with disabilities in everyday life.',
+    'about.mission.body': 'Our work reaches across the lifespan, from children to older adults, and is grounded in close collaboration with clinicians and the people who use our technologies.',
+    'about.value.relearn.title': 'Relearn',
+    'about.value.relearn.body': 'Retraining movement and neuromotor control through robotic and interactive therapy.',
+    'about.value.restore.title': 'Restore',
+    'about.value.restore.body': 'Recovering lost function with rehabilitation robots, prosthetics, and biomechatronics.',
+    'about.value.augment.title': 'Augment',
+    'about.value.augment.body': 'Extending human ability and independence with wearable and assistive technologies.',
+    'about.living.eyebrow': 'The Living Lab approach',
+    'about.living.title': 'Patients and clinicians at the heart of the process.',
+    'about.living.body': 'We place the people we serve — and the health professionals who care for them — at the centre of innovation. By co-designing and testing in real clinical and everyday settings, our technologies stay grounded in genuine needs.',
+    'about.serve.eyebrow': 'Who we serve',
+    'about.serve.title': 'Supporting people across many conditions.',
+    'about.serve.body': 'Our research aims to improve mobility and independence for patients of all ages living with a range of motor conditions, including:',
+    'about.partners.eyebrow': 'Partners & support',
+    'about.partners.title': 'Where research meets care.',
+    'about.partners.body': 'POLAR is supported by leading academic and clinical institutions across Montréal.',
+    'about.contact.eyebrow': 'Contact',
+    'about.contact.title': 'Get in touch.',
+    'about.contact.general': 'General inquiries',
+    'about.contact.opps': 'Opportunities',
+    'about.contact.opps.body': 'Prospective students & collaborators:',
+    'about.contact.find': 'Find us',
+  },
+  fr: {
+    // En-tête / navigation
+    'nav.home': 'Accueil',
+    'nav.research': 'Recherche',
+    'nav.people': 'Équipe',
+    'nav.opportunities': 'Opportunités',
+    'nav.about': 'À propos',
+    'nav.join': 'Rejoindre l’équipe',
+    'nav.menu': 'Menu',
+    'lang.switch': 'English',
+
+    // Pied de page
+    'footer.tagline': 'Laboratoire Polytechnique pour les technologies d’assistance et de réadaptation — faire progresser la mobilité humaine par l’innovation en robotique médicale.',
+    'footer.explore': 'Explorer',
+    'footer.contact': 'Contact',
+    'footer.affiliations': 'Affiliations',
+    'footer.rights': 'Tous droits réservés.',
+    'footer.directed': 'Dirigé par le Pr Abolfazl Mohebbi',
+
+    // Accueil
+    'home.eyebrow': 'Polytechnique Montréal · Robotique de réadaptation',
+    'home.tagline': 'Laboratoire Polytechnique pour les technologies d’assistance et de réadaptation',
+    'home.lead': 'Nous concevons des robots, des dispositifs portables et des systèmes biomécatroniques qui aident les gens à <em>réapprendre, restaurer et augmenter</em> le mouvement humain — pour faire progresser la mobilité par l’innovation en robotique médicale.',
+    'home.cta.research': 'Découvrir nos recherches',
+    'home.cta.join': 'Rejoindre l’équipe',
+    'stats.projects': 'Projets en cours',
+    'stats.themes': 'Axes de recherche',
+    'stats.members': 'Membres et anciens',
+    'stats.model': 'Modèle de recherche',
+    'stats.model.value': 'Living Lab',
+    'home.who.eyebrow': 'Qui sommes-nous',
+    'home.who.title': 'Redonner le mouvement à celles et ceux qui en ont besoin.',
+    'home.who.lead': 'POLAR est un laboratoire de recherche de Polytechnique Montréal, dirigé par le Pr Abolfazl Mohebbi et rattaché à la Chaire de recherche iTMT en technologies de réadaptation et d’assistance.',
+    'home.who.body': 'Nous développons des technologies robotiques et biomécatroniques — des robots de réadaptation et interfaces haptiques aux dispositifs portables intelligents et aux aides pilotées par électromyographie (EMG) — pour les personnes vivant avec un AVC, une lésion médullaire, une paralysie cérébrale ou d’autres atteintes motrices. Nos travaux couvrent tout le parcours, de la science neuromusculaire fondamentale aux dispositifs testés avec les patients et les cliniciens.',
+    'home.who.more': 'En savoir plus sur le laboratoire',
+    'home.themes.eyebrow': 'Axes de recherche',
+    'home.themes.title': 'Quatre axes, une mission.',
+    'home.themes.lead': 'Nos projets se regroupent en quatre axes complémentaires — de ce que l’on porte sur soi aux robots et à la science qui soutiennent la récupération.',
+    'home.featured.eyebrow': 'Projets en vedette',
+    'home.featured.title': 'Une sélection de nos travaux.',
+    'home.featured.all': 'Tous les projets',
+    'home.living.eyebrow': 'L’approche Living Lab',
+    'home.living.title': 'Les patients et les cliniciens au cœur de l’innovation.',
+    'home.living.body': 'Nous concevons avec celles et ceux pour qui nous concevons. En collaboration avec le CHU Sainte-Justine et nos partenaires cliniques, POLAR intègre les patients et les professionnels de la santé directement au processus de conception — pour ancrer nos technologies dans les besoins réels et le quotidien.',
+    'home.living.cta': 'Notre démarche',
+    'home.living.step1': 'Écouter patients et cliniciens',
+    'home.living.step2': 'Co-concevoir et prototyper',
+    'home.living.step3': 'Tester en conditions réelles',
+    'home.living.step4': 'Affiner et transférer',
+    'home.partners.eyebrow': 'Partenaires et affiliations',
+    'home.partners.title': 'À la croisée de la recherche et des soins.',
+    'home.ctaband.title': 'Envie de rejoindre POLAR ?',
+    'home.ctaband.body': 'Nous sommes toujours à la recherche d’étudiantes, d’étudiants et de collaborateurs curieux en robotique, en biomécatronique et en génie de la réadaptation.',
+    'home.ctaband.opps': 'Voir les opportunités',
+    'home.ctaband.contact': 'Contacter le directeur',
+
+    // Recherche
+    'research.eyebrow': 'Recherche',
+    'research.title': 'Concevoir des technologies qui font avancer les gens.',
+    'research.lead': 'Nos projets couvrent quatre axes complémentaires — des dispositifs portables aux robots et à la science neuromusculaire au cœur de la récupération.',
+
+    // Détail de projet
+    'project.crumb': 'Recherche',
+    'project.videos': 'Vidéos',
+    'project.publications': 'Publications',
+    'project.theme': 'Axe de recherche',
+    'project.contributors': 'Collaborateurs',
+    'project.join': 'Participer à ce projet',
+    'project.more': 'Autres projets en',
+    'project.back': 'Toute la recherche',
+
+    // Équipe
+    'people.eyebrow': 'Équipe',
+    'people.title': 'Les visages derrière POLAR.',
+    'people.lead': 'Une communauté de chercheuses, de chercheurs et d’étudiants de Montréal et d’ailleurs, réunis autour de la robotique, de la biomécatronique et du génie de la réadaptation.',
+    'people.director': 'Directeur du laboratoire',
+    'people.director.body': 'POLAR est dirigé par le <strong>Pr Abolfazl Mohebbi</strong>, professeur agrégé en génie mécanique et biomédical à Polytechnique Montréal et titulaire de la Chaire de recherche iTMT en technologies de réadaptation et d’assistance.',
+    'people.director.body2': 'Ses recherches font le pont entre la robotique, la biomécatronique et la réadaptation clinique — en développant des technologies qui restaurent et augmentent le mouvement humain.',
+    'people.director.cta': 'Nous écrire',
+    'people.group.postdoc': 'Chercheurs postdoctoraux',
+    'people.group.grad': 'Étudiants aux cycles supérieurs',
+    'people.group.cosupervised': 'Étudiants en cosupervision',
+    'people.group.undergrad': 'Stagiaires de premier cycle',
+    'people.alumni.eyebrow': 'Anciens membres',
+    'people.alumni.title': 'Là où tout a commencé pour plusieurs.',
+    'people.alumni.lead': 'D’anciens membres qui poursuivent aujourd’hui des études supérieures, une carrière en industrie ou en recherche partout dans le monde.',
+    'people.alumni.grad': 'Étudiants aux cycles supérieurs et postdoctorants',
+    'people.alumni.intern': 'Stagiaires et chercheurs invités',
+    'people.alumni.undergrad': 'Stagiaires de premier cycle',
+
+    // Opportunités
+    'opps.eyebrow': 'Opportunités',
+    'opps.title': 'Bâtir l’avenir de la robotique de réadaptation avec nous.',
+    'opps.lead': 'POLAR accueille des étudiantes, étudiants et chercheurs motivés qui souhaitent transformer le génie en mobilité concrète pour les patients. Si cela vous ressemble, écrivez-nous.',
+    'opps.apply.cta': 'Comment postuler',
+    'opps.exp.cta': 'Participer aux expériences',
+    'opps.who.eyebrow': 'Qui nous recherchons',
+    'opps.who.title': 'Des postes à chaque étape.',
+    'opps.pos.grad.title': 'Étudiants au doctorat et à la maîtrise',
+    'opps.pos.grad.body': 'Investissez-vous pleinement dans un projet de recherche pluriannuel en robotique de réadaptation, en dispositifs portables ou en contrôle neuromusculaire — de la conception et la modélisation aux expériences avec les patients et les cliniciens.',
+    'opps.pos.grad.tag': 'Cycles supérieurs',
+    'opps.pos.postdoc.title': 'Chercheurs postdoctoraux',
+    'opps.pos.postdoc.body': 'Menez des axes de recherche ambitieux, encadrez des étudiants et contribuez à transférer les prototypes du laboratoire vers l’impact clinique. Postes par bourse ou financés par projet considérés.',
+    'opps.pos.postdoc.tag': 'Postdoctorat',
+    'opps.pos.undergrad.title': 'Premier cycle et stagiaires',
+    'opps.pos.undergrad.body': 'Acquérez une expérience de recherche concrète grâce à des projets d’été, des bourses CRSNG/MITACS et des stages internationaux. Une belle porte d’entrée vers la robotique biomédicale.',
+    'opps.pos.undergrad.tag': 'Premier cycle',
+    'opps.value.eyebrow': 'Ce que nous valorisons',
+    'opps.value.title': 'Un bon profil pour POLAR.',
+    'opps.value.1': 'Une formation en génie mécanique, biomédical, électrique ou logiciel — ou dans un domaine connexe',
+    'opps.value.2': 'De la curiosité pour la robotique, la biomécanique, la commande ou le mouvement humain',
+    'opps.value.3': 'Des compétences pratiques : CAO, prototypage, systèmes embarqués, traitement du signal ou programmation',
+    'opps.value.4': 'La motivation de créer des technologies qui aident réellement les gens',
+    'opps.value.note': 'Vous ne cochez pas toutes les cases ? Postulez quand même — la motivation et la curiosité comptent le plus.',
+    'opps.apply.title': 'Comment postuler',
+    'opps.apply.intro': 'Envoyez au Pr Mohebbi un court courriel comprenant :',
+    'opps.apply.step1': 'Un bref mot sur vos intérêts de recherche et pourquoi POLAR',
+    'opps.apply.step2': 'Votre CV',
+    'opps.apply.step3': 'Vos relevés de notes (une version non officielle suffit)',
+    'opps.apply.email': 'Écrire au directeur',
+    'opps.exp.eyebrow': 'Participer aux expériences',
+    'opps.exp.title': 'Prenez part à nos recherches.',
+    'opps.exp.lead': 'POLAR recrute régulièrement des volontaires pour des études sur le mouvement, l’équilibre et les technologies d’assistance. La participation est rémunérée. Si une étude vous intéresse, écrivez à la personne-ressource indiquée pour y participer.',
+    'opps.exp.duration': 'Durée',
+    'opps.exp.location': 'Lieu',
+    'opps.exp.compensation': 'Rémunération',
+    'opps.exp.contact': 'Écrire pour participer',
+
+    // À propos
+    'about.eyebrow': 'À propos',
+    'about.title': 'Restaurer le mouvement par un génie centré sur l’humain.',
+    'about.lead': 'POLAR — le Laboratoire Polytechnique pour les technologies d’assistance et de réadaptation — développe des technologies robotiques et biomécatroniques qui aident les gens à réapprendre, restaurer et augmenter leur performance neuromotrice.',
+    'about.mission.eyebrow': 'Notre mission',
+    'about.mission.title': 'La technologie au service de la mobilité.',
+    'about.mission.lead': 'À POLAR, nous recherchons et développons des technologies robotiques et biomécatroniques innovantes pour aider les humains à réapprendre, restaurer ou augmenter leur performance neuromotrice — en robotique de réadaptation, en technologies d’assistance et dans des interventions qui soutiennent les personnes en situation de handicap au quotidien.',
+    'about.mission.body': 'Nos travaux touchent tous les âges de la vie, des enfants aux aînés, et reposent sur une étroite collaboration avec les cliniciens et les personnes qui utilisent nos technologies.',
+    'about.value.relearn.title': 'Réapprendre',
+    'about.value.relearn.body': 'Réentraîner le mouvement et le contrôle neuromoteur par une thérapie robotique et interactive.',
+    'about.value.restore.title': 'Restaurer',
+    'about.value.restore.body': 'Récupérer les fonctions perdues grâce aux robots de réadaptation, aux prothèses et à la biomécatronique.',
+    'about.value.augment.title': 'Augmenter',
+    'about.value.augment.body': 'Étendre les capacités et l’autonomie par des technologies portables et d’assistance.',
+    'about.living.eyebrow': 'L’approche Living Lab',
+    'about.living.title': 'Les patients et les cliniciens au cœur de la démarche.',
+    'about.living.body': 'Nous plaçons les personnes que nous servons — et les professionnels de la santé qui les accompagnent — au centre de l’innovation. En co-concevant et en testant en contexte clinique et quotidien réel, nos technologies restent ancrées dans les besoins véritables.',
+    'about.serve.eyebrow': 'À qui nous nous adressons',
+    'about.serve.title': 'Accompagner des personnes aux réalités variées.',
+    'about.serve.body': 'Nos recherches visent à améliorer la mobilité et l’autonomie de patients de tous âges vivant avec diverses atteintes motrices, notamment :',
+    'about.partners.eyebrow': 'Partenaires et soutien',
+    'about.partners.title': 'À la rencontre de la recherche et des soins.',
+    'about.partners.body': 'POLAR est soutenu par des établissements universitaires et cliniques de premier plan à Montréal.',
+    'about.contact.eyebrow': 'Contact',
+    'about.contact.title': 'Écrivez-nous.',
+    'about.contact.general': 'Renseignements généraux',
+    'about.contact.opps': 'Opportunités',
+    'about.contact.opps.body': 'Étudiants et collaborateurs potentiels :',
+    'about.contact.find': 'Nous trouver',
+  },
+} as const;
+
+export type UIKey = keyof (typeof ui)['en'];
+
+/** Detect the active language from a URL pathname (/fr/… → fr, else en). */
+export function getLangFromUrl(url: URL): Lang {
+  const [, seg] = url.pathname.split('/');
+  return seg === 'fr' ? 'fr' : 'en';
+}
+
+/** Returns a t(key) function that falls back to English when a string is missing. */
+export function useTranslations(lang: Lang) {
+  return function t(key: UIKey): string {
+    return (ui[lang] as Record<string, string>)[key] ?? ui[defaultLang][key];
+  };
+}
+
+/** Prefix an internal path with the language (no prefix for the default). */
+export function localizePath(path: string, lang: Lang): string {
+  const clean = path.startsWith('/') ? path : `/${path}`;
+  return lang === defaultLang ? clean : `/${lang}${clean === '/' ? '' : clean}`;
+}
+
+/** Strip a leading language segment from a path (for building the switcher link). */
+export function stripLang(pathname: string): string {
+  const stripped = pathname.replace(/^\/fr(?=\/|$)/, '');
+  return stripped === '' ? '/' : stripped;
+}
