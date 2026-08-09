@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import experiments from '../data/experiments.json';
+
+const positions = [
+  {
+    title: 'PhD & MSc Students',
+    body: 'Fully engage in a multi-year research project in rehabilitation robotics, wearables, or neuromuscular control — from design and modelling to experiments with patients and clinicians.',
+    tag: 'Graduate',
+  },
+  {
+    title: 'Postdoctoral Researchers',
+    body: 'Lead ambitious research directions, mentor students, and help translate lab prototypes toward clinical impact. Fellowship and project-funded positions considered.',
+    tag: 'Postdoc',
+  },
+  {
+    title: 'Undergraduate & Interns',
+    body: 'Gain hands-on research experience through summer projects, NSERC/MITACS awards, and international internships. A great first step into biomedical robotics.',
+    tag: 'Undergraduate',
+  },
+];
+
+const looking = [
+  'A background in mechanical, biomedical, electrical, or software engineering — or a related field',
+  'Curiosity about robotics, biomechanics, control, or human movement',
+  'Hands-on skills: CAD, prototyping, embedded systems, signal processing, or programming',
+  'Motivation to build technology that genuinely helps people',
+];
+---
+
+<BaseLayout
+  title="Opportunities"
+  description="Join POLAR — graduate, postdoctoral, and undergraduate research opportunities in rehabilitation robotics at Polytechnique Montréal."
+>
+  <PageHero
+    eyebrow="Opportunities"
+    title="Build the future of rehabilitation robotics with us."
+    lead="POLAR welcomes motivated students and researchers who want to turn engineering into real-world mobility for patients. If that sounds like you, we’d love to hear from you."
+  >
+    <div class="hero-actions">
+      <a href="#apply" class="btn">How to apply</a>
+      <a href="#experiments" class="btn btn--ghost">Participate in experiments</a>
+    </div>
+  </PageHero>
+
+  <!-- Positions -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who we’re looking for</span>
+        <h2>Positions at every stage.</h2>
+      </div>
+      <div class="grid grid--3">
+        {positions.map((p) => (
+          <article class="pos card reveal">
+            <span class="tag">{p.tag}</span>
+            <h3>{p.title}</h3>
+            <p>{p.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What we look for + How to apply -->
+  <section class="section section--soft">
+    <div class="container apply-grid" id="apply">
+      <div class="reveal">
+        <span class="eyebrow">What we value</span>
+        <h2>A good fit for POLAR.</h2>
+        <ul class="check-list">
+          {looking.map((item) => (
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="muted">
+          Don’t match every point? Apply anyway — motivation and curiosity matter most.
+        </p>
+      </div>
+
+      <aside class="apply-card card reveal">
+        <h3>How to apply</h3>
+        <p>Send Prof. Mohebbi a short email that includes:</p>
+        <ol class="apply-steps">
+          <li>A brief note on your research interests and why POLAR</li>
+          <li>Your CV / résumé</li>
+          <li>Academic transcripts (unofficial is fine)</li>
+        </ol>
+        <a href="mailto:abolfazl.mohebbi@polymtl.ca?subject=Prospective%20student%20%E2%80%94%20POLAR%20Lab" class="btn apply-btn">
+          Email the director
+        </a>
+        <p class="apply-email">abolfazl.mohebbi@polymtl.ca</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Participate in Experiments -->
+  <section class="section" id="experiments">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Participate in experiments</span>
+        <h2>Take part in our research.</h2>
+        <p>
+          POLAR regularly recruits volunteers for studies on movement, balance, and assistive
+          technology. Participation is compensated. If a study interests you, email the listed
+          contact to take part.
+        </p>
+      </div>
+      <div class="grid grid--2">
+        {experiments.map((e) => (
+          <article class="exp card reveal">
+            <h3 class="exp__title">{e.title}</h3>
+            <p class="exp__desc">{e.description}</p>
+            <dl class="exp__meta">
+              <div><dt>Duration</dt><dd>{e.duration}</dd></div>
+              <div><dt>Location</dt><dd>{e.location}</dd></div>
+              <div><dt>Compensation</dt><dd>{e.compensation}</dd></div>
+            </dl>
+            <a class="btn btn--ghost exp__cta" href={`mailto:${e.contact}?subject=${encodeURIComponent('Participation — ' + e.title)}`}>
+              Contact to participate
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.6rem; }
+
+  .exp { padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
+  .exp__title { margin: 0; font-size: 1.2rem; }
+  .exp__desc { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.6; flex: 1; }
+  .exp__meta { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin: 0; padding: 0.9rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .exp__meta dt { font-family: var(--font-head); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .exp__meta dd { margin: 0.15rem 0 0; font-weight: 600; font-size: 0.92rem; }
+  .exp__cta { align-self: flex-start; }
+
+  .pos { padding: 1.7rem 1.6rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .pos h3 { margin: 0.3rem 0 0; font-size: 1.2rem; }
+  .pos p { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.6; }
+
+  .apply-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .check-list { list-style: none; margin: 1.25rem 0 1.5rem; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+  .check-list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .check-list svg { flex: none; color: var(--c-robot); margin-top: 0.2rem; }
+  .check-list span { color: var(--ink-soft); }
+
+  .apply-card { padding: 1.9rem; position: sticky; top: 6rem; }
+  .apply-card h3 { margin: 0 0 0.5rem; }
+  .apply-card > p { color: var(--muted); margin-bottom: 0.75rem; }
+  .apply-steps { margin: 0 0 1.4rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--ink-soft); }
+  .apply-btn { width: 100%; justify-content: center; }
+  .apply-email { text-align: center; margin: 0.9rem 0 0; font-size: 0.9rem; color: var(--muted); word-break: break-all; }
+
+  @media (max-width: 820px) {
+    .apply-grid { grid-template-columns: 1fr; }
+    .apply-card { position: static; }
+  }
+</style>

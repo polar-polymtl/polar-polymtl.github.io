@@ -1,0 +1,98 @@
+---
+import { areaMap } from '../data/areas.ts';
+
+interface Props {
+  id: string;
+  name: string;
+  area: 'wearables' | 'robots' | 'neuro' | 'assistive';
+  summary: string;
+  thumb?: string | null;
+  showArea?: boolean;
+}
+const { id, name, area, summary, thumb, showArea = true } = Astro.props;
+const meta = areaMap[area];
+---
+
+<a class="project card reveal" href={`/research/${id}/`} style={`--accent:${meta.color}`}>
+  <div class="project__media">
+    {thumb ? (
+      <img src={thumb} alt={`${name} — ${meta.name}`} loading="lazy" decoding="async" width="600" height="360" />
+    ) : (
+      <span class="project__ph" aria-hidden="true">{name}</span>
+    )}
+    <span class="project__badge">{name}</span>
+  </div>
+  <div class="project__body">
+    <p class="project__summary">{summary}</p>
+    {showArea && <span class="project__area">{meta.name}</span>}
+    <span class="project__more">View project
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </div>
+</a>
+
+<style>
+  .project {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--ink);
+  }
+  .project:hover { color: var(--ink); }
+  .project__media {
+    position: relative;
+    aspect-ratio: 5 / 3;
+    background: color-mix(in srgb, var(--accent) 12%, var(--bg-soft));
+    overflow: hidden;
+  }
+  .project__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease);
+  }
+  .project:hover .project__media img { transform: scale(1.05); }
+  .project__ph {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--font-head); font-weight: 700;
+    font-size: 1.2rem; letter-spacing: 0.05em;
+    color: var(--accent);
+  }
+  .project__badge {
+    position: absolute; left: 0.8rem; bottom: 0.8rem;
+    font-family: var(--font-head); font-weight: 700;
+    font-size: 0.82rem; letter-spacing: 0.03em;
+    color: #fff;
+    background: color-mix(in srgb, var(--accent) 92%, #000 8%);
+    padding: 0.3rem 0.65rem;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px rgba(16,33,60,0.25);
+  }
+  .project__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.15rem 1.25rem 1.3rem;
+    flex: 1;
+  }
+  .project__summary {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+  .project__area {
+    font-family: var(--font-head);
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .project__more {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-family: var(--font-head); font-weight: 600;
+    font-size: 0.9rem; color: var(--accent);
+  }
+  .project__more svg { transition: transform 0.2s var(--ease); }
+  .project:hover .project__more svg { transform: translateX(4px); }
+</style>

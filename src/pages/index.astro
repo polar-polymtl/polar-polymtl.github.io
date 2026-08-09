@@ -1,0 +1,293 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchAreaCard from '../components/ResearchAreaCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PartnerLogos from '../components/PartnerLogos.astro';
+import { areas } from '../data/areas.ts';
+
+const projects = await getCollection('projects');
+const people = await getCollection('people');
+
+const countByArea = (key: string) => projects.filter((p) => p.data.area === key).length;
+const featured = projects
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const stats = [
+  { value: `${projects.length}`, label: 'Active projects' },
+  { value: `${areas.length}`, label: 'Research themes' },
+  { value: `${people.length}+`, label: 'Members & alumni' },
+  { value: 'Living Lab', label: 'Research model' },
+];
+---
+
+<BaseLayout>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="container container--wide hero__inner">
+      <div class="hero__copy">
+        <span class="eyebrow">Polytechnique Montréal · Rehabilitation Robotics</span>
+        <h1 class="hero__title">
+          <span class="hero__word">POLAR</span>
+        </h1>
+        <p class="hero__expand">
+          <b>Po</b>lytechnique <b>L</b>ab for <b>A</b>ssistive and <b>R</b>ehabilitation Technologies
+        </p>
+        <p class="hero__lead">
+          We design robots, wearables, and biomechatronic systems that help people
+          <em>relearn, restore, and augment</em> human movement — advancing mobility
+          through innovation in medical robotics.
+        </p>
+        <div class="hero__actions">
+          <a href="/research/" class="btn">Explore our research</a>
+          <a href="/opportunities/" class="btn btn--ghost">Join the lab</a>
+        </div>
+      </div>
+
+      <div class="hero__figure">
+        <img class="hero__logo" src="/images/polar-logo-full.webp" alt="POLAR — Polytechnique Lab for Assistive and Rehabilitation Technologies" width="720" height="748" fetchpriority="high" />
+      </div>
+    </div>
+
+    <div class="container container--wide hero__banner-wrap">
+      <figure class="hero__banner">
+        <img src="/images/home-banner.webp" alt="POLAR — advancing human mobility through medical robotics" width="1000" height="563" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+
+    <div class="container container--wide hero__stats">
+      {stats.map((s) => (
+        <div class="stat">
+          <span class="stat__value">{s.value}</span>
+          <span class="stat__label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ================= WHO WE ARE ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="who">
+        <div class="who__head reveal">
+          <span class="eyebrow">Who we are</span>
+          <h2>Engineering movement back into people’s lives.</h2>
+        </div>
+        <div class="who__text reveal">
+          <p class="lead">
+            POLAR is a research laboratory at Polytechnique Montréal, led by Prof. Abolfazl Mohebbi
+            and home to the iTMT Research Chair in Rehabilitation and Assistive Technologies.
+          </p>
+          <p>
+            We develop robotics and biomechatronics — from rehabilitation robots and haptic
+            interfaces to smart wearables and EMG-driven assistive devices — for people living with
+            stroke, spinal cord injury, cerebral palsy, and other motor conditions. Our work spans
+            the full path from fundamental neuromuscular science to devices tested with patients and
+            clinicians.
+          </p>
+          <a href="/about/" class="link-arrow">More about the lab
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH AREAS ================= -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Research themes</span>
+        <h2>Four directions, one mission.</h2>
+        <p>Our projects cluster into four connected themes — from what people wear to the robots and science behind their recovery.</p>
+      </div>
+      <div class="grid grid--2">
+        {areas.map((area) => <ResearchAreaCard area={area} count={countByArea(area.key)} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PROJECTS ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal spread">
+        <div>
+          <span class="eyebrow">Featured projects</span>
+          <h2>Selected work from the lab.</h2>
+        </div>
+        <a href="/research/" class="btn btn--ghost">All projects</a>
+      </div>
+      <div class="grid grid--3">
+        {featured.map((p) => <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVING LAB ================= -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="livinglab card reveal">
+        <div class="livinglab__body">
+          <span class="eyebrow">The Living Lab approach</span>
+          <h2>Patients and clinicians at the heart of innovation.</h2>
+          <p class="lead">
+            We build with the people we build for. Working alongside CHU Sainte-Justine and clinical
+            partners, POLAR embeds patients and health professionals directly in the design process —
+            so our technologies are grounded in real needs and everyday life.
+          </p>
+          <a href="/about/" class="btn">How we work</a>
+        </div>
+        <ul class="livinglab__steps" aria-label="Living Lab process">
+          <li><span>01</span> Listen to patients &amp; clinicians</li>
+          <li><span>02</span> Co-design &amp; prototype</li>
+          <li><span>03</span> Test in real settings</li>
+          <li><span>04</span> Refine &amp; translate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTNERS ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Partners &amp; affiliations</span>
+        <h2>Working across research and care.</h2>
+      </div>
+      <PartnerLogos />
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Interested in joining POLAR?</h2>
+        <p>We’re always looking for curious students and collaborators in robotics, biomechatronics, and rehabilitation engineering.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a href="/opportunities/" class="btn btn--light">See opportunities</a>
+        <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost btn--ghost-light">Contact the director</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg-tint) 0%, var(--bg) 65%);
+    padding-top: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  }
+  .hero__grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(18, 70, 123, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 70, 123, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 80% 10%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 10%, #000 30%, transparent 75%);
+  }
+  .hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 2rem;
+    padding-block: clamp(1.5rem, 2vw, 3rem);
+  }
+  .hero__title { margin: 0.2rem 0 0; line-height: 0.95; }
+  .hero__word {
+    font-size: clamp(3.6rem, 2rem + 9vw, 7rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: linear-gradient(120deg, var(--brand), var(--brand-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero__expand { margin: 0.6rem 0 0; font-size: var(--step-1); color: var(--ink); font-family: var(--font-head); font-weight: 500; }
+  .hero__expand b { color: var(--brand-600); }
+  .hero__lead { margin: 1.2rem 0 0; font-size: var(--step-1); color: var(--ink-soft); max-width: 40ch; }
+  .hero__lead em { font-style: normal; color: var(--brand-600); font-weight: 600; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
+
+  .hero__figure { display: grid; place-items: center; }
+  .hero__logo { width: min(100%, 380px); height: auto; filter: drop-shadow(0 12px 30px rgba(16, 33, 60, 0.12)); }
+
+  .hero__banner-wrap { position: relative; padding-bottom: clamp(2rem, 4vw, 3.5rem); }
+  .hero__banner {
+    margin: 0 auto;
+    max-width: 800px; /* GIF source is 800px wide — don't upscale */
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line);
+  }
+  .hero__banner img { width: 100%; height: auto; display: block; }
+
+  .hero__stats {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: clamp(1.5rem, 3vw, 3rem);
+    padding: 1.5rem 0 clamp(2.5rem, 4vw, 4rem);
+    border-top: 1px solid var(--line);
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat__value { font-family: var(--font-head); font-weight: 700; font-size: clamp(1.6rem, 1rem + 2.5vw, 2.4rem); color: var(--brand); letter-spacing: -0.02em; }
+  .stat__label { font-size: 0.9rem; color: var(--muted); }
+
+  /* Who we are */
+  .who { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+  .who__head h2 { margin: 0; }
+  .link-arrow { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-head); font-weight: 600; margin-top: 0.5rem; }
+  .link-arrow svg { transition: transform 0.2s var(--ease); }
+  .link-arrow:hover svg { transform: translateX(4px); }
+
+  .section-head.spread { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; max-width: none; flex-wrap: wrap; }
+
+  /* Living lab */
+  .livinglab { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); padding: clamp(1.8rem, 4vw, 3rem); align-items: center; }
+  .livinglab__body h2 { margin: 0.2rem 0 0.6rem; }
+  .livinglab__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .livinglab__steps li {
+    display: flex; align-items: center; gap: 0.9rem;
+    font-family: var(--font-head); font-weight: 500;
+    padding: 0.85rem 1.1rem;
+    background: var(--bg-soft);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+  }
+  .livinglab__steps span {
+    font-weight: 700; color: var(--brand-500);
+    font-size: 0.9rem;
+    background: var(--brand-tint);
+    width: 34px; height: 34px; flex: none;
+    display: grid; place-items: center; border-radius: 8px;
+  }
+
+  /* CTA band */
+  .cta-band { background: linear-gradient(130deg, #0d1b30, #143a63); color: #fff; padding-block: clamp(3rem, 5vw, 4.5rem); }
+  .cta-band__inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .cta-band h2 { color: #fff; margin: 0 0 0.5rem; }
+  .cta-band p { color: #b9c8de; margin: 0; max-width: 46ch; }
+  .cta-band__actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .btn--ghost-light { color: #fff; border-color: rgba(255,255,255,0.3); }
+  .btn--ghost-light:hover { color: #fff; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__figure { order: -1; max-width: 300px; margin-inline: auto; }
+    .who { grid-template-columns: 1fr; }
+    .livinglab { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1rem; }
+  }
+</style>

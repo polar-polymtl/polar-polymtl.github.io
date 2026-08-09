@@ -1,0 +1,16 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# generated types
+.astro/
+# environment variables
+.env
+.env.production
+# macOS
+.DS_Store
+# logs
+npm-debug.log*
+# original-site source material (large, import-only — not needed to build)
+polargsite/
+logo/

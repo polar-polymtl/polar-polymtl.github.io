@@ -1,0 +1,658 @@
+{
+  "projects": {
+    "care": {
+      "id": "care",
+      "area": "wearables",
+      "title": "Cycloidal Actuator for Robotic Exoskeletons (CARE)",
+      "paras": [
+        "This project focuses on the development of a cycloidal actuator for robotic exoskeleton applications, with the goal of creating a compact, high-torque, and efficient actuation system suitable for wearable robotics. Exoskeletons require actuators that can generate sufficient torque to support or assist human joint motion while remaining lightweight, compact, and safe for close physical interaction with users. Cycloidal actuation offers an attractive solution because it can provide high reduction ratios, good torque density, smooth transmission, and robust load-bearing capacity within a relatively small package.",
+        "The proposed actuator is intended to enable robotic exoskeletons to deliver precise, powerful, and smooth movements during rehabilitation, assistance, or human-performance augmentation tasks. By integrating a cycloidal transmission with appropriate motor, sensing, and control components, the system can improve the actuator’s ability to respond accurately to user motion and external loading conditions. This is particularly important for exoskeletons, where the actuator must not only produce sufficient mechanical output but also operate reliably, quietly, and comfortably while interacting with the human body.",
+        "A key contribution of this project is the advancement of actuator design specifically tailored to the constraints of wearable robotic systems. Compared with conventional bulky actuation solutions, a compact cycloidal actuator can reduce the overall size and weight of the exoskeleton while maintaining the torque capacity required for joint assistance. The outcome of this work is expected to support the development of more practical, efficient, and user-friendly exoskeletons for rehabilitation, mobility assistance, and research applications."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Thomas HOULACHI, Research Intern at Polytechnique Montréal, thomas.houlachi@polymtl.ca",
+        "Ophélie SÉNÉCHAL, Research Intern at Polytechnique Montréal, ophelie.senechal@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/care-1.webp",
+        "/images/projects/care-2.webp"
+      ],
+      "videos": []
+    },
+    "crutch": {
+      "id": "crutch",
+      "area": "wearables",
+      "title": "I nstrumented C rutch for U se with R obotic E xoskeletons",
+      "paras": [
+        "The instrumented crutch can help the control of a robotic exoskeleton by acting as an external intention and stability sensor. For example, an ankle exoskeleton normally senses only what happens at the ankle, such as joint angle, velocity, and torque. However, when a user walks with crutches, a large part of the walking strategy is expressed through the crutch: when it touches the ground, how much weight the user puts on it, and in which direction the crutch is oriented.",
+        "We have develped a device that measures axial crutch force, crutch orientation using the 6-axis IMU, and estimates force components Fx, Fy, and Fz. For an ankle exoskeleton, this information can be used to detect gait phase and user intent. For example, when the crutch force suddenly increases, the controller can infer that the crutch is in contact with the ground and that the user is preparing to transfer weight, initiate a step, or stabilize themselves. If the crutch is inclined forward and loaded, it may indicate forward progression intent. If the crutch is loaded laterally, it may indicate balance correction or instability. This can help the ankle exoskeleton decide when to provide dorsiflexion support, when to increase ankle stiffness for stance stability, and when to prepare for plantarflexion assistance during push-off. If the crutch force is low and the gait pattern is stable, the controller can allow more natural ankle motion or provide more active assistance. In other words, crutch loading can be used as a real-time confidence or stability indicator."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Paul Jabbour, Undergraduate student at Polytechnique Montréal, paul.jabbour@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/crutch-1.webp",
+        "/images/projects/crutch-2.webp",
+        "/images/projects/crutch-3.webp"
+      ],
+      "videos": []
+    },
+    "flora": {
+      "id": "flora",
+      "area": "wearables",
+      "title": "Flexible Orthosis for Rehabilitation of Ankle (FLORA)",
+      "paras": [
+        "FLORA is a semi-active ankle exoskeleton that modulates joint stiffness, rather than directly imposing motion and offers an important middle ground between passive and fully active designs. Compared with a passive ankle exoskeleton, it can adapt its mechanical behavior to different gait phases, walking speeds, terrains, or rehabilitation tasks.",
+        "For example, it can provide higher stiffness during stance for support, energy storage, or stability, and lower stiffness during swing to avoid restricting natural ankle motion. This makes it more versatile than a passive device with fixed springs or dampers, while still preserving a relatively simple and lightweight architecture.",
+        "Compared with a fully active ankle exoskeleton, semi-active FLORA is generally safer, more energy-efficient, and less intrusive because it does not inject large amounts of mechanical power or force the user along a prescribed trajectory. Instead of driving the ankle, it shapes the joint impedance and lets the user’s own neuromuscular system generate the movement. This can improve comfort, transparency, and user acceptance, especially in rehabilitation or assistive walking, where over-assistance may reduce muscle engagement. It also reduces actuator power requirements, battery size, control complexity, risk of unintended motion and instability, while still enabling meaningful assistance through adaptive support and resistance for rehabilitation.",
+        "Potential users include post-stroke patients, people with incomplete spinal cord injury, individuals with cerebral palsy, people with multiple sclerosis, and patients recovering from ankle injury, orthopedic surgery, or prolonged immobilization. For these groups, a semi-active ankle exoskeleton could provide adjustable support without forcing the ankle through a predefined motion, which is useful when the user has remaining voluntary control but needs help with stability, push-off, foot clearance, or controlled resistance during rehabilitation.",
+        "It could also be useful for older adults, people with balance deficits or fall risk, and workers or soldiers who walk for long periods while carrying loads. In these cases, the device could increase ankle stability during stance, reduce fatigue, and adapt to different walking conditions without the complexity and power demands of a fully active exoskeleton. Another important user group is rehabilitation clinics and research labs, where adjustable ankle stiffness can be used to study gait mechanics, train motor control, or provide progressive assistance/resistance during therapy."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Flora Dommanget , Research Intern at Polytechnique Montréal, flora.dommanget@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/flora-1.webp",
+        "/images/projects/flora-2.webp",
+        "/images/projects/flora-3.webp"
+      ],
+      "videos": [
+        {
+          "id": "UacjHnRN08k",
+          "title": "[Project Presentation] FLORA : Flexible Orthosis for Rehabilitation of Ankle | Flora Dommanget"
+        },
+        {
+          "id": "Zbjkkml3G0s",
+          "title": "[Graphical Abstract] Flexible Orthoses for Rehabilitation of Ankle by Flora Dommanget | Updated"
+        }
+      ]
+    },
+    "insole-perl": {
+      "id": "insole-perl",
+      "area": "wearables",
+      "title": "Smart Instrumented Insole for Gait Phase Detection and Center of Pressure Prediction",
+      "paras": [
+        "The project centers on the creation of a cost-effective, multimodal instrumented insole designed to capture real-time gait data for controlling assistive lower-limb exoskeletons. The physical hardware consists of a flexible, 3D-printed thermoplastic polyurethane base embedded with five force-sensing resistors (FSRs) strategically placed under key anatomical landmarks of the foot. This plantar pressure data is paired with kinematic data from an inertial measurement unit (IMU) housed on a custom circuit board strapped to the user’s calf. Driven by a Raspberry Pi and a lithium polymer battery, the data acquisition is synchronized into a fully wearable unit that is highly affordable.",
+        "To interpret the raw sensor signals, the project engineered a predictive algorithmic pipeline. The system utilizes Random Forest machine learning models to identify real-time gait phases (stance versus swing) and Long Short-Term Memory (LSTM) neural networks to predict the wearer’s Center of Pressure (CoP) trajectories in multiple directions. By validating this setup on human participants against gold-standard laboratory equipment, the project successfully proved that a lightweight, low-sensor-count wearable can rival the accuracy of traditional lab instrumentation. Ultimately, this framework was developed to provide the precise, real-time feedback necessary to safely actuate and synchronize robotic exoskeletons with human movement outside of clinical settings"
+      ],
+      "refs": [
+        "[ 1 ] Gesta, Amandine, Sofiane Achiche, Mickael Begon and Abolfazl Mohebbi. \"Gait Phase Classification and Center of Pressure Prediction Using Cost-Effective Multimodal Instrumented Insoles.\" IEEE Transactions on Medical Robotics and Bionics (2026)"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Amandine Gesta, PhD Candidate at Polytechnique Montréal, amandine.gesta@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/insole-perl-1.webp",
+        "/images/projects/insole-perl-2.webp",
+        "/images/projects/insole-perl-3.webp"
+      ],
+      "videos": []
+    },
+    "open-arms": {
+      "id": "open-arms",
+      "area": "wearables",
+      "title": "Open-Source Pediatric Upper Extremity Exoskeleton (OPEN-ARMS)",
+      "paras": [
+        "Children with neuromuscular disorders often experience major limitations in upper-limb mobility, which restricts their ability to perform activities of daily living. Although wearable robotics have advanced considerably in recent years, pediatric applications, particularly for the upper limb, remain underdeveloped. Existing devices are typically designed for adults, making them too heavy, costly, and poorly adapted for children’s anatomical and functional needs.",
+        "The Open-Arms is a lightweight pediatric exoskeleton that supports shoulder and elbow movements. Its design focuses on safety and adjustability, offering adaptive assist-as-needed support that complements the child’s own effort. This approach is intended to enhance rehabilitation outcomes, encourage active participation and promote greater independence in daily activities.",
+        "By making the design open-source, the project seeks to lower costs, remove commercial barriers and enable clinicians, researchers and even families to refine and adapt the device to meet their specific needs. In the long term, this approach is intended to enhance movement, participation and quality of life for children with neuromuscular disorders."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Amandine Gesta, Master’s student at Polytechnique Montréal, parsa.maghsoudloo@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/open-arms-1.webp",
+        "/images/projects/open-arms-2.webp",
+        "/images/projects/open-arms-3.webp",
+        "/images/projects/open-arms-4.webp"
+      ],
+      "videos": []
+    },
+    "perl": {
+      "id": "perl",
+      "area": "wearables",
+      "title": "Pediatric Exoskeleton for Rehabilitation of Lower limb (PERL)",
+      "paras": [
+        "Children with cerebral palsy (CP) often experience difficulties in walking due to muscle weakness and spasticity. Current therapies and assistive devices can help preserve motor function and improve mobility, but they are often limited to clinical settings and are not always adjusted to each child’s specific needs. A personalized robotic solution has the potential to provide more effective gait assistance, both during rehabilitation in clinics and for daily use at home.",
+        "The main objective of this project is to develop a personalized gait assistance for children with cerebral palsy using an ankle exoskeleton. This personalized assistive device should be able to improve walking efficiency and reduce fatigue while remaining comfortable and safe for daily use.",
+        "To achieve this goal, we designed a bilateral ankle exoskeleton equipped with sensors and actuators to evaluate gait patterns and provide real-time assistance. Instrumented insoles have also been developed to help in the assistance timing by detecting gait phases and predicting center of pressure trajectories. Several experiment sessions are conducted to collect data for the predictive models and to validate the effect of the exoskeleton’s assistance on its user. The exoskeleton is first tested on healthy adults for safety reasons before being tested on typically developed children and children with CP.",
+        "This project will contribute to advancing pediatric rehabilitation technologies by offering a customizable and clinically viable solution. The expected outcomes include improved gait stability and efficiency, reduced energy cost of walking, and greater independence for children. In the longer term, the aim is to make this device accessible to all children who could benefit from it."
+      ],
+      "refs": [
+        "[1] Gesta, Amandine, Sofiane Achiche, and Abolfazl Mohebbi. \"Design considerations for the development of lower limb pediatric exoskeletons: a literature review.\" IEEE Transactions on Medical Robotics and Bionics 5.4 (2023): 768-779.",
+        "[2] Gesta, Amandine, Sofiane Achiche, Mickael Begon and Abolfazl Mohebbi. \" Gait Phase Classification and Center of Pressure Prediction Using Cost-Effective Multimodal Instrumented Insoles.\" IEEE Transactions on Medical Robotics and Bionics (202 6 )"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Amandine Gesta, PhD Candidate at Polytechnique Montréal, ama ndine.gesta@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/perl-1.webp",
+        "/images/projects/perl-2.webp",
+        "/images/projects/perl-3.webp",
+        "/images/projects/perl-4.webp",
+        "/images/projects/perl-5.webp"
+      ],
+      "videos": []
+    },
+    "tens": {
+      "id": "tens",
+      "area": "wearables",
+      "title": "Somatotopic Non-Invasive Proprioceptive Feedback Strategy for Robotic Hand Prosthesis",
+      "paras": [
+        "The upper limbs are essential for a variety of daily activities involving reaching, grasping, and manipulating objects. In individuals who have undergone transradial amputation, the loss of the hand and part of the forearm compromises the ability to perform actions that enable interaction with the environment and leads to significant functional compensations.",
+        "Myoelectric prostheses are designed to restore these abilities by decoding user movement intentions based on muscle activity measured from the residual limb. Despite major technological advances, their adoption remains limited, partly due to the lack of physiological sensory feedback, which is essential for closing the sensorimotor loop. Essentially, users need to be able to feel their robotic hand. Deprived of proprioceptive and tactile feedback, they rely heavily on their vision, experience increased cognitive load, and must undergo long and demanding training. These elements compromise movement accuracy and prosthesis acceptance. Consequently, artificial sensory feedback is attracting interest within the field of robotic prosthetics research. The majority of studies have focused on tactile feedback. However, proprioception, which is essential for motor control and the development of a sense of autonomy, remains underrepresented in the literature. Current approaches range from sensory substitution, such as vibrotactile stimulation, to biomimetic strategies, aiming at reproducing the original sensation.",
+        "This project proposes an intermediate bioinspired approach, between sensory substitution and biomimicry, based on the use of Transcutaneous Electrical Nerve Stimulation (TENS) to transmit proprioceptive information related to hand configuration. Stimulation is applied via surface electrodes to interact with the median and ulnar nerves, inducing sensations downstream of the stimulation site and perceived in the amputated hand. This strategy provides spatially coherent proprioceptive feedback while avoiding the need for surgical intervention.",
+        "Achieving the objectives of this project has allowed for the gradual evolution of human-machine interaction between users and the robotic hand. An initial study focused on developing a proof of concept to evaluate the ability of the feedback strategy developed to transmit relevant proprioceptive information to the user of a robotic hand. Participants consistently identified finger apertures conveyed via median or ulnar nerve stimulation and grasp types conveyed through concurrent stimulation of both nerves, with respective classification accuracies of 96.5% and 88.3%."
+      ],
+      "refs": [
+        "[1] Lecompte, Olivier, Sofiane Achiche, and Abolfazl Mohebbi. \"A review of proprioceptive feedback strategies for upper-limb myoelectric prostheses.\" IEEE Transactions on Medical Robotics and Bionics 6.3 (2024): 930-939.",
+        "[2] Lecompte, Olivier, et al. \"Somatotopic non-invasive proprioceptive feedback strategy for prosthetic hands: a preliminary study.\" Biomedical Physics & Engineering Express 11.5 (2025): 055049.",
+        "[3] Lecompte, Olivier, et al. \"Non-invasive somatotopic proprioceptive feedback for closed-loop robotic hand aperture control.\" Journal of Neural Engineering 23.3 (2026): 036019.",
+        "[4] THESIS: Lecompte, Olivier. Development of a Non-Invasive Proprioceptive Feedback Strategy for Upper-Limb Robotic Prosthesis Users. Diss. Polytechnique Montréal, 2026."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Olivier Lecompte , PhD Student at Polytechnique Montréal, olivier.lecompte@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/tens-1.webp",
+        "/images/projects/tens-2.webp",
+        "/images/projects/tens-3.webp",
+        "/images/projects/tens-4.webp"
+      ],
+      "videos": []
+    },
+    "tentacle": {
+      "id": "tentacle",
+      "area": "wearables",
+      "title": "Myoelectric Tentacle-Shaped Prosthetic Limb",
+      "paras": [
+        "Upper-limb prostheses are essential for restoring autonomy after amputation, but many users remain dissatisfied with existing devices. One important limitation is that conventional prostheses often struggle to adapt their grasping configuration to different objects.",
+        "This project addresses that challenge by exploring a non-anthropomorphic design that prioritizes adaptability and functional interaction. It presents the development of a myoelectric tentacle-shaped prosthesis designed to coil around objects of different shapes and sizes. Instead of relying on fingers or a rigid gripper, the device uses a flexible segmented structure that can wrap around objects through cable-driven actuation.",
+        "The prototype was developed as a lightweight, cable-driven structure composed of 24 3D-printed segments arranged according to a logarithmic spiral. The design was inspired by octopus tentacles, which can passively deform and wrap around objects. The geometry was based on a logarithmic spiral, allowing the device to produce a smooth and progressive curling motion. A tapered angle of 10 degrees was selected to balance compact coiling with the ability to grasp objects of different sizes. The motion is produced by two servomotors located at the base. Each motor pulls a cable routed along one side of the tentacle.",
+        "The user controls the prosthesis using muscle activation which is captured by surface EMG signals recorded from the biceps. When the activation exceeds 30 percent of the calibrated maximum voluntary contraction, the motors are commanded. A kinematic model was also developed to describe the tentacle’s motion in the XY plane. This model links cable displacement to the curvature of the structure and helps formalize how the tentacle coils during grasping."
+      ],
+      "refs": [
+        "[1] whitepaper"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Gabrielle Marion, Research Intern at Polytechnique Montréal, gabrielle.marion@polymtl.ca",
+        "Olivier Lecompte, PhD Student at Polytechnique Montréal, olivier.lecompte@polymtl.ca",
+        "Amandine Gesta, PhD Candidate at Polytechnique Montréal, amandine.gesta@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/tentacle-1.webp",
+        "/images/projects/tentacle-2.webp",
+        "/images/projects/tentacle-3.webp",
+        "/images/projects/tentacle-4.webp",
+        "/images/projects/tentacle-5.webp",
+        "/images/projects/tentacle-6.webp",
+        "/images/projects/tentacle-7.webp",
+        "/images/projects/tentacle-8.webp"
+      ],
+      "videos": []
+    },
+    "haptic3d": {
+      "id": "haptic3d",
+      "area": "robots",
+      "title": "HAPTIC3D - A Reproducible 3-DOF Haptic Robot for Upper-limb Rehabilitation of Children with Neuromuscular Disorders",
+      "paras": [
+        "This project aims to develop a rehabilitation robot specifically designed to help children with neuromuscular diseases, such as spinal muscular atrophy and Duchenne and Becker muscular dystrophies. These diseases often affect the upper limbs, which play a crucial role in children’s daily lives. Traditional physical rehabilitation helps slow the progression of these diseases, but it requires significant human resources and is not always frequent or intensive enough. Furthermore, monitoring the progression of the disease often relies on methods based on rating scales, the results of which can vary depending on the evaluator and their experience.",
+        "In this context, the project therefore consists of creating a robot to assist with the rehabilitation of children’s upper limbs. This robot will be able to adapt to the specific needs of each patient using an advanced control system that automatically adjusts resistance and assistance based on the child’s progress. One of the major advantages of this robot is its ability to collect data in real time, allowing for more precise tracking of patient progress and personalization of rehabilitation exercises. Another key objective is to make this technology accessible, particularly by making it affordable and easily usable remotely through telerehabilitation. This would make it possible to reach a larger number of children, including those living in remote areas.",
+        "In summary, this project seeks to develop a low-cost robotic solution, specifically tailored to children, to help them maintain or recover motor functions and thus offer them greater autonomy in their daily lives. The robot could become an essential tool for pediatric rehabilitation professionals and contribute to a more inclusive and sustainable society."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Thomas Imbeault-Nepton , PhD Candidate at Polytechnique Montréal, thomas.imbeault-nepton@etud.polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/haptic3d-1.webp",
+        "/images/projects/haptic3d-2.webp"
+      ],
+      "videos": []
+    },
+    "hapticmaster": {
+      "id": "hapticmaster",
+      "area": "robots",
+      "title": "3 Degrees-of-Freedom Arm Support Mechanism for Upper-limb Robotic Rehabilitation",
+      "paras": [
+        "The HapticMaster is a high‑performance haptic robot widely used for upper‑limb rehabilitation, particularly with children. Its strength lies in delivering precise translational movements and force feedback, enabling therapists and researchers to design controlled, interactive rehabilitation tasks. However, the device has a fundamental limitation: it cannot directly control or sense wrist rotation. This constraint reduces the range of functional movements that can be trained, especially those involving pronation–supination, abduction–adduction, and flexion–extension—motions essential for natural hand use in daily activities.",
+        "To overcome this limitation, the project introduces a 3‑DOF arm/hand support mechanism that adds rotational capability to the HapticMaster. The mechanism is lightweight, adaptable to different hand sizes, and easily modifiable, making it suitable for pediatric use. Most importantly, it converts wrist rotations into pure translational movements that the HapticMaster can interpret, effectively extending the robot’s functional workspace without altering its core architecture. By enabling controlled wrist motion the 3‑DOF mechanism transforms the HapticMaster into a more complete rehabilitation platform, supporting richer motor tasks and more natural interaction patterns."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/hapticmaster-1.webp",
+        "/images/projects/hapticmaster-2.webp",
+        "/images/projects/hapticmaster-3.webp"
+      ],
+      "videos": [
+        {
+          "id": "EIITQGbzkuo",
+          "title": "Benjamin Saglietto - HapticMaster Arm Support (Summer 2021)_French"
+        }
+      ]
+    },
+    "roborehab-2d": {
+      "id": "roborehab-2d",
+      "area": "robots",
+      "title": "RoboRehab 2D - Planar Five-bar Pantograph Robot for Upper Limb Rehabilitation",
+      "paras": [
+        "Conventional physical therapy is often limited by the need for continuous one-on-one supervision and a lack of engaging, interactive exercises, which can lead to a loss of motivation, especially in children. To overcome these challenges, RoboRehab2D was developed as a budget-effective, two-dimensional upper-limb rehabilitation system. Utilizing a planar, five-linkage mechanism, the robot provides a motivating, game-like environment that supports both passive and active therapy tailored to a patient’s specific recovery stage. It enables precise, repeatable exercises like reaching and tracing while seamlessly supplying therapists with objective data to monitor performance.",
+        "Beyond its clinical benefits, RoboRehab2D stands out for its accessible, open-source design and clever engineering. The system uses low-cost servo motors and an admittance-based control strategy to ensure compliant human-robot interaction, impressively estimating torque directly from servo currents to eliminate the need for expensive external force sensors. By making its mechanical, electronic, and software designs freely available, the creators aim to foster global collaboration and innovation. Ultimately, this transparency makes advanced, data-driven pediatric and home-based rehabilitation significantly more affordable and accessible to clinics, researchers, and families worldwide."
+      ],
+      "refs": [
+        "[1] Mohebbi, A. “Kinematic Modeling, Analysis, and Real-Time Implementation of a Planar Five-Bar Pantograph Robot”. Zenodo, 9 June 2026, https://doi.org/10.5281/zenodo.20616265 .",
+        "[2] Mohebbi, A. “Dynamic Modeling, Control, and Real-Time Implementation of a Planar Five-Bar Pantograph Robot”. Zenodo, 10 June 2026, https://doi.org/10.5281/zenodo.20620179 .",
+        "[3] Mohebbi, A. “Polypantograph: Python Library User Guide, Kinematics and Dynamics of the Planar Five-bar Pantograph Robot”. Zenodo, 10 June 2026, https://doi.org/10.5281/zenodo.20634162 ."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Ophélie Sénéchal, Research Intern at at Polytechnique Montréal, ophelie.senechal@etud.polymtl.ca",
+        "Maëlys Carre , Research Intern at at Polytechnique Montréal, maelys.carre@etud.polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/roborehab-2d-1.webp",
+        "/images/projects/roborehab-2d-2.webp",
+        "/images/projects/roborehab-2d-3.webp"
+      ],
+      "videos": []
+    },
+    "roborehab-6d": {
+      "id": "roborehab-6d",
+      "area": "robots",
+      "title": "Physical Human-Robot Interaction (pHRI) Startegies in Robotic Rehabilitation",
+      "paras": [
+        "Stroke and other neurological damages often lead to severe upper-limb impairments, creating a high demand for labor-intensive and time-consuming physical rehabilitation. While robotic systems can provide repetitive and long-duration training, traditional controllers often apply fixed levels of assistance, ignoring the varying and unpredictable performance capabilities of individual patients. To maximize the effectiveness of therapy and promote neural plasticity, this project emphasizes Adaptive and the Assist-As-Needed (AAN) approaches, where a robotic device dynamically varies the provides assistance to encourage the patient’s active voluntary effort and engagement.",
+        "The foundational control schemes utilize admittance control to generate patient-specific reference trajectories from therapist-induced movements, and impedance control to allow for collaborative trajectory tracking.",
+        "The core of the system’s real-time adaptability relies on an adaptive Neural Network (NN) algorithm that adjusts the stiffness and damping parameters of the admittance model without requiring offline training. This adaptation is driven by a novel energy-based performance index that calculates the human input power, identifying whether the patient is an active energy provider or an energy dissipator within the system’s dynamic energy flow.",
+        "Experimental validations demonstrated that the proposed adaptive algorithms successfully balance the conflicting objectives of minimizing robot intervention and ensuring task completion. During active participation modes, the system exhibited highly compliant behavior; for instance, the passivity-aware adaptive controller achieved an 83% reduction in average stiffness when human effort was detected.",
+        "The integration of these adaptive impedance controls with VR environments proved to deliver customized, responsive therapy that accommodates heterogeneous motor capabilities and unexpected spasms. Ultimately, this framework significantly reduces the need for continuous manual intervention by therapists, optimizes healthcare resource use, and provides a highly versatile, safety-aware solution for personalized neurological rehabilitation."
+      ],
+      "refs": [
+        "[1] Pezeshki, Leilaalsadat, Hamid Sadeghian, Abolfazl Mohebbi, Mehdi Keshmiri, and Sami Haddadin. \"Personalized assistance in robotic rehabilitation: Real-time adaptation via energy-based performance monitoring.\" IEEE Transactions on Automation Science and Engineering (2025).",
+        "[2] Pezeshki, Leilaalsadat, Hamid Sadeghian, Xiao Chen, Mehdi Keshmiri, Sami Haddadin, and Abolfazl Mohebbi. \"Assist-as-Needed Framework for Robotic Rehabilitation: Adaptive Admittance Control with Passivity-Based Safety Features.\" IEEE Transactions on Medical Robotics and Bionics (2025).",
+        "[3] Behidj, Ayoub, Sofiane Achiche, and Abolfazl Mohebbi. \"Upper-limb rehabilitation of patients with neuromotor deficits using impedance-based control of a 6-dof robot.\" 2023 45th Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC). IEEE, 2023.",
+        "[4] Behidj, Ayoub. Personalized Upper Limb Robotic Rehabilitation Using Impedance-Based Control Strategies. MS thesis. Ecole Polytechnique, Montreal (Canada), 2023."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Leilaalsadat Pezeshki , P ostdoctoral Fellow at Polytechnique Montréal, l eilaalsadat .p ezeshki@polymtl.ca",
+        "Ayoub Behidj , Master’s student at Polytechnique Montréal, a youb .b ehidj@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/roborehab-6d-1.webp",
+        "/images/projects/roborehab-6d-2.webp",
+        "/images/projects/roborehab-6d-3.webp"
+      ],
+      "videos": [
+        {
+          "id": "8Bh_A4_oeK0",
+          "title": "Robotic Upper Limb Rehabilitation"
+        },
+        {
+          "id": "mzBR71ywdgE",
+          "title": "Personalized Assistance in Robotic Rehabilitation: Adaptation via Energy-Based Performance Monitor"
+        },
+        {
+          "id": "M0Wsv_Vp7Xk",
+          "title": "Human-Robot Interaction Control: Admittance/Impedance Control of a 7-DOF Robot"
+        }
+      ]
+    },
+    "ankle-dynamics": {
+      "id": "ankle-dynamics",
+      "area": "neuro",
+      "title": "Experimental Study on Parameter-Varying Identification of Non-Stationary Ankle Joint Stiffness",
+      "paras": [
+        "Accurate characterization of dynamic joint stiffness (DJS) at the ankle is vital for understanding human locomotion and diagnosing clinical pathologies. Historically, researchers have relied on custom-molded fiberglass boots to interface between the participant and the testing apparatus. However, these traditional interfaces are hindered by lengthy fabrication times, participant discomfort, and mechanical compliances that can compromise signal accuracy. To overcome these limitations, this project focuses on the design and validation of a novel, 3D-printed Sub-Malleolar Interface (SMI). To validate the SMI, a proof-of-concept study was conducted on a healthy participant, comparing the new device against a traditional fiberglass legacy boot. The experimental setup featured a high-torque electrohydraulic servomotor that applied pseudo-random arbitrary level distributed sequence (PRALDS) position perturbations to the ankle joint. The validation encompassed three distinct experimental paradigms: estimating the interface’s moment of inertia, identifying DJS across eight quasi-stationary angles in a relaxed state, and identifying DJS during an isotonic plantarflexion contraction at 15% of maximum voluntary contraction (MVC). A parallel-cascade system identification method was then employed to mathematically decouple the resulting joint torque into its intrinsic (mechanical) and reflex (neural) components for comparative analysis.",
+        "The results demonstrated that the SMI is a robust and reliable alternative to traditional interfaces, producing intrinsic parameter estimates such as inertia, viscosity, and elasticity that closely matched those of the legacy boot. Total-torque predictions achieved high goodness-of-fit, with variance accounted for (VAF) reaching approximately 91% to 94% under relaxed conditions. Crucially, the SMI’s enhanced mechanical coupling and reduced micro-slippage allowed it to capture reflex-mediated torques with greater fidelity than the more compliant fiberglass boot. By providing a standardized, highly efficient, and scalable interfacing solution, the SMI represents a significant advancement in the study of joint neuromechanics, paving the way for broader clinical translation and improved diagnostic capabilities for distinguishing neural spasticity from passive tissue stiffness"
+      ],
+      "refs": [
+        "[1] Rouzbayani, Ali, Ehsan Sobhani Tehrani, Pouya Amiri, Robert Kearney, and Abolfazl Mohebbi. \"Methods for the Identification of Ankle Joint Dynamics Using a Novel Sub-Malleolar Interface\", Journal of Clinical Biomechanics, 2026.",
+        "[2] Rouzbayani, Ali. Quasi-Stationary Identification of Ankle Joint Dynamic Stiffness in Isotonic Contraction and in a Relaxed State: Validating a Novel Sub-Malleolar Interface. Diss. Polytechnique Montréal, 2024."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Ali Rouzbayani , Master’s student at Polytechnique Montréal, ali.rouzbayani@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/ankle-dynamics-1.webp"
+      ],
+      "videos": [
+        {
+          "id": "IM7KhNr28ho",
+          "title": "[Graphical Abstract] Identification of Dynamic Ankle Joint Stiffness by Ali Rouzbayani | Updated"
+        }
+      ]
+    },
+    "pedal-pc": {
+      "id": "pedal-pc",
+      "area": "neuro",
+      "title": "Identification of S ensory I nteractions B etween V ision and P roprioception in H uman Postural C ontrol",
+      "paras": [
+        "This project focuses on the complex task of maintaining standing balance, which requires the central nervous system (CNS) to continuously integrate feedback from multiple sensory modalities, primarily vision and proprioception. While it is widely recognized that these individual sensory systems play an essential role in postural control, current literature frequently relies on linear time-invariant models that fail to capture the interactions and dynamic sensory reweighting that occur under varying environmental conditions.",
+        "To address this gap, this project aims to thoroughly quantify both the individual and interacting contributions of visual and proprioceptive sensory systems to the CNS during upright stance. By moving beyond simplified linear assumptions, the research seeks to uncover the complex, nonlinear principles governing how humans maintain equilibrium when faced with differing levels of sensory availability and accuracy.",
+        "The analytical framework will initially apply non-parametric frequency domain analyses to estimate frequency response functions (FRF) between the sensory inputs and the resulting mechanical (CoP) and neural (EMG) outputs. To capture the anticipated nonlinearities and non-stationarities inherent in human postural control, the methodology will also incorporate nonlinear block-oriented models (such as Wiener or Hammerstein structures) and time-varying (TV) identification approaches. This multi-input multi-output (MIMO) modeling strategy will enable the precise quantification of both ipsilateral and contralateral neuromuscular responses.",
+        "Ultimately, this research is expected to yield a comprehensive, quantitative model of postural control that explicitly integrates cross-responses between the legs and links sensory reweighting directly to muscle recruitment. The project anticipates confirming that unilateral proprioceptive inputs elicit measurable contralateral neuromuscular reflexes, and that combining visual and proprioceptive stimuli generates distinctly nonlinear integration behaviors within the CNS. By establishing a dynamic model of sensorimotor integration, this project will provide a highly transferable methodology for evaluating unilateral sensory deficits. These insights will significantly enhance the precision of clinical balance assessments, inform the development of targeted rehabilitation protocols, and guide new strategies for assistive technologies aimed at mitigating balance impairments and preventing falls."
+      ],
+      "refs": [
+        "[1]"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Aiman Feghoul , PhD Candidate at Polytechnique Montréal, aiman.feghoul@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/pedal-pc-1.webp"
+      ],
+      "videos": []
+    },
+    "vision-pc": {
+      "id": "vision-pc",
+      "area": "neuro",
+      "title": "Identification of the Visual Sensory Contributions to Human Balance Control",
+      "paras": [
+        "This project investigates the dynamic contribution of visual sensory information to human upright balance control. Maintaining a stable posture is a complex, closed-loop process that relies heavily on the central nervous system’s ability to continuously integrate visual, vestibular, and somatosensory inputs. Impairments in these systems can lead to severe balance disorders and an increased risk of falls, which represent a significant global health concern, particularly among older adults. Despite extensive research in the field, quantifying the specific role of vision remains challenging due to the ambiguity of optical flow cues and the inherently nonlinear nature of visually evoked postural responses. To address these gaps, this project focuses on developing a comprehensive experimental and analytical framework designed to accurately model how visual perturbations influence both body sway and neuromuscular activation.",
+        "To quantify these dynamics, the study utilized a customized virtual reality (VR) platform to deliver precisely controlled visual perturbations to healthy participants. Subjects were exposed to moving visual scenes using specifically designed waveforms, including a trapezoidal velocity (TrapV) signal and a novel multi-level TrapV (ML-TrapV) waveform, which allowed for independent control over perturbation amplitude and velocity. During the trials, participants wore rigid splints extending from the shank to the waist. This crucial mechanical constraint restricted movement at the knees and hips, effectively isolating the body’s motion to the ankle joint. This setup enforced an ankle-dominant postural strategy, allowing the researchers to approximate the body’s dynamics as a single-link inverted pendulum while simultaneously recording kinematic data, ground reaction forces, ankle torques, and electromyographic (EMG) muscle activity.",
+        "The analytical approach leveraged advanced system identification techniques to translate the raw experimental data into interpretable mathematical models. To address the challenge of non-stationarities and slow postural drifts, a novel detrending method based on the inverse Fourier transform was implemented, successfully preserving the critical low-frequency sway components necessary for balance control. For the neuromuscular analysis, Principal Component Analysis (PCA) was applied to the bilateral EMG signals to extract a unified, low-dimensional representation of overall ankle muscle activation. Nonparametric frequency response functions (FRF) and parametric transfer function models including nonlinear Hammerstein models tailored for the ML-TrapV trials were then utilized to characterize the dynamic input-output relationship between the visual stimuli and the resulting biomechanical and neural responses.",
+        "The results revealed that visually evoked postural responses exhibit a delayed, second-order, low-pass filter behavior with pronounced amplitude-dependent nonlinearities; specifically, the system’s gain decreased as the amplitude of the visual perturbation increased. Furthermore, the neuromuscular analysis uncovered a consistent two-phase muscle activation strategy primarily driven by visual velocity, where ankle muscles initially generate movement consistent with the visual motion and subsequently reverse activation to stabilize posture. The introduction of the ML-TrapV waveform proved highly effective at efficiently capturing these nonlinear dynamics within a single experimental trial. Ultimately, this project establishes a robust quantitative framework that deepens our mechanistic understanding of sensorimotor integration in upright stance. These findings lay a critical methodological foundation for future clinical applications, offering promising avenues for the targeted assessment, diagnosis, and personalized rehabilitation of balance disorders."
+      ],
+      "refs": [
+        "[1] Ghiasi Noughaby, Amir, et al. \"Characterizing the Nonlinear Dynamics of the Human Postural Sway Response to Visual Stimuli.\" Journal of Neurophysiology (2026).",
+        "[2] Ghiasi-Noughaby, Amir, et al. \"Identification of the Human Postural Sway Response to Visual Inputs.\" 2024 46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). IEEE, 2024.",
+        "[ 3 ] Mohebbi, Abolfazl, Pouya Amiri, and Robert E. Kearney. \"Identification of human balance control responses to visual inputs using virtual reality.\" Journal of neurophysiology 127.4 (2022): 1159-1170."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Amir Ghiasi-Noughaby, PhD Candidate at Polytechnique Montréal, amir.ghiasi-noughaby@etud.polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/vision-pc-1.webp",
+        "/images/projects/vision-pc-2.webp",
+        "/images/projects/vision-pc-3.webp",
+        "/images/projects/vision-pc-4.webp"
+      ],
+      "videos": [
+        {
+          "id": "XLwjTw5EO8E",
+          "title": "Experimental Methods to Study Human Postural Control"
+        },
+        {
+          "id": "R6VAxe9zDnI",
+          "title": "[Graphical Abstract] Visual Sensory Contributions to Human Postural Control by Amir Ghiasi | Updated"
+        }
+      ]
+    },
+    "emg-robot_1": {
+      "id": "emg-robot_1",
+      "area": "assistive",
+      "title": "Electromyography-Based Hand Gesture Recognition for Assistive Robots Using Deep Learning",
+      "paras": [
+        "The project focuses on improving motion-intention recognition for assistive robotic systems, particularly robotic hand prostheses for transradial amputees. It uses surface electromyography signals from residual muscles to classify different hand gestures, allowing the prosthesis or assistive robot to better interpret the user’s intended movement.",
+        "The study systematically compares several machine-learning and deep-learning models for hand-gesture classification. It evaluates how different preprocessing choices, time-domain features, and sliding-window lengths affect recognition accuracy and generalization across gesture classes and users.",
+        "The results show that ensemble learning and deep-learning methods generally performed better than classical machine-learning approaches. Overall, the project provides useful guidance for developing more reliable, responsive, and user-adaptive EMG-based control systems for prosthetic hands and other assistive robots."
+      ],
+      "refs": [
+        "[1] Gopal, Pranesh, Amandine Gesta, and Abolfazl Mohebbi. \"A systematic study on electromyography-based hand gesture recognition for assistive robots using deep learning and machine learning models.\" Sensors 22.10 (2022): 3650."
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Amandine Gesta, PhD Candidate at Polytechnique Montréal, amandine.gesta@polymtl.ca"
+      ],
+      "images": [],
+      "videos": []
+    },
+    "emg-robot_2": {
+      "id": "emg-robot_2",
+      "area": "assistive",
+      "title": "Electromyography-Based Telecontrol of an Assistive Robotic Arm",
+      "paras": [
+        "Upper-limb motor impairments can make everyday actions, such as reaching, grasping, or manipulating objects, extremely difficult. Assistive robotic arms offer a promising way to restore part of this functional autonomy. However, for these technologies to be truly useful, they must be controlled in a way that is intuitive, reliable, and responsive. The challenge is not only to design a robot capable of moving, but to design an interface that people can actually use. Traditional interfaces, such as joysticks or visual control systems, can be effective in some cases, but they may not be suitable for users with severe motor limitations. Physiological signals, such as muscle activity, provide a more direct way to access the user’s intention.",
+        "In this project we developed a complete real-time pipeline that transforms forearm muscle activity into control commands for an assistive robotic arm. The system records sEMG signals from four electrodes placed on the forearm. These signals are filtered in real time to reduce noise and preserve the frequency range associated with muscle activity. The signal is then divided into shorter windows. Each window is normalized and analyzed by a one-dimensional convolutional neural network, which classifies the user’s gesture. The final system uses a threshold-based detector to identify muscle activation, followed by a five-gesture classifier. Each recognized gesture is mapped to a robotic command, allowing the arm to move upward, downward, laterally, or activate the gripper."
+      ],
+      "refs": [
+        "[1] whitepaper"
+      ],
+      "contributors": [
+        "Abolfazl Mohebbi, Associate Professor at Polytechnique Montréal, abolfazl.mohebbi@polymtl.ca",
+        "Edgar Manacorda , Research intern at Polytechnique Montréal, edgar.manacorda@polymtl.ca"
+      ],
+      "images": [
+        "/images/projects/emg-robot_2-1.webp",
+        "/images/projects/emg-robot_2-2.webp",
+        "/images/projects/emg-robot_2-3.webp"
+      ],
+      "videos": []
+    }
+  },
+  "people": [
+    {
+      "id": "abolfazl-mohebbi",
+      "photo": "/images/people/abolfazl-mohebbi.webp"
+    },
+    {
+      "id": "leila-pezeshki",
+      "photo": "/images/people/leila-pezeshki.webp"
+    },
+    {
+      "id": "amandine-gesta",
+      "photo": "/images/people/amandine-gesta.webp"
+    },
+    {
+      "id": "armineh-rahmanian",
+      "photo": "/images/people/armineh-rahmanian.webp"
+    },
+    {
+      "id": "aiman-feghoul",
+      "photo": "/images/people/aiman-feghoul.webp"
+    },
+    {
+      "id": "thomas-imbeault-nepton",
+      "photo": "/images/people/thomas-imbeault-nepton.webp"
+    },
+    {
+      "id": "parsa-maghsoudloo",
+      "photo": "/images/people/parsa-maghsoudloo.webp"
+    },
+    {
+      "id": "mena-samir-abouseffien",
+      "photo": "/images/people/mena-samir-abouseffien.webp"
+    }
+  ],
+  "social": {
+    "abolfazl-mohebbi": {
+      "scholar": "https://scholar.google.ca/citations?user=LcUZkGoAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/abolfazl-mohebbi/",
+      "x": "https://x.com/POLAR_PolyMTL",
+      "github": "http://abolfazlmohebbi.github.io"
+    },
+    "leila-pezeshki": {
+      "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=leilaalsadat+pezeshki&btnG=",
+      "linkedin": "https://www.linkedin.com/in/leila-pezeshki/"
+    },
+    "amandine-gesta": {
+      "scholar": "https://scholar.google.ca/citations?user=sDw0M0UAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/amandinegesta/"
+    },
+    "armineh-rahmanian": {
+      "scholar": "https://scholar.google.ca/citations?user=_sHYmwEAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/armineh-r-a4b7082b0/"
+    },
+    "aiman-feghoul": {
+      "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=aiman+feghoul&btnG=",
+      "linkedin": "https://www.linkedin.com/in/a%C3%AFman-feghoul-b60188159/"
+    },
+    "thomas-imbeault-nepton": {
+      "linkedin": "https://www.linkedin.com/in/thomas-imbeault-nepton-959562375/"
+    },
+    "parsa-maghsoudloo": {
+      "linkedin": "https://www.linkedin.com/in/parsa-maghsoudloo-bb6783192/"
+    },
+    "mena-samir-abouseffien": {
+      "linkedin": "https://www.linkedin.com/in/mena-abouseffien-b14100257/"
+    },
+    "patrick-deschambault": {
+      "linkedin": "https://www.linkedin.com/in/amir-ghiasi-noughaby/"
+    },
+    "amir-ghiasi-noughaby": {
+      "linkedin": "https://www.linkedin.com/in/olivier-lecompte-764905132/"
+    },
+    "olivier-lecompte": {
+      "linkedin": "https://www.linkedin.com/in/aghil%C3%A8s-yousfi-419003367/"
+    },
+    "seyed-ehsan-marjani": {
+      "linkedin": "https://www.linkedin.com/in/anne-charlotte-desbarbieux/"
+    },
+    "anne-charlotte-desbarbieux": {
+      "linkedin": "https://www.linkedin.com/in/louis-simon-guay-66899a108/"
+    },
+    "louis-simon-guay": {
+      "linkedin": "https://www.linkedin.com/in/stella-maschio-793a90354/"
+    },
+    "carlos-eduardo-maia-de-souza": {
+      "linkedin": "https://www.linkedin.com/in/ali-rouzbayani/"
+    },
+    "maryam-ashkbous-esfahani": {
+      "linkedin": "https://www.linkedin.com/in/ayoub-behidj-0837531a1/"
+    },
+    "ayoub-behidj": {
+      "linkedin": "https://www.linkedin.com/in/shayan-ghiasvand/"
+    },
+    "reza-norouzzadeh": {
+      "linkedin": "https://www.linkedin.com/in/olibd/"
+    },
+    "olivier-brochu-dufour": {
+      "linkedin": "https://www.linkedin.com/in/malaury-fouet-68801b224/?locale=en"
+    },
+    "malaury-fouet": {
+      "linkedin": "https://www.linkedin.com/in/hend-afli/"
+    },
+    "selliya-ravanthiramohan": {
+      "linkedin": "https://www.linkedin.com/in/jean-louis-blervacque/"
+    },
+    "jean-louis-blervacque": {
+      "linkedin": "https://www.linkedin.com/in/caitlin-chee-sl/"
+    },
+    "caitlin-chee": {
+      "linkedin": "https://www.linkedin.com/in/sophia-taddei-5a1738218/"
+    },
+    "valentin-obrier": {
+      "linkedin": "https://www.linkedin.com/in/alice-roustan/"
+    },
+    "alice-roustan": {
+      "linkedin": "https://www.linkedin.com/in/sepideh-lashkari/"
+    },
+    "sepideh-lashkari": {
+      "linkedin": "https://www.linkedin.com/in/anna-diop-b68913166/"
+    },
+    "anna-diop": {
+      "linkedin": "https://www.linkedin.com/in/gabrielle-marion-33585333a/"
+    },
+    "gabrielle-marion": {
+      "linkedin": "https://www.linkedin.com/in/maelys-carre/"
+    },
+    "ophelie-senechal": {
+      "linkedin": "https://www.linkedin.com/in/thomas-houlachi/"
+    },
+    "thomas-houlachi": {
+      "linkedin": "https://www.linkedin.com/in/jacobduncan876/"
+    },
+    "andrea-paulina-centeno-munoz": {
+      "linkedin": "https://www.linkedin.com/in/markrrjohnson/"
+    },
+    "mena-samir-kamal-abouseffien": {
+      "linkedin": "https://www.linkedin.com/in/jongann-lee/"
+    },
+    "jongann-lee": {
+      "linkedin": "https://www.linkedin.com/in/ikram-beghdadi-28042624a/"
+    },
+    "chi-wei-wen": {
+      "linkedin": "https://www.linkedin.com/in/nadia-houti-379125215/"
+    },
+    "nadia-houti": {
+      "linkedin": "https://www.linkedin.com/in/flora-dommanget-207bb81b9/"
+    },
+    "flora-dommanget": {
+      "linkedin": "https://www.linkedin.com/in/sarah-ora/?locale=en"
+    },
+    "sarah-lambert": {
+      "linkedin": "https://www.linkedin.com/in/imane-r-b24359225/"
+    },
+    "aditya-jeppu": {
+      "linkedin": "https://www.linkedin.com/in/chetan-pathrabe/"
+    },
+    "chetan-pathrabe": {
+      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+    },
+    "benjamin-saglietto": {
+      "linkedin": "https://www.linkedin.com/in/iris-toye/"
+    },
+    "iris-toye": {
+      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+    },
+    "jean-simon-houle": {
+      "linkedin": "https://www.linkedin.com/in/praneshgopal/"
+    },
+    "pranesh-gopal": {
+      "linkedin": "https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fpolar-polymtl&sa=D&sntz=1&usg=AOvVaw14iwirZTtR2xmMa4R8jU7Z"
+    }
+  },
+  "home": [
+    {
+      "file": "gait-banner.webp",
+      "path": "/images/gait-banner.webp"
+    },
+    {
+      "file": "areas/wearables.webp",
+      "path": "/images/areas/wearables.webp"
+    },
+    {
+      "file": "areas/robots.webp",
+      "path": "/images/areas/robots.webp"
+    },
+    {
+      "file": "areas/neuro.webp",
+      "path": "/images/areas/neuro.webp"
+    },
+    {
+      "file": "areas/assistive.webp",
+      "path": "/images/areas/assistive.webp"
+    },
+    {
+      "file": "partners.webp",
+      "path": "/images/partners.webp"
+    }
+  ],
+  "media": {
+    "logoFull": "/images/polar-logo-full.webp",
+    "peopleBanner": "/images/people-banner.webp",
+    "homeBanner": "/images/home-banner.webp"
+  }
+}

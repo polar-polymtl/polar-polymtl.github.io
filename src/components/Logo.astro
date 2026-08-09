@@ -1,0 +1,42 @@
+---
+/**
+ * POLAR logo — the real lab badge (polar bear traced as a kinematic chain)
+ * plus the wordmark. `variant="mark"` shows the badge only.
+ */
+interface Props {
+  variant?: 'full' | 'mark';
+  tone?: 'ink' | 'light';
+  class?: string;
+}
+const { variant = 'full', tone = 'ink', class: className = '' } = Astro.props;
+const wordColor = tone === 'light' ? '#ffffff' : 'var(--ink)';
+---
+
+<span class={`logo logo--${variant} ${className}`}>
+  <img class="logo__mark" src="/images/logo.webp" alt="POLAR" width="40" height="40" />
+  {variant === 'full' && (
+    <span class="logo__word" style={`--word-color:${wordColor}`}>POLAR</span>
+  )}
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    line-height: 1;
+  }
+  .logo__mark {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .logo__word {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    color: var(--word-color);
+  }
+</style>

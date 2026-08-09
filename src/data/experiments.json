@@ -1,0 +1,38 @@
+[
+  {
+    "id": "lower-limb-exo",
+    "title": "Lower-Limb Exoskeleton Evaluation",
+    "description": "We invite you to participate in a research activity that aims to evaluate lower-limb exoskeletons for personalized assistance. A lower-limb exoskeleton can have joints similar to the ankle, knee, and hip, which help its user to walk.",
+    "duration": "2–3 hours",
+    "location": "Polytechnique Montréal",
+    "compensation": "Yes",
+    "contact": "amandine.gesta@polymtl.ca"
+  },
+  {
+    "id": "upper-limb-exo",
+    "title": "Upper-Limb Exoskeleton Evaluation",
+    "description": "We invite healthy participants to partake in a research activity that aims to evaluate upper-limb exoskeletons for personalized assistance and rehabilitation.",
+    "duration": "2–3 hours",
+    "location": "Polytechnique Montréal",
+    "compensation": "Yes",
+    "contact": "parsa.maghsoudloo@polymtl.ca"
+  },
+  {
+    "id": "postural-control",
+    "title": "Balance & Postural Control Study",
+    "description": "Human upright balance is maintained through feedback mechanisms that use a variety of sensory modalities such as vision, proprioception, and vestibular inputs. Healthy adult participants are invited to take part in data collections that characterize the effects of sensory information on balance.",
+    "duration": "2–3 hours",
+    "location": "McGill University · Polytechnique Montréal",
+    "compensation": "Yes",
+    "contact": "aiman.feghoul@polymtl.ca"
+  },
+  {
+    "id": "human-robot-interaction",
+    "title": "Human–Robot Interaction in Rehabilitation",
+    "description": "Adult participants are invited to take part in data collections related to the effectiveness and safety of human–robot interaction during rehabilitation exercises.",
+    "duration": "2–3 hours",
+    "location": "Polytechnique Montréal",
+    "compensation": "Yes",
+    "contact": "abolfazl.mohebbi@polymtl.ca"
+  }
+]

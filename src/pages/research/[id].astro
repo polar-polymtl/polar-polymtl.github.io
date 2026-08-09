@@ -1,0 +1,219 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { areaMap } from '../../data/areas.ts';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({
+    params: { id: p.id },
+    props: { project: p, all: projects },
+  }));
+}
+
+const { project, all } = Astro.props;
+const d = project.data;
+const meta = areaMap[d.area];
+const related = all
+  .filter((p) => p.data.area === d.area && p.id !== project.id)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+const [hero, ...gallery] = d.images;
+---
+
+<BaseLayout title={d.name} description={d.summary}>
+  <article>
+    <!-- Header -->
+    <section class="detail-hero" style={`--accent:${meta.color}`}>
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/research/">Research</a>
+          <span aria-hidden="true">/</span>
+          <a href={`/research/#${d.area}`}>{meta.name}</a>
+        </nav>
+        <div class="detail-head">
+          <span class="tag" style={`background:color-mix(in srgb, ${meta.color} 14%, transparent); color:${meta.color}`}>{meta.name}</span>
+          <h1>{d.name}</h1>
+          <p class="detail-title">{d.title}</p>
+          <p class="detail-summary lead">{d.summary}</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container detail-body">
+      <div class="detail-main">
+        {hero && (
+          <figure class="detail-figure">
+            <img src={hero} alt={`${d.name}`} width="1400" height="900" fetchpriority="high" />
+          </figure>
+        )}
+
+        <div class="prose">
+          {d.description.map((para) => <p>{para}</p>)}
+        </div>
+
+        {gallery.length > 0 && (
+          <div class="gallery">
+            {gallery.map((img, i) => (
+              <figure class="gallery__item">
+                <img src={img} alt={`${d.name} — figure ${i + 2}`} loading="lazy" decoding="async" width="700" height="500" />
+              </figure>
+            ))}
+          </div>
+        )}
+
+        {d.videos.length > 0 && (
+          <div class="videos">
+            <h2 class="detail-h2">Videos</h2>
+            {d.videos.map((v) => (
+              <figure class="video">
+                <div class="video__frame">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${v.id}`}
+                    title={v.title || `${d.name} video`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                {v.title && <figcaption>{v.title}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        )}
+
+        {d.publications.length > 0 && (
+          <div class="publications">
+            <h2 class="detail-h2">Publications</h2>
+            <ol class="pub-list">
+              {d.publications.map((pub) => (
+                <li>{pub.replace(/^\[\d+\]\s*/, '')}</li>
+              ))}
+            </ol>
+          </div>
+        )}
+      </div>
+
+      <aside class="detail-aside">
+        <div class="aside-card card">
+          <h2 class="aside-title">Research theme</h2>
+          <a class="aside-theme" href={`/research/#${d.area}`} style={`--accent:${meta.color}`}>
+            <span class="aside-dot" aria-hidden="true"></span>{meta.name}
+          </a>
+
+          {d.team.length > 0 && (
+            <>
+              <h2 class="aside-title">Contributors</h2>
+              <ul class="team-list">
+                {d.team.map((member) => (
+                  <li>
+                    {member.email
+                      ? <a class="team-name team-name--link" href={`mailto:${member.email}`}>{member.name}</a>
+                      : <span class="team-name">{member.name}</span>}
+                    {member.role && <span class="team-role">{member.role}</span>}
+                    {member.email && <a class="team-email" href={`mailto:${member.email}`}>{member.email}</a>}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          <a href="/opportunities/" class="btn btn--ghost aside-cta">Join this research</a>
+        </div>
+      </aside>
+    </div>
+
+    {related.length > 0 && (
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-head reveal"><h2>More in {meta.name}</h2></div>
+          <div class="grid grid--3">
+            {related.map((p) => (
+              <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} showArea={false} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <div class="container detail-back">
+      <a href="/research/" class="link-back">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All research
+      </a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .detail-hero {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, var(--bg)), var(--bg));
+    border-bottom: 1px solid var(--line);
+    padding-block: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .crumbs { display: flex; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .crumbs a { color: var(--muted); }
+  .crumbs a:hover { color: var(--accent); }
+  .detail-head { max-width: 60ch; }
+  .detail-head h1 { margin: 0.7rem 0 0.3rem; font-size: var(--step-4); }
+  .detail-title { font-family: var(--font-head); font-weight: 500; font-size: var(--step-1); color: var(--ink-soft); margin: 0 0 0.8rem; }
+  .detail-summary { margin: 0; color: var(--muted); }
+
+  .detail-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .detail-figure { margin: 0 0 2rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+  .detail-figure img { width: 100%; height: auto; display: block; }
+
+  .prose p { font-size: 1.03rem; line-height: 1.75; color: var(--ink-soft); margin: 0 0 1.2rem; }
+  .prose p:first-child::first-letter {
+    font-family: var(--font-head); font-weight: 700;
+    font-size: 3.1rem; line-height: 0.8;
+    float: left; margin: 0.1rem 0.6rem 0 0; color: var(--accent);
+  }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; margin-top: 2rem; }
+  .gallery__item { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--bg-soft); }
+  .gallery__item img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+  .detail-h2 { font-size: var(--step-2); margin: 2.5rem 0 1.1rem; }
+
+  .videos { margin-top: 1rem; }
+  .video { margin: 0 0 1.6rem; }
+  .video__frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); background: #000; }
+  .video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); }
+
+  .pub-list { margin: 0; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 0.9rem; }
+  .pub-list li { font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+
+  .team-name--link { color: var(--ink); font-weight: 600; }
+  .team-name--link:hover { color: var(--brand-600); }
+  .team-email { display: block; font-size: 0.8rem; word-break: break-all; margin-top: 0.1rem; }
+
+  .detail-aside { position: sticky; top: 6rem; }
+  .aside-card { padding: 1.6rem; }
+  .aside-title { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.7rem; }
+  .aside-title:not(:first-child) { margin-top: 1.5rem; }
+  .aside-theme { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-head); font-weight: 600; color: var(--accent); }
+  .aside-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+  .team-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  .team-name { display: block; font-weight: 600; font-size: 0.95rem; }
+  .team-role { display: block; font-size: 0.85rem; color: var(--muted); }
+  .aside-cta { margin-top: 1.6rem; width: 100%; justify-content: center; }
+
+  .detail-back { padding-block: 2.5rem; }
+  .link-back { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-head); font-weight: 600; }
+  .link-back svg { transition: transform 0.2s var(--ease); }
+  .link-back:hover svg { transform: translateX(-3px); }
+
+  @media (max-width: 860px) {
+    .detail-body { grid-template-columns: 1fr; }
+    .detail-aside { position: static; }
+  }
+</style>

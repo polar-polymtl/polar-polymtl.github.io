@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { areas } from '../../data/areas.ts';
+
+const projects = await getCollection('projects');
+const byArea = (key: string) =>
+  projects.filter((p) => p.data.area === key).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Research"
+  description="POLAR's research spans wearables and prosthetics, rehabilitation robots, neuromuscular control, and assistive technologies."
+>
+  <PageHero
+    eyebrow="Research"
+    title="Building technology that moves people forward."
+    lead="Our projects span four connected themes — from body-worn devices to the robots and neuromuscular science behind recovery."
+  >
+    <nav class="area-nav" aria-label="Research themes">
+      {areas.map((a) => (
+        <a href={`#${a.key}`} class="area-nav__chip" style={`--accent:${a.color}`}>
+          {a.name}<span>{byArea(a.key).length}</span>
+        </a>
+      ))}
+    </nav>
+  </PageHero>
+
+  {areas.map((area) => (
+    <section class="section area-section" id={area.key}>
+      <div class="container">
+        <div class="area-section__head reveal" style={`--accent:${area.color}`}>
+          <span class="area-section__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d={area.icon} /></svg>
+          </span>
+          <div>
+            <h2>{area.name}</h2>
+            <p class="muted">{area.description}</p>
+          </div>
+        </div>
+        <div class="grid grid--3">
+          {byArea(area.key).map((p) => (
+            <ProjectCard id={p.id} name={p.data.name} area={p.data.area} summary={p.data.summary} thumb={p.data.thumb} showArea={false} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+</BaseLayout>
+
+<style>
+  .area-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+  .area-nav__chip {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-head); font-weight: 600; font-size: 0.9rem;
+    color: var(--ink-soft);
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .area-nav__chip span {
+    font-size: 0.75rem;
+    color: #fff; background: var(--accent);
+    border-radius: 999px; padding: 0.05rem 0.5rem;
+  }
+  .area-nav__chip:hover { color: var(--accent); border-color: var(--accent); }
+
+  .area-section { scroll-margin-top: 5rem; }
+  .area-section:nth-of-type(even) { background: var(--bg-soft); }
+  .area-section__head {
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 70ch;
+  }
+  .area-section__icon {
+    flex: none; width: 52px; height: 52px;
+    border-radius: 14px; display: grid; place-items: center;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+  .area-section__head h2 { margin: 0 0 0.35rem; font-size: var(--step-3); }
+  .area-section__head p { margin: 0; }
+
+  .note-block {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 60ch;
+  }
+  .note-block strong { color: var(--ink-soft); }
+</style>

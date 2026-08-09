@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = 'POLAR — Polytechnique Lab for Assistive and Rehabilitation Technologies. We develop robotics and biomechatronics to help people restore, relearn, and augment human mobility.',
+  image = '/images/polar-logo.png',
+} = Astro.props;
+
+const siteName = 'POLAR Lab';
+const fullTitle = title ? `${title} · ${siteName}` : `${siteName} — Assistive & Rehabilitation Technologies`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      // Mark JS as active so scroll-reveal styles apply. Without this class
+      // (no JS), all content renders fully visible.
+      document.documentElement.classList.add('js');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <meta name="theme-color" content="#12467b" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Reveal-on-scroll for elements marked with .reveal.
+      // Uses scroll + requestAnimationFrame (rather than IntersectionObserver)
+      // for reliable behaviour across environments; content is never left
+      // hidden because .reveal is only dimmed when html.js is present.
+      const els = Array.from(document.querySelectorAll('.reveal'));
+      if (els.length) {
+        const pending = new Set(els);
+        const reveal = () => {
+          const trigger = window.innerHeight * 0.92;
+          pending.forEach((el) => {
+            if (el.getBoundingClientRect().top < trigger) {
+              el.classList.add('is-visible');
+              pending.delete(el);
+            }
+          });
+          if (pending.size === 0) {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+          }
+        };
+        let ticking = false;
+        const onScroll = () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            reveal();
+            ticking = false;
+          });
+        };
+        reveal();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        // Re-check after web fonts settle (layout can shift positions).
+        window.setTimeout(reveal, 400);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(reveal);
+        // Absolute safety net: never leave content hidden. If the visitor
+        // hasn't scrolled after a few seconds (or scroll events never fire),
+        // reveal everything that remains.
+        window.setTimeout(() => {
+          pending.forEach((el) => el.classList.add('is-visible'));
+          pending.clear();
+        }, 4000);
+      }
+    </script>
+  </body>
+</html>

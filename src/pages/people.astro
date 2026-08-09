@@ -1,0 +1,212 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PersonCard from '../components/PersonCard.astro';
+
+const people = await getCollection('people');
+const inGroup = (g: string) =>
+  people.filter((p) => p.data.group === g).sort((a, b) => a.data.order - b.data.order);
+
+const director = inGroup('director')[0];
+
+// Sections rendered as full cards.
+const cardSections = [
+  { key: 'postdoc', title: 'Postdoctoral Researchers' },
+  { key: 'grad', title: 'Graduate Students' },
+  { key: 'cosupervised', title: 'Co-supervised Students' },
+  { key: 'undergrad', title: 'Undergraduate Researchers' },
+];
+
+// Alumni sections rendered as a compact roster.
+const alumniSections = [
+  { key: 'alumni-grad', title: 'Graduate Students & Postdocs' },
+  { key: 'intern', title: 'Graduate Interns & Visiting Researchers' },
+  { key: 'alumni-undergrad', title: 'Undergraduate Researchers' },
+];
+
+// Social icons for the compact alumni list.
+const ICONS: Record<string, { label: string; svg: string }> = {
+  scholar: { label: 'Google Scholar', svg: '<path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2Z"/><path d="M6 12.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8l-6 3.3-6-3.3Z"/>' },
+  linkedin: { label: 'LinkedIn', svg: '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05a4.2 4.2 0 0 1 3.78-2.08c4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.44c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.41-2.08 2.87V21h-4V9Z"/>' },
+  x: { label: 'X', svg: '<path d="M18.9 2H22l-7.3 8.34L23.3 22h-6.6l-5.17-6.76L5.6 22H2.5l7.8-8.92L1 2h6.77l4.67 6.18L18.9 2Zm-1.16 18h1.83L7.34 3.9H5.38L17.74 20Z"/>' },
+  github: { label: 'GitHub', svg: '<path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>' },
+};
+const linksOf = (l?: Record<string, string>) =>
+  l ? (Object.keys(ICONS) as string[]).filter((k) => l[k]).map((k) => ({ href: l[k], ...ICONS[k] })) : [];
+---
+
+<BaseLayout title="People" description="The researchers, students, and alumni of the POLAR Lab at Polytechnique Montréal.">
+  <PageHero
+    eyebrow="People"
+    title="The people behind POLAR."
+    lead="A community of researchers and students from Montréal and around the world, working across robotics, biomechatronics, and rehabilitation engineering."
+  />
+
+  <!-- Group photo banner -->
+  <section class="people-banner-section">
+    <div class="container">
+      <figure class="people-banner reveal">
+        <img src="/images/people-banner.webp" alt="The POLAR Lab team" width="1800" height="1243" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Director -->
+  {director && (
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow reveal">Lab Director</span>
+        <div class="director-grid">
+          <PersonCard
+            name={director.data.name}
+            role={director.data.role}
+            institution={director.data.institution}
+            note={director.data.note}
+            email={director.data.email}
+            photo={director.data.photo}
+            links={director.data.links}
+            featured
+          />
+          <div class="director-note reveal">
+            <p class="lead">
+              POLAR is led by <strong>Prof. Abolfazl Mohebbi</strong>, Associate Professor in
+              Mechanical and Biomedical Engineering at Polytechnique Montréal and holder of the
+              iTMT Research Chair in Rehabilitation and Assistive Technologies.
+            </p>
+            <p class="muted">
+              His research bridges robotics, biomechatronics, and clinical rehabilitation — building
+              technologies that restore and augment human movement.
+            </p>
+            <a href="mailto:abolfazl.mohebbi@polymtl.ca" class="btn btn--ghost">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Current members (cards) -->
+  {cardSections.map((sec) => {
+    const members = inGroup(sec.key);
+    if (!members.length) return null;
+    return (
+      <section class="section section--soft members-section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>{sec.title}</h2>
+          </div>
+          <div class="grid grid--3">
+            {members.map((p) => (
+              <PersonCard
+                name={p.data.name}
+                role={p.data.role}
+                institution={p.data.institution}
+                years={p.data.years}
+                note={p.data.note}
+                photo={p.data.photo}
+                links={p.data.links}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Alumni (compact roster) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Alumni</span>
+        <h2>Where it started for many.</h2>
+        <p>Former members who have moved on to graduate programs, industry, and research around the world.</p>
+      </div>
+      {alumniSections.map((sec) => {
+        const members = inGroup(sec.key);
+        if (!members.length) return null;
+        return (
+          <div class="alumni-block reveal">
+            <h3 class="alumni-block__title">{sec.title}</h3>
+            <ul class="alumni-list">
+              {members.map((p) => (
+                <li class="alumni-item">
+                  <span class="alumni-item__name">
+                    {p.data.name}
+                    {linksOf(p.data.links).map((s) => (
+                      <a href={s.href} class="alumni-link" target="_blank" rel="noopener" aria-label={`${p.data.name} on ${s.label}`}>
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" set:html={s.svg} />
+                      </a>
+                    ))}
+                  </span>
+                  <span class="alumni-item__role">{p.data.role}</span>
+                  <span class="alumni-item__inst">{p.data.institution}</span>
+                  {p.data.years && <span class="alumni-item__years">{p.data.years}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .people-banner-section { padding-block: clamp(1.5rem, 3vw, 2.5rem); }
+  .people-banner { margin: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+  .people-banner img { width: 100%; height: auto; display: block; }
+
+  .alumni-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; margin-left: 0.35rem;
+    border-radius: 6px; vertical-align: middle;
+    color: var(--muted); background: var(--bg-soft); border: 1px solid var(--line);
+    transition: color 0.15s var(--ease), background 0.15s var(--ease);
+  }
+  .alumni-link:hover { color: #fff; background: var(--brand-500); border-color: var(--brand-500); }
+
+  .director-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .director-note p { margin-bottom: 1rem; }
+
+  .members-section:nth-of-type(even) { background: var(--bg); }
+
+  .alumni-block { margin-bottom: 2.5rem; }
+  .alumni-block__title {
+    font-size: 1.05rem;
+    color: var(--brand-600);
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--line);
+    margin-bottom: 0.5rem;
+  }
+  .alumni-list { list-style: none; margin: 0; padding: 0; }
+  .alumni-item {
+    display: grid;
+    grid-template-columns: 1.3fr 1.7fr 1.6fr auto;
+    gap: 0.5rem 1.25rem;
+    align-items: baseline;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .alumni-item__name { font-weight: 600; color: var(--ink); }
+  .alumni-item__role { color: var(--ink-soft); font-size: 0.92rem; }
+  .alumni-item__inst { color: var(--muted); font-size: 0.88rem; }
+  .alumni-item__years {
+    font-family: var(--font-head); font-weight: 600;
+    font-size: 0.82rem; color: var(--muted);
+    white-space: nowrap; text-align: right;
+  }
+
+  @media (max-width: 780px) {
+    .director-grid { grid-template-columns: 1fr; }
+    .alumni-item { grid-template-columns: 1fr auto; gap: 0.15rem 1rem; }
+    .alumni-item__role { grid-column: 1 / -1; }
+    .alumni-item__inst { grid-column: 1; color: var(--muted); }
+    .alumni-item__years { grid-column: 2; grid-row: 3; }
+  }
+</style>

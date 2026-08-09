@@ -1,0 +1,74 @@
+---
+import type { Area } from '../data/areas.ts';
+
+interface Props {
+  area: Area;
+  count?: number;
+}
+const { area, count } = Astro.props;
+---
+
+<a class="area card reveal" href={`/research/#${area.key}`} style={`--accent:${area.color}`}>
+  <div class="area__media">
+    <img src={area.image} alt={area.name} loading="lazy" decoding="async" width="700" height="450" />
+    <span class="area__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d={area.icon} />
+      </svg>
+    </span>
+  </div>
+  <div class="area__body">
+    <h3 class="area__name">{area.name}</h3>
+    <p class="area__desc">{area.description}</p>
+    <span class="area__link">
+      {count != null ? `${count} project${count === 1 ? '' : 's'}` : 'Explore'}
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </div>
+</a>
+
+<style>
+  .area {
+    display: flex;
+    flex-direction: column;
+    color: var(--ink);
+    height: 100%;
+    overflow: hidden;
+  }
+  .area:hover { color: var(--ink); }
+  .area__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--accent) 12%, var(--bg-soft));
+  }
+  .area__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease);
+  }
+  .area:hover .area__media img { transform: scale(1.05); }
+  .area__icon {
+    position: absolute; left: 1rem; bottom: 1rem;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: grid; place-items: center;
+    color: #fff;
+    background: color-mix(in srgb, var(--accent) 92%, #000 8%);
+    box-shadow: 0 4px 14px rgba(16,33,60,0.3);
+  }
+  .area__body {
+    display: flex; flex-direction: column; gap: 0.7rem;
+    padding: 1.4rem 1.5rem 1.6rem;
+    flex: 1;
+  }
+  .area__name { margin: 0; font-size: 1.25rem; }
+  .area__desc { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
+  .area__link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--font-head); font-weight: 600; font-size: 0.9rem;
+    color: var(--accent);
+  }
+  .area__link svg { transition: transform 0.2s var(--ease); }
+  .area:hover .area__link svg { transform: translateX(4px); }
+</style>

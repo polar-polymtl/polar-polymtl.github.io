@@ -1,0 +1,704 @@
+[
+  {
+    "id": "abolfazl-mohebbi",
+    "name": "Abolfazl Mohebbi, PhD, P.Eng.",
+    "role": "Lab Director · Associate Professor, Mechanical & Biomedical Engineering",
+    "group": "director",
+    "institution": "Polytechnique Montréal",
+    "note": "iTMT Research Chair in Rehabilitation and Assistive Technologies",
+    "email": "abolfazl.mohebbi@polymtl.ca",
+    "order": 1,
+    "photo": "/images/people/abolfazl-mohebbi.webp",
+    "links": {
+      "scholar": "https://scholar.google.ca/citations?user=LcUZkGoAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/abolfazl-mohebbi/",
+      "x": "https://x.com/POLAR_PolyMTL",
+      "github": "http://abolfazlmohebbi.github.io"
+    }
+  },
+  {
+    "id": "leila-pezeshki",
+    "name": "Leila Pezeshki, PhD",
+    "role": "Impact+ Postdoctoral Fellow, Mechanical Engineering",
+    "group": "postdoc",
+    "institution": "Polytechnique Montréal",
+    "order": 1,
+    "photo": "/images/people/leila-pezeshki.webp",
+    "links": {
+      "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=leilaalsadat+pezeshki&btnG=",
+      "linkedin": "https://www.linkedin.com/in/leila-pezeshki/"
+    }
+  },
+  {
+    "id": "amandine-gesta",
+    "name": "Amandine Gesta",
+    "role": "PhD Candidate, Biomedical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2022–2026",
+    "order": 1,
+    "photo": "/images/people/amandine-gesta.webp",
+    "links": {
+      "scholar": "https://scholar.google.ca/citations?user=sDw0M0UAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/amandinegesta/"
+    }
+  },
+  {
+    "id": "armineh-rahmanian",
+    "name": "Armineh Rahmanian",
+    "role": "PhD Candidate, Mechanical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2023–2027",
+    "order": 2,
+    "photo": "/images/people/armineh-rahmanian.webp",
+    "links": {
+      "scholar": "https://scholar.google.ca/citations?user=_sHYmwEAAAAJ&hl=en&oi=ao",
+      "linkedin": "https://www.linkedin.com/in/armineh-r-a4b7082b0/"
+    }
+  },
+  {
+    "id": "aiman-feghoul",
+    "name": "Aiman Feghoul",
+    "role": "PhD Student, Biomedical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2024–2028",
+    "order": 3,
+    "photo": "/images/people/aiman-feghoul.webp",
+    "links": {
+      "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=aiman+feghoul&btnG=",
+      "linkedin": "https://www.linkedin.com/in/a%C3%AFman-feghoul-b60188159/"
+    }
+  },
+  {
+    "id": "thomas-imbeault-nepton",
+    "name": "Thomas Imbeault-Nepton",
+    "role": "PhD Student, Biomedical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2025–2029",
+    "order": 4,
+    "photo": "/images/people/thomas-imbeault-nepton.webp",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/thomas-imbeault-nepton-959562375/"
+    }
+  },
+  {
+    "id": "parsa-maghsoudloo",
+    "name": "Parsa Maghsoudloo",
+    "role": "MSc Student, Biomedical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2024–2026",
+    "order": 5,
+    "photo": "/images/people/parsa-maghsoudloo.webp",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/parsa-maghsoudloo-bb6783192/"
+    }
+  },
+  {
+    "id": "mena-samir-abouseffien",
+    "name": "Mena Samir Abouseffien",
+    "role": "MSc Student, Mechanical Engineering",
+    "group": "grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2025–2027",
+    "order": 6,
+    "photo": "/images/people/mena-samir-abouseffien.webp",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/mena-abouseffien-b14100257/"
+    }
+  },
+  {
+    "id": "maria-haddad",
+    "name": "Maria Haddad",
+    "role": "PhD, Quantitative Life Sciences",
+    "group": "cosupervised",
+    "institution": "McGill University",
+    "years": "2025–2026",
+    "order": 1
+  },
+  {
+    "id": "ahmed-mouloudj",
+    "name": "Ahmed Mouloudj",
+    "role": "MSc, Mechanical Engineering",
+    "group": "cosupervised",
+    "institution": "Polytechnique Montréal",
+    "years": "2025–2027",
+    "order": 2
+  },
+  {
+    "id": "hubert-laflamme",
+    "name": "Hubert Laflamme",
+    "role": "MSc, Mechanical Engineering",
+    "group": "cosupervised",
+    "institution": "Polytechnique Montréal",
+    "years": "2024–2026",
+    "order": 3
+  },
+  {
+    "id": "remi-chayer",
+    "name": "Rémi Chayer",
+    "role": "Undergraduate Researcher",
+    "group": "undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2026",
+    "order": 1
+  },
+  {
+    "id": "jana-mahmoud",
+    "name": "Jana Mahmoud",
+    "role": "Undergraduate Researcher",
+    "group": "undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2026",
+    "order": 2
+  },
+  {
+    "id": "patrick-deschambault",
+    "name": "Patrick Deschambault",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2025–2026",
+    "order": 1,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/amir-ghiasi-noughaby/"
+    }
+  },
+  {
+    "id": "amir-ghiasi-noughaby",
+    "name": "Amir Ghiasi Noughaby",
+    "role": "PhD, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2021–2026",
+    "order": 2,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/olivier-lecompte-764905132/"
+    }
+  },
+  {
+    "id": "olivier-lecompte",
+    "name": "Olivier Lecompte",
+    "role": "PhD, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2022–2026",
+    "order": 3,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/aghil%C3%A8s-yousfi-419003367/"
+    }
+  },
+  {
+    "id": "aghiles-yousfi",
+    "name": "Aghiles Yousfi",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2023–2026",
+    "order": 4
+  },
+  {
+    "id": "seyed-ehsan-marjani",
+    "name": "Seyed Ehsan Marjani",
+    "role": "Postdoc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2025–2026",
+    "order": 5,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/anne-charlotte-desbarbieux/"
+    }
+  },
+  {
+    "id": "anne-charlotte-desbarbieux",
+    "name": "Anne-Charlotte Desbarbieux",
+    "role": "MSc Student, Biomedical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2023–2025",
+    "order": 6,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/louis-simon-guay-66899a108/"
+    }
+  },
+  {
+    "id": "louis-simon-guay",
+    "name": "Louis-Simon Guay",
+    "role": "MSc Student, Biomedical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2022–2025",
+    "order": 7,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/stella-maschio-793a90354/"
+    }
+  },
+  {
+    "id": "stella-maschio",
+    "name": "Stella Maschio",
+    "role": "MSc, Information Engineering",
+    "group": "alumni-grad",
+    "institution": "Harvard Medical School · University of Padova, Italy",
+    "years": "2024–2025",
+    "order": 8
+  },
+  {
+    "id": "leilasadat-pezeshki",
+    "name": "Leilasadat Pezeshki",
+    "role": "PhD, Mechanical Engineering · Graduate Visiting Researcher",
+    "group": "alumni-grad",
+    "institution": "Isfahan University of Technology",
+    "years": "2023–2025",
+    "order": 9
+  },
+  {
+    "id": "nishanth-rajkumar",
+    "name": "Nishanth Rajkumar",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Concordia University",
+    "years": "2022–2024",
+    "order": 10
+  },
+  {
+    "id": "carlos-eduardo-maia-de-souza",
+    "name": "Carlos Eduardo Maia de Souza",
+    "role": "PhD, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2020–2024",
+    "order": 11,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ali-rouzbayani/"
+    }
+  },
+  {
+    "id": "ali-rouzbayani",
+    "name": "Ali Rouzbayani",
+    "role": "MSc Student, Biomedical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2021–2024",
+    "order": 12
+  },
+  {
+    "id": "maryam-ashkbous-esfahani",
+    "name": "Maryam Ashkbous Esfahani",
+    "role": "PhD Student, Industrial Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2022–2024",
+    "order": 13,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ayoub-behidj-0837531a1/"
+    }
+  },
+  {
+    "id": "ayoub-behidj",
+    "name": "Ayoub Behidj",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2020–2023",
+    "order": 14,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/shayan-ghiasvand/"
+    }
+  },
+  {
+    "id": "shayan-ghiasvand",
+    "name": "Shayan Ghiasvand",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Concordia University",
+    "years": "2020–2023",
+    "order": 15
+  },
+  {
+    "id": "reza-norouzzadeh",
+    "name": "Reza Norouzzadeh",
+    "role": "PhD, Mechanical Engineering · Graduate Visiting Researcher",
+    "group": "alumni-grad",
+    "institution": "Iran",
+    "years": "2022–2023",
+    "order": 16,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/olibd/"
+    }
+  },
+  {
+    "id": "olivier-brochu-dufour",
+    "name": "Olivier Brochu Dufour",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2020–2021",
+    "order": 17,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/malaury-fouet-68801b224/?locale=en"
+    }
+  },
+  {
+    "id": "malaury-fouet",
+    "name": "Malaury Fouet",
+    "role": "MSc, Industrial Engineering for Aeronautics & Space",
+    "group": "intern",
+    "institution": "ISAE-Supaero, Toulouse, France",
+    "years": "2025",
+    "order": 1,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/hend-afli/"
+    }
+  },
+  {
+    "id": "hend-afli",
+    "name": "Hend Afli",
+    "role": "MSc, Mechanical Engineering",
+    "group": "intern",
+    "institution": "Tunisia Polytechnic School, Tunisia",
+    "years": "2024",
+    "order": 2
+  },
+  {
+    "id": "selliya-ravanthiramohan",
+    "name": "Selliya Ravanthiramohan",
+    "role": "MSc, Engineering · Graduate Visiting Researcher",
+    "group": "intern",
+    "institution": "EPF Engineering School, Troyes, France",
+    "years": "2023",
+    "order": 3,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/jean-louis-blervacque/"
+    }
+  },
+  {
+    "id": "jean-louis-blervacque",
+    "name": "Jean-Louis Blervacque",
+    "role": "MSc, Mechanical Engineering · MITACS Visiting Researcher",
+    "group": "intern",
+    "institution": "Junia ISEN, France",
+    "years": "2023",
+    "order": 4,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/caitlin-chee-sl/"
+    }
+  },
+  {
+    "id": "caitlin-chee",
+    "name": "Caitlin Chee",
+    "role": "M.Eng, Product Design Engineering · MITACS Visiting Researcher",
+    "group": "intern",
+    "institution": "Queen’s University Belfast, Ireland",
+    "years": "2023",
+    "order": 5,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/sophia-taddei-5a1738218/"
+    }
+  },
+  {
+    "id": "sophia-taddei",
+    "name": "Sophia Taddei",
+    "role": "MSc, Biomedical Engineering · Graduate Visiting Researcher",
+    "group": "intern",
+    "institution": "École Polytechnique, Paris, France",
+    "years": "2023",
+    "order": 6
+  },
+  {
+    "id": "valentin-obrier",
+    "name": "Valentin Obrier",
+    "role": "MSc, Biomedical Engineering · Graduate Visiting Researcher",
+    "group": "intern",
+    "institution": "CESI École d’ingénieurs, France",
+    "years": "2022",
+    "order": 7,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/alice-roustan/"
+    }
+  },
+  {
+    "id": "alice-roustan",
+    "name": "Alice Roustan",
+    "role": "MSc, Biomedical Engineering · Graduate Visiting Researcher",
+    "group": "intern",
+    "institution": "Polytech Lyon, France",
+    "years": "2022",
+    "order": 8,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/sepideh-lashkari/"
+    }
+  },
+  {
+    "id": "sepideh-lashkari",
+    "name": "Sepideh Lashkari",
+    "role": "MSc, Biomedical Engineering · Graduate Visiting Researcher",
+    "group": "intern",
+    "institution": "Polytech Lyon, France",
+    "years": "2022",
+    "order": 9,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/anna-diop-b68913166/"
+    }
+  },
+  {
+    "id": "anna-diop",
+    "name": "Anna Diop",
+    "role": "MSc, Life Sciences Engineering",
+    "group": "intern",
+    "institution": "EPFL · Harvard Medical School, USA",
+    "years": "2022",
+    "order": 10,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/gabrielle-marion-33585333a/"
+    }
+  },
+  {
+    "id": "gabrielle-marion",
+    "name": "Gabrielle Marion",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2025–2026",
+    "order": 1,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/maelys-carre/"
+    }
+  },
+  {
+    "id": "maelys-carre",
+    "name": "Maelys Carré",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2025–2026",
+    "order": 2
+  },
+  {
+    "id": "ophelie-senechal",
+    "name": "Ophélie Sénéchal",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2025–2026",
+    "order": 3,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/thomas-houlachi/"
+    }
+  },
+  {
+    "id": "thomas-houlachi",
+    "name": "Thomas Houlachi",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2025",
+    "order": 4,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/jacobduncan876/"
+    }
+  },
+  {
+    "id": "jacob-duncan",
+    "name": "Jacob Duncan",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Memorial University of Newfoundland, Canada",
+    "years": "2025",
+    "order": 5
+  },
+  {
+    "id": "andrea-paulina-centeno-munoz",
+    "name": "Andrea Paulina Centeno Munoz",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Universidad de las Américas Puebla, Mexico",
+    "years": "2025",
+    "order": 6,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/markrrjohnson/"
+    }
+  },
+  {
+    "id": "mark-johnson",
+    "name": "Mark Johnson",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Memorial University of Newfoundland, Canada",
+    "years": "2025",
+    "order": 7
+  },
+  {
+    "id": "mena-samir-kamal-abouseffien",
+    "name": "Mena Samir Kamal Abouseffien",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2024",
+    "order": 8,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/jongann-lee/"
+    }
+  },
+  {
+    "id": "jongann-lee",
+    "name": "Jongann Lee",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Seoul National University, South Korea",
+    "years": "2024",
+    "order": 9,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ikram-beghdadi-28042624a/"
+    }
+  },
+  {
+    "id": "ikram-beghdadi",
+    "name": "Ikram Beghdadi",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal, Canada",
+    "years": "2024",
+    "order": 10
+  },
+  {
+    "id": "raul-aleksander-martell-esparza",
+    "name": "Raul Aleksander Martell Esparza",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Universidad Tecnológica El Retoño, Mexico",
+    "years": "2024",
+    "order": 11
+  },
+  {
+    "id": "chi-wei-wen",
+    "name": "Chi-Wei Wen",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "National Taiwan University, Taiwan",
+    "years": "2024",
+    "order": 12,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/nadia-houti-379125215/"
+    }
+  },
+  {
+    "id": "nadia-houti",
+    "name": "Nadia Houti",
+    "role": "Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Nanyang Technological University, Singapore",
+    "years": "2023",
+    "order": 13,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/flora-dommanget-207bb81b9/"
+    }
+  },
+  {
+    "id": "flora-dommanget",
+    "name": "Flora Dommanget",
+    "role": "NSERC Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2023",
+    "order": 14,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/sarah-ora/?locale=en"
+    }
+  },
+  {
+    "id": "sarah-lambert",
+    "name": "Sarah Lambert",
+    "role": "MITACS Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2022",
+    "order": 15,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/imane-r-b24359225/"
+    }
+  },
+  {
+    "id": "imane-rafi",
+    "name": "Imane Rafi",
+    "role": "MITACS Globalink Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "Polytech Montpellier, France",
+    "years": "2022",
+    "order": 16
+  },
+  {
+    "id": "aditya-jeppu",
+    "name": "Aditya Jeppu",
+    "role": "MITACS Globalink Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "RV College of Engineering, India",
+    "years": "2022",
+    "order": 17,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/chetan-pathrabe/"
+    }
+  },
+  {
+    "id": "chetan-pathrabe",
+    "name": "Chetan Pathrabe",
+    "role": "MITACS Globalink Undergraduate Researcher",
+    "group": "alumni-undergrad",
+    "institution": "College of Engineering, Pune, India",
+    "years": "2022",
+    "order": 18,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+    }
+  },
+  {
+    "id": "benjamin-saglietto",
+    "name": "Benjamin Saglietto",
+    "role": "BSc, Mechanical Engineering",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2021–2022",
+    "order": 19,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/iris-toye/"
+    }
+  },
+  {
+    "id": "iris-toye",
+    "name": "Iris Toye",
+    "role": "BSc, Life Science Engineering",
+    "group": "alumni-undergrad",
+    "institution": "EPFL, Switzerland",
+    "years": "2021",
+    "order": 20,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+    }
+  },
+  {
+    "id": "jean-simon-houle",
+    "name": "Jean-Simon Houle",
+    "role": "BSc, Biomedical Engineering",
+    "group": "alumni-undergrad",
+    "institution": "Polytechnique Montréal",
+    "years": "2021",
+    "order": 21,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/praneshgopal/"
+    }
+  },
+  {
+    "id": "pranesh-gopal",
+    "name": "Pranesh Gopal",
+    "role": "BSc, Mechatronics Engineering",
+    "group": "alumni-undergrad",
+    "institution": "Manipal Institute of Technology, India",
+    "years": "2021",
+    "order": 22,
+    "links": {
+      "linkedin": "https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fpolar-polymtl&sa=D&sntz=1&usg=AOvVaw14iwirZTtR2xmMa4R8jU7Z"
+    }
+  }
+]
