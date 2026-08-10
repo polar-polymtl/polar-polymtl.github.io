@@ -112,6 +112,16 @@ Each person is one block like this:
 - **`links`** is optional — include only the ones the person has (scholar / linkedin / x / github). Icons appear automatically.
 - To **remove** someone, delete their whole block (and the comma before it).
 
+### The photo carousel (bottom of the People page)
+
+At the very bottom of the People page there's a sliding **photo gallery**. It simply shows **every image in the `public/images/gallery/` folder**, in filename order — no code or list to edit.
+
+- **To add photos:** drop image files (`.webp` or `.jpg`) into `public/images/gallery/`. They appear automatically. Tip: name them so they sort the way you want, e.g. `01-team.webp`, `02-lab.webp`, `03-demo.webp`.
+- **To remove or reorder:** delete files, or rename them (the carousel sorts by filename).
+- Visitors can click any photo to view it **full size**. If the whole folder is empty, the gallery section just doesn't show.
+
+> Big photos straight off a phone/camera are heavy. For a fast site, resize them to about 1200px wide and save as `.webp` before dropping them in (any image tool or an online converter can do this).
+
 ---
 
 ## 3. Editing research projects

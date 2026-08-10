@@ -18,6 +18,11 @@ const { project, all, lang = 'en' } = Astro.props as { project: any; all: any[];
 const t = useTranslations(lang);
 const d = localizeProject(project.id, project.data, lang);
 const meta = localizeArea(areaMap[d.area], lang);
+
+// Show the lab director (Prof. Mohebbi) last, after the students.
+const isDirector = (m: { name?: string; email?: string }) =>
+  m.email === 'abolfazl.mohebbi@polymtl.ca' || /Mohebbi/i.test(m.name ?? '');
+const team = [...d.team.filter((m) => !isDirector(m)), ...d.team.filter(isDirector)];
 const related = all
   .filter((p) => p.data.area === d.area && p.id !== project.id)
   .sort((a, b) => a.data.order - b.data.order)
@@ -48,7 +53,7 @@ const [hero, ...gallery] = d.images;
       <div class="detail-main">
         {hero && (
           <figure class="detail-figure">
-            <img src={hero} alt={`${d.name}`} width="1400" height="900" fetchpriority="high" />
+            <img src={hero} alt={`${d.name}`} width="1400" height="900" fetchpriority="high" data-zoomable />
           </figure>
         )}
 
@@ -60,7 +65,7 @@ const [hero, ...gallery] = d.images;
           <div class="gallery">
             {gallery.map((img, i) => (
               <figure class="gallery__item">
-                <img src={img} alt={`${d.name} — figure ${i + 2}`} loading="lazy" decoding="async" width="700" height="500" />
+                <img src={img} alt={`${d.name} — figure ${i + 2}`} loading="lazy" decoding="async" width="700" height="500" data-zoomable />
               </figure>
             ))}
           </div>
@@ -105,11 +110,11 @@ const [hero, ...gallery] = d.images;
             <span class="aside-dot" aria-hidden="true"></span>{meta.name}
           </a>
 
-          {d.team.length > 0 && (
+          {team.length > 0 && (
             <>
               <h2 class="aside-title">{t('project.contributors')}</h2>
               <ul class="team-list">
-                {d.team.map((member) => (
+                {team.map((member) => (
                   <li>
                     {member.email
                       ? <a class="team-name team-name--link" href={`mailto:${member.email}`}>{member.name}</a>

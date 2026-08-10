@@ -1,13 +1,25 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PersonCard from '../components/PersonCard.astro';
+import Carousel from '../components/Carousel.astro';
 import { useTranslations, type Lang, type UIKey } from '../i18n/ui';
 import { localizeRole, localizeNote } from '../i18n/content';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const t = useTranslations(lang);
+
+// Gallery carousel: every image in public/images/gallery/ (drop files in to add).
+const galleryDir = path.join(process.cwd(), 'public', 'images', 'gallery');
+const galleryImages = fs.existsSync(galleryDir)
+  ? fs.readdirSync(galleryDir)
+      .filter((f) => /\.(webp|jpe?g|png|avif)$/i.test(f))
+      .sort()
+      .map((f) => ({ src: `/images/gallery/${f}`, alt: 'POLAR Lab' }))
+  : [];
 
 const people = await getCollection('people');
 const inGroup = (g: string) =>
@@ -143,6 +155,22 @@ const linksOf = (l?: Record<string, string>) =>
       })}
     </div>
   </section>
+
+  <!-- Photo gallery carousel -->
+  {galleryImages.length > 0 && (
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">{t('people.gallery.eyebrow')}</span>
+          <h2>{t('people.gallery.title')}</h2>
+          <p>{t('people.gallery.lead')}</p>
+        </div>
+        <div class="reveal">
+          <Carousel images={galleryImages} lang={lang} />
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
 
 <style>

@@ -249,6 +249,45 @@ hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
 
+/* ---------- Lightbox (full-size image viewer) ---------- */
+img[data-zoomable] { cursor: zoom-in; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(8, 15, 28, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.lightbox[hidden] { display: none; }
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+}
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 46px;
+  height: 46px;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease);
+}
+.lightbox__close:hover { background: rgba(255, 255, 255, 0.28); }
+
 /* ---------- Accessibility ---------- */
 .visually-hidden {
   position: absolute;

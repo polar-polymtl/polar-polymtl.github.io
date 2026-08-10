@@ -97,6 +97,9 @@ export const ui = {
     'people.alumni.grad': 'Graduate Students & Postdocs',
     'people.alumni.intern': 'Graduate Interns & Visiting Researchers',
     'people.alumni.undergrad': 'Undergraduate Researchers',
+    'people.gallery.eyebrow': 'Gallery',
+    'people.gallery.title': 'Life at the lab.',
+    'people.gallery.lead': 'Moments from the lab — projects, experiments, and the people who make them happen.',
 
     // Opportunities
     'opps.eyebrow': 'Opportunities',
@@ -256,6 +259,9 @@ export const ui = {
     'people.alumni.grad': 'Étudiants aux cycles supérieurs et postdoctorants',
     'people.alumni.intern': 'Stagiaires et chercheurs invités',
     'people.alumni.undergrad': 'Stagiaires de premier cycle',
+    'people.gallery.eyebrow': 'Galerie',
+    'people.gallery.title': 'La vie au laboratoire.',
+    'people.gallery.lead': 'Des moments du labo — projets, expériences et les personnes qui les réalisent.',
 
     // Opportunités
     'opps.eyebrow': 'Opportunités',

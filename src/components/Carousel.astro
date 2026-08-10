@@ -1,0 +1,95 @@
+---
+import type { Lang } from '../i18n/ui';
+interface Props {
+  images: { src: string; alt?: string }[];
+  lang?: Lang;
+}
+const { images, lang = 'en' } = Astro.props;
+const prev = lang === 'fr' ? 'Image précédente' : 'Previous image';
+const next = lang === 'fr' ? 'Image suivante' : 'Next image';
+---
+
+{images.length > 0 && (
+  <div class="carousel" data-carousel>
+    <div class="carousel__track" data-carousel-track>
+      {images.map((img) => (
+        <figure class="carousel__slide">
+          <img src={img.src} alt={img.alt ?? ''} loading="lazy" decoding="async" data-zoomable />
+        </figure>
+      ))}
+    </div>
+    <button class="carousel__btn carousel__btn--prev" type="button" data-carousel-prev aria-label={prev}>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="carousel__btn carousel__btn--next" type="button" data-carousel-next aria-label={next}>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+)}
+
+<style>
+  .carousel { position: relative; }
+  .carousel__track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel__slide {
+    flex: 0 0 auto;
+    width: min(85%, 460px);
+    margin: 0;
+    scroll-snap-align: center;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    box-shadow: var(--shadow-sm);
+  }
+  .carousel__slide img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ink);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-md);
+    transition: background 0.15s var(--ease), color 0.15s var(--ease);
+  }
+  .carousel__btn:hover { background: #fff; color: var(--brand-600); }
+  .carousel__btn--prev { left: -8px; }
+  .carousel__btn--next { right: -8px; }
+  @media (max-width: 640px) {
+    .carousel__slide { width: 88%; }
+    .carousel__btn { display: none; } /* swipe on touch devices */
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-carousel]').forEach((c) => {
+    const track = c.querySelector('[data-carousel-track]') as HTMLElement | null;
+    if (!track) return;
+    const step = () => {
+      const slide = track.querySelector('.carousel__slide') as HTMLElement | null;
+      return slide ? slide.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+    };
+    c.querySelector('[data-carousel-prev]')?.addEventListener('click', () => track.scrollBy({ left: -step() }));
+    c.querySelector('[data-carousel-next]')?.addEventListener('click', () => track.scrollBy({ left: step() }));
+  });
+</script>
