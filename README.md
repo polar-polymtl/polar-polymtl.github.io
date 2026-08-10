@@ -209,16 +209,21 @@ Where the French text lives:
 
 The long **descriptions** on project pages are also translated to French. They were drafted with **Microsoft Azure Translator** by a helper script and stored in `src/data/i18n/projects.fr.json` (each project's `"description"` list). Like all the French, you can edit any wording by hand — a machine draft always benefits from your expert eye on technical terms (e.g. it may write *"exosquelettes assistatifs"* where you'd prefer *"exosquelettes d'assistance"*).
 
-When you **add a new project** or **change an English description**, get the French in one of two ways:
+> **Important — the French does NOT update automatically.** Pushing to GitHub only rebuilds the site with whatever text is already in the files; it never translates. And the helper script only fills in French that is **missing** (so it can never overwrite French you've edited). One consequence to remember:
 
-- **By hand:** open `src/data/i18n/projects.fr.json`, find the project by its `id`, and add/edit its `"description"` list of French paragraphs. (Tip: paste the English into [DeepL](https://www.deepl.com/translator) or Google Translate, then paste the result in and tidy the terms.)
-- **Automatically, with the script:** `scripts/translate.mjs` fills in French for any project **missing** one, using Azure Translator. It never overwrites French you've already written. Run it locally — the key is read from the environment, never stored in the project:
+- **Adding a _brand-new_ project** → run the script once and it writes the French for you:
 
   ```bash
   AZURE_TRANSLATOR_KEY=your-key AZURE_TRANSLATOR_REGION=canadacentral node scripts/translate.mjs
   ```
 
-  Then review the French and commit. (The key comes from your Azure "Translator" resource → *Keys and Endpoint*. Keep it secret — never paste it into a file or commit it.)
+- **Changing an _existing_ English description** → the script will **skip it** (that project already has French), so its French will *not* refresh on its own. To update it, do **one** of these:
+  1. Edit the French directly: open `src/data/i18n/projects.fr.json`, find the project by its `id`, and edit its `"description"` paragraphs.
+  2. Or delete that project's whole `"description"` block from `projects.fr.json` and re-run the script above. Now it counts as "missing", so it re-translates just that one.
+
+After either method, preview with `npm run dev` (check `/fr/…`), then commit and push.
+
+*(The Azure key comes from your "Translator" resource → **Keys and Endpoint**.)*
 
 **Publications stay as-is on purpose.** Citations (author names, article and journal titles) are kept in their original language by academic convention, so they read the same in both languages — that's intentional, not a missing translation.
 
