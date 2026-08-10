@@ -1,6 +1,6 @@
 ---
 import { areaMap } from '../data/areas.ts';
-import { localizePath, type Lang } from '../i18n/ui';
+import { localizePath, useTranslations, type Lang } from '../i18n/ui';
 import { localizeArea } from '../i18n/content';
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 }
 const { id, name, area, summary, thumb, showArea = true, lang = 'en' } = Astro.props;
 const meta = localizeArea(areaMap[area], lang);
+const t = useTranslations(lang);
 ---
 
 <a class="project card reveal" href={localizePath(`/research/${id}/`, lang)} style={`--accent:${meta.color}`}>
@@ -28,7 +29,7 @@ const meta = localizeArea(areaMap[area], lang);
   <div class="project__body">
     <p class="project__summary">{summary}</p>
     {showArea && <span class="project__area">{meta.name}</span>}
-    <span class="project__more">View project
+    <span class="project__more">{t('project.view')}
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </span>
   </div>

@@ -77,6 +77,7 @@ export const ui = {
     'project.join': 'Join this research',
     'project.more': 'More in',
     'project.back': 'All research',
+    'project.view': 'View project',
 
     // People
     'people.eyebrow': 'People',
@@ -235,6 +236,7 @@ export const ui = {
     'project.join': 'Participer à ce projet',
     'project.more': 'Autres projets en',
     'project.back': 'Toute la recherche',
+    'project.view': 'Voir le projet',
 
     // Équipe
     'people.eyebrow': 'Équipe',
