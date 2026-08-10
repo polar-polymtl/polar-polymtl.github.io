@@ -6,24 +6,46 @@ This guide is written for **non-coders**. Almost everything on the site is edite
 
 ---
 
-## 1. Running the site on your computer (one-time setup)
+## 1. Running & updating the site
+
+### First-time setup
 
 You need [Node.js](https://nodejs.org) installed (LTS version). Then, in the Terminal, from this folder:
 
 ```bash
-npm install     # only the first time — downloads what the site needs
-npm run dev     # starts a live preview at http://localhost:4321
+npm install
 ```
 
-Open **http://localhost:4321** in your browser. While `npm run dev` is running, any change you save to a file appears in the browser within a second. Press `Ctrl+C` in the Terminal to stop it.
+That downloads what the site needs (only required the first time, and again if you change the tooling).
 
-When you're happy with your changes, build the final website:
+### The everyday update loop
+
+Whenever you want to change something on the site, it's the same three steps. **One update publishes both English and French together** — they're one project, not two.
+
+**Step 1 — Edit.** Open the file for whatever you're changing and edit the text. Sections 2–10 below tell you exactly which file for each thing (people, projects, experiments, wording, images, French text, etc.).
+
+**Step 2 — Preview both languages.** Start the live preview:
 
 ```bash
-npm run build   # creates the finished site in the "dist" folder
+npm run dev
 ```
 
-The `dist` folder is what gets uploaded to your web host.
+Then open both **http://localhost:4321/** (English) and **http://localhost:4321/fr/** (French) in your browser and check your change looks right in each. The page updates within a second as you save. Press `Ctrl+C` in the Terminal to stop it.
+
+**Step 3 — Publish.** When you're happy, this one command sends it live:
+
+```bash
+git add -A && git commit -m "describe your change" && git push
+```
+
+That's it — an automated job rebuilds every page in **both languages** and republishes the site in about 2 minutes. (You never need to run `npm run build` yourself for a normal update; the publish step does it for you.)
+
+### The rule for English vs. French
+
+- Content that reads **the same** in both languages — a person's name, an email, a year, a photo, the logo, a partner — is edited **once** and both languages update automatically.
+- Content that **differs** — a heading, a description, a summary — is edited in the English file **and** its French twin. They live side by side (see Section 7) so they're easy to keep in sync. If you ever forget the French, the site simply shows the English there — it never breaks.
+
+> **Heads-up (branches):** the French version currently lives only on the `multilingual` branch, so the **live site is English-only until you merge that branch into `main`**. To work on the bilingual version, run `git checkout multilingual` first. On the English-only `main`, you'd edit just the English files.
 
 > **Tip:** Files that end in `.json` are lists of information. They use quotes `"like this"`, commas between items, and curly braces `{ }`. The safest way to edit them: copy an existing entry, paste it, and change the words inside the quotes. Keep all the commas and braces exactly where they are.
 
