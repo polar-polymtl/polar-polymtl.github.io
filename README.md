@@ -11,7 +11,6 @@ Website for the **POLAR** (Polytechnique Lab for Assistive and Rehabilitation Te
 You need **[Node.js](https://nodejs.org)** installed — pick the **LTS** version. You only do this once per computer.
 
 **Windows**
-
 Download the **LTS** installer (`.msi`) from [nodejs.org](https://nodejs.org), run it, and click through with the default options. (Advanced alternative, in PowerShell:)
 
 ```bash
@@ -19,7 +18,6 @@ winget install OpenJS.NodeJS.LTS
 ```
 
 **macOS**
-
 Download the **LTS** installer (`.pkg`) from [nodejs.org](https://nodejs.org), run it, and click through. (Or, if you use [Homebrew](https://brew.sh):)
 
 ```bash
@@ -27,7 +25,6 @@ brew install node
 ```
 
 **Ubuntu / Debian Linux**
-
 ```bash
 sudo apt update && sudo apt install -y nodejs npm
 ```
@@ -35,40 +32,34 @@ sudo apt update && sudo apt install -y nodejs npm
 If that installs an old version, use the current LTS from [NodeSource](https://github.com/nodesource/distributions) (run their one-line setup script, then `sudo apt install -y nodejs`).
 
 **Check it worked** (any operating system, in the Terminal / PowerShell):
-
 ```bash
 node --version
 ```
 
 You should see a version number (e.g. `v20.x` or newer). Then, once, from this project folder, install what the site needs:
-
 ```bash
 npm install
 ```
 
-(Only required the first time, and again if the tooling changes.)
-
 ### The everyday update loop
 
-Whenever you want to change something on the site, it's the same three steps. **One update publishes both English and French together** — they're one project, not two.
+**One update publishes both English and French together**
 
-**Step 1 — Edit.** Open the file for whatever you're changing and edit the text. Sections 2–10 below tell you exactly which file for each thing (people, projects, experiments, wording, images, French text, etc.).
+**Step 1 — Edit.** Open the file for whatever you're changing and edit the text(Sections 2–10 below).
 
 **Step 2 — Preview both languages.** Start the live preview:
-
 ```bash
 npm run dev
 ```
 
-Then open both **http://localhost:4321/** (English) and **http://localhost:4321/fr/** (French) in your browser and check your change looks right in each. The page updates within a second as you save. Press `Ctrl+C` in the Terminal to stop it.
+Then open both **http://localhost:4321/** (English) and **http://localhost:4321/fr/** (French) in your browser and check your change looks right in each. Press `Ctrl+C` in the Terminal to stop it.
 
-**Step 3 — Publish.** When you're happy, this one command sends it live:
-
+**Step 3 — Publish.** When you're happy, this command pushes to the remote repo and makes it live:
 ```bash
 git add -A && git commit -m "describe your change" && git push
 ```
 
-That's it — an automated job rebuilds every page in **both languages** and republishes the site in about 2 minutes. (You never need to run `npm run build` yourself for a normal update; the publish step does it for you.)
+That's an automated job rebuilds every page in **both languages** and republishes the site in about 2 minutes. (You never need to run `npm run build` yourself for a normal update; the publish step does it for you.)
 
 ### The rule for English vs. French
 
@@ -251,21 +242,3 @@ At the very top, inside `:root { … }`, are the site's colors (e.g. `--brand`) 
 
 Almost all the fixed wording on the pages (headings, buttons, intro sentences) lives in **one file**: `src/i18n/ui.ts`. Each entry has an English line (`en:`) and a French line (`fr:`) — edit the text inside the quotes. For example, to change the Home page hero sentence, find `'home.lead'` and edit both the `en` and `fr` versions. This keeps English and French side by side so they stay in sync.
 
----
-
-## For developers
-
-The real content was originally imported from a `wget` copy of the old Google Sites site (`polargsite/`, and `logo/` for the official logo) by two one-off scripts:
-
-```bash
-node scripts/extract.mjs      # parse polargsite/ → optimized images + scripts/extracted.json
-node scripts/build-data.mjs   # merge into src/data/projects.json + people.json
-```
-
-You normally **don't** run these — edit `src/data/*.json` directly. They only matter for a fresh re-import. `polargsite/` and `logo/` are source-only and never ship in `dist/`. See `CLAUDE.md` for architecture notes.
-
-**Known gap:** a few original project images (all of `emg-robot_1`'s, and one each on several others) were never saved by the `wget` mirror and Google blocks re-downloading them, so those specific images are absent. Drop replacements into `public/images/projects/` and add them to the project's `images` list to fill the gaps.
-
-## Deploying
-
-The site is static — it works on any host (Netlify, Vercel, GitHub Pages, or a university server). Build command: `npm run build`; publish the `dist` folder. Point the `polarlab.ca` domain at your chosen host.
