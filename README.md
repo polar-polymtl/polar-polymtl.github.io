@@ -47,7 +47,7 @@ npm install
 
 **Step 1 — Edit.** Open the file for whatever you're changing and edit the text(Sections 2–10 below).
 
-**Step 2 — Preview both languages.** Start the live preview:
+**Step 2 — Preview both languages.** Start the live preview, from inside the project folder run:
 ```bash
 npm run dev
 ```

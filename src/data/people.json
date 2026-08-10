@@ -127,16 +127,7 @@
     "institution": "Polytechnique Montréal",
     "years": "2025–2027",
     "order": 2
-  },
-  {
-    "id": "hubert-laflamme",
-    "name": "Hubert Laflamme",
-    "role": "MSc, Mechanical Engineering",
-    "group": "cosupervised",
-    "institution": "Polytechnique Montréal",
-    "years": "2024–2026",
-    "order": 3
-  },
+  },  
   {
     "id": "remi-chayer",
     "name": "Rémi Chayer",
@@ -156,13 +147,25 @@
     "order": 2
   },
   {
+    "id": "hubert-laflamme",
+    "name": "Hubert Laflamme",
+    "role": "MSc, Mechanical Engineering",
+    "group": "alumni-grad",
+    "institution": "Polytechnique Montréal",
+    "years": "2024–2026",
+    "order": 1,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/hubert-laflamme-cpi-335744205/"
+    }
+  },
+  {
     "id": "patrick-deschambault",
     "name": "Patrick Deschambault",
     "role": "MSc, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2025–2026",
-    "order": 1
+    "order": 2
   },
   {
     "id": "amir-ghiasi-noughaby",

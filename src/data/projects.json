@@ -641,14 +641,22 @@
         "name": "Amandine Gesta",
         "role": "PhD Candidate",
         "email": "amandine.gesta@polymtl.ca"
+      },
+      {
+        "name": "Pranesh Gopal",
+        "role": "Research Intern",
+        "email": "pranesh.gopal@polymtl.ca"
       }
     ],
     "publications": [
       "[1] Gopal, Pranesh, Amandine Gesta, and Abolfazl Mohebbi. \"Asystematic study on electromyography-based hand gesture recognition for assistive robots using deep learning and machine learning models.\" Sensors 22.10 (2022): 3650."
     ],
     "videos": [],
-    "images": [],
-    "thumb": null,
+    "images": [    
+      "/images/projects/emg-robot_1-2.webp",
+      "/images/projects/emg-robot_1-3.webp"
+    ],
+    "thumb": "/images/projects/emg-robot_1-1.webp",
     "featured": true,
     "order": 1
   },
