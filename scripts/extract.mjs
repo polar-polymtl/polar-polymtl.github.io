@@ -174,6 +174,10 @@ const PEOPLE_ORDER = [
 }
 
 // ---------- social links per person (slice people.html between names) ----------
+// CAVEAT: the alumni list uses a "link-before-name" layout (opposite of the
+// member cards), so this slicing mis-assigns alumni LinkedIn URLs by one person.
+// After a fresh re-run, re-match alumni links to names by LinkedIn slug (the
+// slug contains the person's name) before trusting `people.json`.
 {
   const html = read(path.join(SITE, 'people.html'));
   const peopleData = JSON.parse(read(path.join(ROOT, 'src', 'data', 'people.json')));

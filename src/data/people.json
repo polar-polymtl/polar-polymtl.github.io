@@ -162,10 +162,7 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2025–2026",
-    "order": 1,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/amir-ghiasi-noughaby/"
-    }
+    "order": 1
   },
   {
     "id": "amir-ghiasi-noughaby",
@@ -176,7 +173,7 @@
     "years": "2021–2026",
     "order": 2,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/olivier-lecompte-764905132/"
+      "linkedin": "https://www.linkedin.com/in/amir-ghiasi-noughaby"
     }
   },
   {
@@ -188,7 +185,7 @@
     "years": "2022–2026",
     "order": 3,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/aghil%C3%A8s-yousfi-419003367/"
+      "linkedin": "https://www.linkedin.com/in/olivier-lecompte-764905132"
     }
   },
   {
@@ -198,7 +195,10 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2023–2026",
-    "order": 4
+    "order": 4,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/aghil%C3%A8s-yousfi-419003367"
+    }
   },
   {
     "id": "seyed-ehsan-marjani",
@@ -207,10 +207,7 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2025–2026",
-    "order": 5,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/anne-charlotte-desbarbieux/"
-    }
+    "order": 5
   },
   {
     "id": "anne-charlotte-desbarbieux",
@@ -221,7 +218,7 @@
     "years": "2023–2025",
     "order": 6,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/louis-simon-guay-66899a108/"
+      "linkedin": "https://www.linkedin.com/in/anne-charlotte-desbarbieux"
     }
   },
   {
@@ -233,7 +230,7 @@
     "years": "2022–2025",
     "order": 7,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/stella-maschio-793a90354/"
+      "linkedin": "https://www.linkedin.com/in/louis-simon-guay-66899a108"
     }
   },
   {
@@ -243,7 +240,10 @@
     "group": "alumni-grad",
     "institution": "Harvard Medical School · University of Padova, Italy",
     "years": "2024–2025",
-    "order": 8
+    "order": 8,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/stella-maschio-793a90354"
+    }
   },
   {
     "id": "leilasadat-pezeshki",
@@ -270,10 +270,7 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2020–2024",
-    "order": 11,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/ali-rouzbayani/"
-    }
+    "order": 11
   },
   {
     "id": "ali-rouzbayani",
@@ -282,7 +279,10 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2021–2024",
-    "order": 12
+    "order": 12,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ali-rouzbayani"
+    }
   },
   {
     "id": "maryam-ashkbous-esfahani",
@@ -291,10 +291,7 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2022–2024",
-    "order": 13,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/ayoub-behidj-0837531a1/"
-    }
+    "order": 13
   },
   {
     "id": "ayoub-behidj",
@@ -305,7 +302,7 @@
     "years": "2020–2023",
     "order": 14,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/shayan-ghiasvand/"
+      "linkedin": "https://www.linkedin.com/in/ayoub-behidj-0837531a1"
     }
   },
   {
@@ -315,7 +312,10 @@
     "group": "alumni-grad",
     "institution": "Concordia University",
     "years": "2020–2023",
-    "order": 15
+    "order": 15,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/shayan-ghiasvand"
+    }
   },
   {
     "id": "reza-norouzzadeh",
@@ -324,10 +324,7 @@
     "group": "alumni-grad",
     "institution": "Iran",
     "years": "2022–2023",
-    "order": 16,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/olibd/"
-    }
+    "order": 16
   },
   {
     "id": "olivier-brochu-dufour",
@@ -336,10 +333,7 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2020–2021",
-    "order": 17,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/malaury-fouet-68801b224/?locale=en"
-    }
+    "order": 17
   },
   {
     "id": "malaury-fouet",
@@ -350,7 +344,7 @@
     "years": "2025",
     "order": 1,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/hend-afli/"
+      "linkedin": "https://www.linkedin.com/in/malaury-fouet-68801b224"
     }
   },
   {
@@ -360,7 +354,10 @@
     "group": "intern",
     "institution": "Tunisia Polytechnic School, Tunisia",
     "years": "2024",
-    "order": 2
+    "order": 2,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/hend-afli"
+    }
   },
   {
     "id": "selliya-ravanthiramohan",
@@ -369,10 +366,7 @@
     "group": "intern",
     "institution": "EPF Engineering School, Troyes, France",
     "years": "2023",
-    "order": 3,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/jean-louis-blervacque/"
-    }
+    "order": 3
   },
   {
     "id": "jean-louis-blervacque",
@@ -383,7 +377,7 @@
     "years": "2023",
     "order": 4,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/caitlin-chee-sl/"
+      "linkedin": "https://www.linkedin.com/in/jean-louis-blervacque"
     }
   },
   {
@@ -395,7 +389,7 @@
     "years": "2023",
     "order": 5,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/sophia-taddei-5a1738218/"
+      "linkedin": "https://www.linkedin.com/in/caitlin-chee-sl"
     }
   },
   {
@@ -405,7 +399,10 @@
     "group": "intern",
     "institution": "École Polytechnique, Paris, France",
     "years": "2023",
-    "order": 6
+    "order": 6,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/sophia-taddei-5a1738218"
+    }
   },
   {
     "id": "valentin-obrier",
@@ -414,10 +411,7 @@
     "group": "intern",
     "institution": "CESI École d’ingénieurs, France",
     "years": "2022",
-    "order": 7,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/alice-roustan/"
-    }
+    "order": 7
   },
   {
     "id": "alice-roustan",
@@ -428,7 +422,7 @@
     "years": "2022",
     "order": 8,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/sepideh-lashkari/"
+      "linkedin": "https://www.linkedin.com/in/alice-roustan"
     }
   },
   {
@@ -440,7 +434,7 @@
     "years": "2022",
     "order": 9,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/anna-diop-b68913166/"
+      "linkedin": "https://www.linkedin.com/in/sepideh-lashkari"
     }
   },
   {
@@ -452,7 +446,7 @@
     "years": "2022",
     "order": 10,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/gabrielle-marion-33585333a/"
+      "linkedin": "https://www.linkedin.com/in/anna-diop-b68913166"
     }
   },
   {
@@ -464,7 +458,7 @@
     "years": "2025–2026",
     "order": 1,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/maelys-carre/"
+      "linkedin": "https://www.linkedin.com/in/gabrielle-marion-33585333a"
     }
   },
   {
@@ -474,7 +468,10 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2025–2026",
-    "order": 2
+    "order": 2,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/maelys-carre"
+    }
   },
   {
     "id": "ophelie-senechal",
@@ -485,7 +482,7 @@
     "years": "2025–2026",
     "order": 3,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/thomas-houlachi/"
+      "linkedin": "https://www.linkedin.com/in/oph%C3%A9lie-s%C3%A9n%C3%A9chal-a6383733b"
     }
   },
   {
@@ -497,7 +494,7 @@
     "years": "2025",
     "order": 4,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/jacobduncan876/"
+      "linkedin": "https://www.linkedin.com/in/thomas-houlachi"
     }
   },
   {
@@ -507,7 +504,10 @@
     "group": "alumni-undergrad",
     "institution": "Memorial University of Newfoundland, Canada",
     "years": "2025",
-    "order": 5
+    "order": 5,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/jacobduncan876"
+    }
   },
   {
     "id": "andrea-paulina-centeno-munoz",
@@ -516,10 +516,7 @@
     "group": "alumni-undergrad",
     "institution": "Universidad de las Américas Puebla, Mexico",
     "years": "2025",
-    "order": 6,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/markrrjohnson/"
-    }
+    "order": 6
   },
   {
     "id": "mark-johnson",
@@ -528,7 +525,10 @@
     "group": "alumni-undergrad",
     "institution": "Memorial University of Newfoundland, Canada",
     "years": "2025",
-    "order": 7
+    "order": 7,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/markrrjohnson"
+    }
   },
   {
     "id": "mena-samir-kamal-abouseffien",
@@ -537,10 +537,7 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2024",
-    "order": 8,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/jongann-lee/"
-    }
+    "order": 8
   },
   {
     "id": "jongann-lee",
@@ -551,7 +548,7 @@
     "years": "2024",
     "order": 9,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/ikram-beghdadi-28042624a/"
+      "linkedin": "https://www.linkedin.com/in/jongann-lee"
     }
   },
   {
@@ -561,7 +558,10 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2024",
-    "order": 10
+    "order": 10,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ikram-beghdadi-28042624a"
+    }
   },
   {
     "id": "raul-aleksander-martell-esparza",
@@ -579,10 +579,7 @@
     "group": "alumni-undergrad",
     "institution": "National Taiwan University, Taiwan",
     "years": "2024",
-    "order": 12,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/nadia-houti-379125215/"
-    }
+    "order": 12
   },
   {
     "id": "nadia-houti",
@@ -593,7 +590,7 @@
     "years": "2023",
     "order": 13,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/flora-dommanget-207bb81b9/"
+      "linkedin": "https://www.linkedin.com/in/nadia-houti-379125215"
     }
   },
   {
@@ -605,7 +602,7 @@
     "years": "2023",
     "order": 14,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/sarah-ora/?locale=en"
+      "linkedin": "https://www.linkedin.com/in/flora-dommanget-207bb81b9"
     }
   },
   {
@@ -617,7 +614,7 @@
     "years": "2022",
     "order": 15,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/imane-r-b24359225/"
+      "linkedin": "https://www.linkedin.com/in/sarah-ora"
     }
   },
   {
@@ -627,7 +624,10 @@
     "group": "alumni-undergrad",
     "institution": "Polytech Montpellier, France",
     "years": "2022",
-    "order": 16
+    "order": 16,
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/imane-r-b24359225"
+    }
   },
   {
     "id": "aditya-jeppu",
@@ -636,10 +636,7 @@
     "group": "alumni-undergrad",
     "institution": "RV College of Engineering, India",
     "years": "2022",
-    "order": 17,
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/chetan-pathrabe/"
-    }
+    "order": 17
   },
   {
     "id": "chetan-pathrabe",
@@ -650,7 +647,7 @@
     "years": "2022",
     "order": 18,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+      "linkedin": "https://www.linkedin.com/in/chetan-pathrabe"
     }
   },
   {
@@ -662,7 +659,7 @@
     "years": "2021–2022",
     "order": 19,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/iris-toye/"
+      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto"
     }
   },
   {
@@ -674,7 +671,7 @@
     "years": "2021",
     "order": 20,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/benjamin-saglietto/"
+      "linkedin": "https://www.linkedin.com/in/iris-toye"
     }
   },
   {
@@ -686,7 +683,7 @@
     "years": "2021",
     "order": 21,
     "links": {
-      "linkedin": "https://www.linkedin.com/in/praneshgopal/"
+      "linkedin": "https://www.linkedin.com/in/jean-simon-houle-395903193"
     }
   },
   {
@@ -698,7 +695,7 @@
     "years": "2021",
     "order": 22,
     "links": {
-      "linkedin": "https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fpolar-polymtl&sa=D&sntz=1&usg=AOvVaw14iwirZTtR2xmMa4R8jU7Z"
+      "linkedin": "https://www.linkedin.com/in/praneshgopal"
     }
   }
 ]
