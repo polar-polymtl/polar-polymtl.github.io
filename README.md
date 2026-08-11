@@ -82,10 +82,9 @@ Each person is one block like this:
   "id": "jane-doe",
   "name": "Jane Doe",
   "role": "PhD Student, Biomedical Engineering",
-  "group": "grad",
+  "group": "phd",
   "institution": "Polytechnique Montréal",
   "years": "2026–2030",
-  "order": 7,
   "photo": "/images/people/jane-doe.webp",
   "links": {
     "scholar": "https://scholar.google.com/...",
@@ -97,17 +96,17 @@ Each person is one block like this:
 ```
 
 - **`group`** decides which section they appear in. Use one of:
-  `director`, `postdoc`, `grad`, `cosupervised`, `undergrad`, `alumni-grad`, `intern`, `alumni-undergrad`.
-- **`order`** sorts people within their section (1 comes first).
+  `director`, `postdoc`, `phd`, `msc`, `cosupervised`, `undergrad`, `alumni-grad`, `intern`, `alumni-undergrad`.
+- **`years`** also decides the **order** — you never number people by hand. Within each section the site puts the most recent first: whoever finishes latest goes on top, and if two people finish the same year the one who started most recently comes first, then it falls back to alphabetical. Write it as a range (`"2026–2030"`) or, for someone who was here a single year, just that year (`"2026"` — the site reads it as 2026–2026). The **director** and **postdocs** are the exception: they simply stay in the order they're written in the file.
 - **`photo`** is optional. If you leave it out, the person shows a colored circle with their initials. To add a photo, put an image in `public/images/people/` and set `"photo": "/images/people/their-name.webp"`.
 - **`links`** is optional — include only the ones the person has (scholar / linkedin / x / github). Icons appear automatically.
 - To **remove** someone, delete their whole block (and the comma before it).
 
 ### The photo carousel (bottom of the People page)
 
-At the very bottom of the People page there's a sliding **photo gallery**. It simply shows **every image in the `public/images/gallery/` folder**, in filename order — no code or list to edit.
+At the very bottom of the People page there's a sliding **photo gallery**. It simply shows **every image in the `public/images/team/` folder**, in filename order — no code or list to edit.
 
-- **To add photos:** drop image files (`.webp` or `.jpg`) into `public/images/gallery/`. They appear automatically. Tip: name them so they sort the way you want, e.g. `01-team.webp`, `02-lab.webp`, `03-demo.webp`.
+- **To add photos:** drop image files (`.webp` or `.jpg`) into `public/images/team/`. They appear automatically. Tip: name them so they sort the way you want — the existing ones are `team-1.webp`, `team-2.webp`, `team-3.webp`, …
 - **To remove or reorder:** delete files, or rename them (the carousel sorts by filename).
 - Visitors can click any photo to view it **full size**. If the whole folder is empty, the gallery section just doesn't show.
 

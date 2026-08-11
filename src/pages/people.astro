@@ -12,25 +12,45 @@ import { localizeRole, localizeNote } from '../i18n/content';
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const t = useTranslations(lang);
 
-// Gallery carousel: every image in public/images/gallery/ (drop files in to add).
-const galleryDir = path.join(process.cwd(), 'public', 'images', 'gallery');
-const galleryImages = fs.existsSync(galleryDir)
-  ? fs.readdirSync(galleryDir)
+// Team carousel: every image in public/images/team/ (drop files in to add).
+const teamDir = path.join(process.cwd(), 'public', 'images', 'team');
+const teamImages = fs.existsSync(teamDir)
+  ? fs.readdirSync(teamDir)
       .filter((f) => /\.(webp|jpe?g|png|avif)$/i.test(f))
       .sort()
-      .map((f) => ({ src: `/images/gallery/${f}`, alt: 'POLAR Lab' }))
+      .map((f) => ({ src: `/images/team/${f}`, alt: 'POLAR Lab' }))
   : [];
 
 const people = await getCollection('people');
-const inGroup = (g: string) =>
-  people.filter((p) => p.data.group === g).sort((a, b) => a.data.order - b.data.order);
+
+// `years` is "2022–2026", or a single year meaning that year alone ("2026" = 2026–2026).
+const yearsOf = (s?: string): [start: number, end: number] => {
+  const range = (s ?? '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
+  if (range) return [Number(range[1]), Number(range[2])];
+  const single = (s ?? '').match(/\d{4}/);
+  return single ? [Number(single[0]), Number(single[0])] : [0, 0];
+};
+
+// The director and the postdocs keep their order in people.json; everyone
+// else is sorted most recent first — by end year, then start year, then name.
+const KEEP_FILE_ORDER = new Set(['director', 'postdoc']);
+const inGroup = (g: string) => {
+  const members = people.filter((p) => p.data.group === g);
+  if (KEEP_FILE_ORDER.has(g)) return members;
+  return members.sort((a, b) => {
+    const [aStart, aEnd] = yearsOf(a.data.years);
+    const [bStart, bEnd] = yearsOf(b.data.years);
+    return bEnd - aEnd || bStart - aStart || a.data.name.localeCompare(b.data.name);
+  });
+};
 
 const director = inGroup('director')[0];
 
 // Sections rendered as full cards.
 const cardSections: { key: string; title: UIKey }[] = [
   { key: 'postdoc', title: 'people.group.postdoc' },
-  { key: 'grad', title: 'people.group.grad' },
+  { key: 'phd', title: 'people.group.phd' },
+  { key: 'msc', title: 'people.group.msc' },
   { key: 'cosupervised', title: 'people.group.cosupervised' },
   { key: 'undergrad', title: 'people.group.undergrad' },
 ];
@@ -157,7 +177,7 @@ const linksOf = (l?: Record<string, string>) =>
   </section>
 
   <!-- Photo gallery carousel -->
-  {galleryImages.length > 0 && (
+  {teamImages.length > 0 && (
     <section class="section section--soft">
       <div class="container">
         <div class="section-head reveal">
@@ -166,7 +186,7 @@ const linksOf = (l?: Record<string, string>) =>
           <p>{t('people.gallery.lead')}</p>
         </div>
         <div class="reveal">
-          <Carousel images={galleryImages} lang={lang} />
+          <Carousel images={teamImages} lang={lang} />
         </div>
       </div>
     </section>

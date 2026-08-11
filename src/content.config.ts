@@ -4,7 +4,9 @@ import { file } from 'astro/loaders';
 /**
  * People — a single editable roster file. To add or update a member,
  * edit `src/data/people.json`. `group` controls which section they
- * appear in on the People page; `order` sorts within a group.
+ * appear in on the People page; within a section, members are sorted
+ * automatically from `years` (most recent first) — there is no manual
+ * ordering field.
  */
 const people = defineCollection({
   loader: file('src/data/people.json'),
@@ -14,7 +16,8 @@ const people = defineCollection({
     group: z.enum([
       'director',
       'postdoc',
-      'grad',
+      'phd',
+      'msc',
       'cosupervised',
       'undergrad',
       'alumni-grad',
@@ -34,7 +37,6 @@ const people = defineCollection({
         github: z.string().optional(),
       })
       .optional(),
-    order: z.number().default(50),
   }),
 });
 

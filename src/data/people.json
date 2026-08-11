@@ -7,7 +7,6 @@
     "institution": "Polytechnique Montréal",
     "note": "iTMT Research Chair in Rehabilitation and Assistive Technologies",
     "email": "abolfazl.mohebbi@polymtl.ca",
-    "order": 1,
     "photo": "/images/people/abolfazl-mohebbi.webp",
     "links": {
       "scholar": "https://scholar.google.ca/citations?user=LcUZkGoAAAAJ&hl=en&oi=ao",
@@ -22,7 +21,6 @@
     "role": "Impact+ Postdoctoral Fellow, Mechanical Engineering",
     "group": "postdoc",
     "institution": "Polytechnique Montréal",
-    "order": 1,
     "photo": "/images/people/leila-pezeshki.webp",
     "links": {
       "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=leilaalsadat+pezeshki&btnG=",
@@ -33,10 +31,9 @@
     "id": "amandine-gesta",
     "name": "Amandine Gesta",
     "role": "PhD Candidate, Biomedical Engineering",
-    "group": "grad",
+    "group": "phd",
     "institution": "Polytechnique Montréal",
     "years": "2022–2026",
-    "order": 1,
     "photo": "/images/people/amandine-gesta.webp",
     "links": {
       "scholar": "https://scholar.google.ca/citations?user=sDw0M0UAAAAJ&hl=en&oi=ao",
@@ -47,10 +44,9 @@
     "id": "armineh-rahmanian",
     "name": "Armineh Rahmanian",
     "role": "PhD Candidate, Mechanical Engineering",
-    "group": "grad",
+    "group": "phd",
     "institution": "Polytechnique Montréal",
     "years": "2023–2027",
-    "order": 2,
     "photo": "/images/people/armineh-rahmanian.webp",
     "links": {
       "scholar": "https://scholar.google.ca/citations?user=_sHYmwEAAAAJ&hl=en&oi=ao",
@@ -61,10 +57,9 @@
     "id": "aiman-feghoul",
     "name": "Aiman Feghoul",
     "role": "PhD Student, Biomedical Engineering",
-    "group": "grad",
+    "group": "phd",
     "institution": "Polytechnique Montréal",
     "years": "2024–2028",
-    "order": 3,
     "photo": "/images/people/aiman-feghoul.webp",
     "links": {
       "scholar": "https://scholar.google.ca/scholar?hl=en&as_sdt=0%2C5&q=aiman+feghoul&btnG=",
@@ -75,10 +70,9 @@
     "id": "thomas-imbeault-nepton",
     "name": "Thomas Imbeault-Nepton",
     "role": "PhD Student, Biomedical Engineering",
-    "group": "grad",
+    "group": "phd",
     "institution": "Polytechnique Montréal",
     "years": "2025–2029",
-    "order": 4,
     "photo": "/images/people/thomas-imbeault-nepton.webp",
     "links": {
       "linkedin": "https://www.linkedin.com/in/thomas-imbeault-nepton-959562375/"
@@ -88,10 +82,9 @@
     "id": "parsa-maghsoudloo",
     "name": "Parsa Maghsoudloo",
     "role": "MSc Student, Biomedical Engineering",
-    "group": "grad",
+    "group": "msc",
     "institution": "Polytechnique Montréal",
     "years": "2024–2026",
-    "order": 5,
     "photo": "/images/people/parsa-maghsoudloo.webp",
     "links": {
       "linkedin": "https://www.linkedin.com/in/parsa-maghsoudloo-bb6783192/"
@@ -101,10 +94,9 @@
     "id": "mena-samir-abouseffien",
     "name": "Mena Samir Abouseffien",
     "role": "MSc Student, Mechanical Engineering",
-    "group": "grad",
+    "group": "msc",
     "institution": "Polytechnique Montréal",
     "years": "2025–2027",
-    "order": 6,
     "photo": "/images/people/mena-samir-abouseffien.webp",
     "links": {
       "linkedin": "https://www.linkedin.com/in/mena-abouseffien-b14100257/"
@@ -116,8 +108,7 @@
     "role": "PhD, Quantitative Life Sciences",
     "group": "cosupervised",
     "institution": "McGill University",
-    "years": "2025–2026",
-    "order": 1
+    "years": "2025–2026"
   },
   {
     "id": "ahmed-mouloudj",
@@ -125,8 +116,7 @@
     "role": "MSc, Mechanical Engineering",
     "group": "cosupervised",
     "institution": "Polytechnique Montréal",
-    "years": "2025–2027",
-    "order": 2
+    "years": "2025–2027"
   },  
   {
     "id": "remi-chayer",
@@ -134,8 +124,7 @@
     "role": "Undergraduate Researcher",
     "group": "undergrad",
     "institution": "Polytechnique Montréal",
-    "years": "2026",
-    "order": 1
+    "years": "2026"
   },
   {
     "id": "jana-mahmoud",
@@ -143,8 +132,7 @@
     "role": "Undergraduate Researcher",
     "group": "undergrad",
     "institution": "Polytechnique Montréal",
-    "years": "2026",
-    "order": 2
+    "years": "2026"
   },
   {
     "id": "hubert-laflamme",
@@ -153,7 +141,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2024–2026",
-    "order": 1,
     "links": {
       "linkedin": "https://www.linkedin.com/in/hubert-laflamme-cpi-335744205/"
     }
@@ -164,8 +151,7 @@
     "role": "MSc, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
-    "years": "2025–2026",
-    "order": 2
+    "years": "2025–2026"
   },
   {
     "id": "amir-ghiasi-noughaby",
@@ -174,7 +160,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2021–2026",
-    "order": 2,
     "links": {
       "linkedin": "https://www.linkedin.com/in/amir-ghiasi-noughaby"
     }
@@ -186,7 +171,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2022–2026",
-    "order": 3,
     "links": {
       "linkedin": "https://www.linkedin.com/in/olivier-lecompte-764905132"
     }
@@ -198,7 +182,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2023–2026",
-    "order": 4,
     "links": {
       "linkedin": "https://www.linkedin.com/in/aghil%C3%A8s-yousfi-419003367"
     }
@@ -209,8 +192,7 @@
     "role": "Postdoc, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
-    "years": "2025–2026",
-    "order": 5
+    "years": "2025–2026"
   },
   {
     "id": "anne-charlotte-desbarbieux",
@@ -219,7 +201,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2023–2025",
-    "order": 6,
     "links": {
       "linkedin": "https://www.linkedin.com/in/anne-charlotte-desbarbieux"
     }
@@ -231,7 +212,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2022–2025",
-    "order": 7,
     "links": {
       "linkedin": "https://www.linkedin.com/in/louis-simon-guay-66899a108"
     }
@@ -243,7 +223,6 @@
     "group": "alumni-grad",
     "institution": "Harvard Medical School · University of Padova, Italy",
     "years": "2024–2025",
-    "order": 8,
     "links": {
       "linkedin": "https://www.linkedin.com/in/stella-maschio-793a90354"
     }
@@ -254,8 +233,7 @@
     "role": "PhD, Mechanical Engineering · Graduate Visiting Researcher",
     "group": "alumni-grad",
     "institution": "Isfahan University of Technology",
-    "years": "2023–2025",
-    "order": 9
+    "years": "2023–2025"
   },
   {
     "id": "nishanth-rajkumar",
@@ -263,8 +241,7 @@
     "role": "MSc, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Concordia University",
-    "years": "2022–2024",
-    "order": 10
+    "years": "2022–2024"
   },
   {
     "id": "carlos-eduardo-maia-de-souza",
@@ -272,8 +249,7 @@
     "role": "PhD, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
-    "years": "2020–2024",
-    "order": 11
+    "years": "2020–2024"
   },
   {
     "id": "ali-rouzbayani",
@@ -282,7 +258,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2021–2024",
-    "order": 12,
     "links": {
       "linkedin": "https://www.linkedin.com/in/ali-rouzbayani"
     }
@@ -293,8 +268,7 @@
     "role": "PhD Student, Industrial Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
-    "years": "2022–2024",
-    "order": 13
+    "years": "2022–2024"
   },
   {
     "id": "ayoub-behidj",
@@ -303,7 +277,6 @@
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
     "years": "2020–2023",
-    "order": 14,
     "links": {
       "linkedin": "https://www.linkedin.com/in/ayoub-behidj-0837531a1"
     }
@@ -315,7 +288,6 @@
     "group": "alumni-grad",
     "institution": "Concordia University",
     "years": "2020–2023",
-    "order": 15,
     "links": {
       "linkedin": "https://www.linkedin.com/in/shayan-ghiasvand"
     }
@@ -326,8 +298,7 @@
     "role": "PhD, Mechanical Engineering · Graduate Visiting Researcher",
     "group": "alumni-grad",
     "institution": "Iran",
-    "years": "2022–2023",
-    "order": 16
+    "years": "2022–2023"
   },
   {
     "id": "olivier-brochu-dufour",
@@ -335,8 +306,7 @@
     "role": "MSc, Mechanical Engineering",
     "group": "alumni-grad",
     "institution": "Polytechnique Montréal",
-    "years": "2020–2021",
-    "order": 17
+    "years": "2020–2021"
   },
   {
     "id": "malaury-fouet",
@@ -345,7 +315,6 @@
     "group": "intern",
     "institution": "ISAE-Supaero, Toulouse, France",
     "years": "2025",
-    "order": 1,
     "links": {
       "linkedin": "https://www.linkedin.com/in/malaury-fouet-68801b224"
     }
@@ -357,7 +326,6 @@
     "group": "intern",
     "institution": "Tunisia Polytechnic School, Tunisia",
     "years": "2024",
-    "order": 2,
     "links": {
       "linkedin": "https://www.linkedin.com/in/hend-afli"
     }
@@ -368,8 +336,7 @@
     "role": "MSc, Engineering · Graduate Visiting Researcher",
     "group": "intern",
     "institution": "EPF Engineering School, Troyes, France",
-    "years": "2023",
-    "order": 3
+    "years": "2023"
   },
   {
     "id": "jean-louis-blervacque",
@@ -378,7 +345,6 @@
     "group": "intern",
     "institution": "Junia ISEN, France",
     "years": "2023",
-    "order": 4,
     "links": {
       "linkedin": "https://www.linkedin.com/in/jean-louis-blervacque"
     }
@@ -390,7 +356,6 @@
     "group": "intern",
     "institution": "Queen’s University Belfast, Ireland",
     "years": "2023",
-    "order": 5,
     "links": {
       "linkedin": "https://www.linkedin.com/in/caitlin-chee-sl"
     }
@@ -402,7 +367,6 @@
     "group": "intern",
     "institution": "École Polytechnique, Paris, France",
     "years": "2023",
-    "order": 6,
     "links": {
       "linkedin": "https://www.linkedin.com/in/sophia-taddei-5a1738218"
     }
@@ -413,8 +377,7 @@
     "role": "MSc, Biomedical Engineering · Graduate Visiting Researcher",
     "group": "intern",
     "institution": "CESI École d’ingénieurs, France",
-    "years": "2022",
-    "order": 7
+    "years": "2022"
   },
   {
     "id": "alice-roustan",
@@ -423,7 +386,6 @@
     "group": "intern",
     "institution": "Polytech Lyon, France",
     "years": "2022",
-    "order": 8,
     "links": {
       "linkedin": "https://www.linkedin.com/in/alice-roustan"
     }
@@ -435,7 +397,6 @@
     "group": "intern",
     "institution": "Polytech Lyon, France",
     "years": "2022",
-    "order": 9,
     "links": {
       "linkedin": "https://www.linkedin.com/in/sepideh-lashkari"
     }
@@ -447,7 +408,6 @@
     "group": "intern",
     "institution": "EPFL · Harvard Medical School, USA",
     "years": "2022",
-    "order": 10,
     "links": {
       "linkedin": "https://www.linkedin.com/in/anna-diop-b68913166"
     }
@@ -459,7 +419,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2025–2026",
-    "order": 1,
     "links": {
       "linkedin": "https://www.linkedin.com/in/gabrielle-marion-33585333a"
     }
@@ -471,7 +430,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2025–2026",
-    "order": 2,
     "links": {
       "linkedin": "https://www.linkedin.com/in/maelys-carre"
     }
@@ -483,7 +441,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2025–2026",
-    "order": 3,
     "links": {
       "linkedin": "https://www.linkedin.com/in/oph%C3%A9lie-s%C3%A9n%C3%A9chal-a6383733b"
     }
@@ -495,7 +452,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2025",
-    "order": 4,
     "links": {
       "linkedin": "https://www.linkedin.com/in/thomas-houlachi"
     }
@@ -507,7 +463,6 @@
     "group": "alumni-undergrad",
     "institution": "Memorial University of Newfoundland, Canada",
     "years": "2025",
-    "order": 5,
     "links": {
       "linkedin": "https://www.linkedin.com/in/jacobduncan876"
     }
@@ -518,8 +473,7 @@
     "role": "Undergraduate Researcher",
     "group": "alumni-undergrad",
     "institution": "Universidad de las Américas Puebla, Mexico",
-    "years": "2025",
-    "order": 6
+    "years": "2025"
   },
   {
     "id": "mark-johnson",
@@ -528,7 +482,6 @@
     "group": "alumni-undergrad",
     "institution": "Memorial University of Newfoundland, Canada",
     "years": "2025",
-    "order": 7,
     "links": {
       "linkedin": "https://www.linkedin.com/in/markrrjohnson"
     }
@@ -539,8 +492,7 @@
     "role": "Undergraduate Researcher",
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
-    "years": "2024",
-    "order": 8
+    "years": "2024"
   },
   {
     "id": "jongann-lee",
@@ -549,7 +501,6 @@
     "group": "alumni-undergrad",
     "institution": "Seoul National University, South Korea",
     "years": "2024",
-    "order": 9,
     "links": {
       "linkedin": "https://www.linkedin.com/in/jongann-lee"
     }
@@ -561,7 +512,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal, Canada",
     "years": "2024",
-    "order": 10,
     "links": {
       "linkedin": "https://www.linkedin.com/in/ikram-beghdadi-28042624a"
     }
@@ -572,8 +522,7 @@
     "role": "Undergraduate Researcher",
     "group": "alumni-undergrad",
     "institution": "Universidad Tecnológica El Retoño, Mexico",
-    "years": "2024",
-    "order": 11
+    "years": "2024"
   },
   {
     "id": "chi-wei-wen",
@@ -581,8 +530,7 @@
     "role": "Undergraduate Researcher",
     "group": "alumni-undergrad",
     "institution": "National Taiwan University, Taiwan",
-    "years": "2024",
-    "order": 12
+    "years": "2024"
   },
   {
     "id": "nadia-houti",
@@ -591,7 +539,6 @@
     "group": "alumni-undergrad",
     "institution": "Nanyang Technological University, Singapore",
     "years": "2023",
-    "order": 13,
     "links": {
       "linkedin": "https://www.linkedin.com/in/nadia-houti-379125215"
     }
@@ -603,7 +550,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal",
     "years": "2023",
-    "order": 14,
     "links": {
       "linkedin": "https://www.linkedin.com/in/flora-dommanget-207bb81b9"
     }
@@ -615,7 +561,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal",
     "years": "2022",
-    "order": 15,
     "links": {
       "linkedin": "https://www.linkedin.com/in/sarah-ora"
     }
@@ -627,7 +572,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytech Montpellier, France",
     "years": "2022",
-    "order": 16,
     "links": {
       "linkedin": "https://www.linkedin.com/in/imane-r-b24359225"
     }
@@ -638,8 +582,7 @@
     "role": "MITACS Globalink Undergraduate Researcher",
     "group": "alumni-undergrad",
     "institution": "RV College of Engineering, India",
-    "years": "2022",
-    "order": 17
+    "years": "2022"
   },
   {
     "id": "chetan-pathrabe",
@@ -648,7 +591,6 @@
     "group": "alumni-undergrad",
     "institution": "College of Engineering, Pune, India",
     "years": "2022",
-    "order": 18,
     "links": {
       "linkedin": "https://www.linkedin.com/in/chetan-pathrabe"
     }
@@ -660,7 +602,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal",
     "years": "2021–2022",
-    "order": 19,
     "links": {
       "linkedin": "https://www.linkedin.com/in/benjamin-saglietto"
     }
@@ -672,7 +613,6 @@
     "group": "alumni-undergrad",
     "institution": "EPFL, Switzerland",
     "years": "2021",
-    "order": 20,
     "links": {
       "linkedin": "https://www.linkedin.com/in/iris-toye"
     }
@@ -684,7 +624,6 @@
     "group": "alumni-undergrad",
     "institution": "Polytechnique Montréal",
     "years": "2021",
-    "order": 21,
     "links": {
       "linkedin": "https://www.linkedin.com/in/jean-simon-houle-395903193"
     }
@@ -696,7 +635,6 @@
     "group": "alumni-undergrad",
     "institution": "Manipal Institute of Technology, India",
     "years": "2021",
-    "order": 22,
     "links": {
       "linkedin": "https://www.linkedin.com/in/praneshgopal"
     }
