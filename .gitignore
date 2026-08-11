@@ -14,3 +14,7 @@ npm-debug.log*
 # original-site source material (large, import-only — not needed to build)
 polargsite/
 logo/
+# CLAUDE
+.claude/
+CLAUDE.md
+TODO.md
